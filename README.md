@@ -20,6 +20,7 @@ We at Oxygen are obsessed with helping teams unleash their potential. But great 
 - Backlog Management 
 - Scrum Team 
 - Kanban 
+- OKR
 - Program/Portfolio-Level Planning 
 - Collaboration
 - Budget Tracking 
