@@ -2,7 +2,7 @@ import { intersection } from 'lodash';
 import moment from 'moment';
 
 export const filterIssues = (projectIssues, filters, currentUserId) => {
-  const { searchTerm, userIds, myOnly, recent, viewType, viewStatus } = filters;
+  const { searchTerm, userIds, myOnly, recent, viewType, viewStatus, hideOld } = filters;
   let issues = projectIssues;
 
   if (searchTerm) {
@@ -23,5 +23,8 @@ export const filterIssues = (projectIssues, filters, currentUserId) => {
   if (viewStatus.length > 0) {
     issues = issues.filter(issue => viewStatus.includes(issue.status));
   }
+  if (hideOld > 0) {
+      issues = issues.filter(issue => moment(issue.updatedAt).isAfter(moment().subtract(30, 'days')));
+    }
   return issues;
 };

@@ -26,6 +26,7 @@ const defaultFilters = {
   groupBy: 'None',
   viewType: [],
   viewStatus: [],
+  hideOld:30,
 };
 
 const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refreshData }) => {
