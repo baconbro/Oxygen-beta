@@ -70,9 +70,9 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
   }
 
   //update the user to add the workspace id to his lastWorkspace 
-  const {currentUser} = useAuth()
-  const who = {email:currentUser?.email }
-  FirestoreService.editUser(who,{lastWorkspace: project.spaceId })
+  const { currentUser } = useAuth()
+  const who = { email: currentUser?.email }
+  FirestoreService.editUser(who, { lastWorkspace: project.spaceId })
 
 
 

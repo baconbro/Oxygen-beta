@@ -257,10 +257,10 @@ const List = () => {
             paddingLeft: `${row.depth * 4}rem`
           }}
         >
-      
 
-            <RenderTask type={getValue()} />
-       
+
+          <RenderTask type={getValue()} />
+
         </div>),
       header: () => <span>Type</span>
       //footer: info => info.column.id,
@@ -273,7 +273,7 @@ const List = () => {
     }),
     columnHelper.accessor('title', {
       header: () => 'Title',
-      cell: value => <TruncatedCellRenderer value={value.getValue()}/>,
+      cell: value => <TruncatedCellRenderer value={value.getValue()} />,
       width: 300,
       //footer: info => info.column.id,
     }),
@@ -322,7 +322,7 @@ const List = () => {
       cell: info => info.renderValue(),
       //footer: info => info.column.id,
     }),
-    
+
   ]
 
 
@@ -374,9 +374,9 @@ const List = () => {
     )
   };
   // Custom cell renderer with text-truncate class
-const TruncatedCellRenderer = ({ value }) => {
-  return <div className="text-dark fw-bold text-hover-primary fs-6 min-w-300px  cursor-pointer" >{value}</div>;
-};
+  const TruncatedCellRenderer = ({ value }) => {
+    return <div className="text-dark fw-bold text-hover-primary fs-6 min-w-300px  cursor-pointer" >{value}</div>;
+  };
   const RenderTask = ({ type }) => {
     return (
       <Type >
@@ -399,17 +399,17 @@ const TruncatedCellRenderer = ({ value }) => {
   );
   const Dot = ({ active }) => (
     <i
-    className={`bi bi-circle-fill fs-5 ${active ? 'text-primary' : 'text-light'}`}
-    style={{ margin: '0 2px' }}
-  />
+      className={`bi bi-circle-fill fs-5 ${active ? 'text-primary' : 'text-light'}`}
+      style={{ margin: '0 2px' }}
+    />
   );
-  
+
   const Dots = ({ count }) => {
     const dots = new Array(10).fill(null).map((_, index) => <Dot key={index} active={index < count} />);
     return <div className="d-flex flex-column flex-row-fluid">
       <div className="d-flex flex-column-auto h-25px  flex-center">{dots}
       </div>
-      </div>;
+    </div>;
   };
 
 
@@ -446,29 +446,20 @@ const TruncatedCellRenderer = ({ value }) => {
 
   return (
     <Fragment>
-      <div id="xgn_app_toolbar" className="app-toolbar  py-3 py-lg-6 ">
-        <div id="xgn_app_toolbar_container" className="app-container  container-xxl d-flex flex-stack ">
-          <div className="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
-            <h1 className="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+      <div className="d-flex align-items-center py-2 py-md-1">
+        <Filters
+          projectUsers={projectUsers}
+          defaultFilters={defaultFilters}
+          filters={filters}
+          mergeFilters={mergeFilters}
+        />
 
-            </h1>
-          </div>
-          <div className="d-flex align-items-center py-2 py-md-1">
-            <Filters
-              projectUsers={projectUsers}
-              defaultFilters={defaultFilters}
-              filters={filters}
-              mergeFilters={mergeFilters}
-            />
+      </div>
+      <div className="d-flex align-items-center gap-2 gap-lg-3  mx-7">
 
-          </div>
-          <div className="d-flex align-items-center gap-2 gap-lg-3  mx-7">
 
-            
-            <AddItem reloadList={handleDataRefresh} />
+        <AddItem reloadList={handleDataRefresh} />
 
-          </div>
-        </div>
       </div>
 
       <div className='card kanban' >
@@ -478,83 +469,83 @@ const TruncatedCellRenderer = ({ value }) => {
               <thead>
                 {table.getHeaderGroups().map(headerGroup => (
                   <tr key={headerGroup.id} className='fw-bold fs-6 text-gray-800'>
-                    <th key={'expand'+headerGroup.id} className="max-w-50px min-w-25px">
-          
+                    <th key={'expand' + headerGroup.id} className="max-w-50px min-w-25px">
+
                     </th>
                     {headerGroup.headers.map(header => (
                       <th key={header.id} //className="max-w-200px min-w-150px"> 
                       >
                         {header.isPlaceholder
-                          ? null:( 
-                          <div
-                          {...{
-                            className: header.column.getCanSort()
-                              ? 'cursor-pointer select-none'
-                              : '',
-                            onClick: header.column.getToggleSortingHandler(),
-                          }}
-                        >
-                          {flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                          {{
-                            asc: <><i className="bi bi-filter-circle-fill fs-6 me-1 ms-2 text-primary"></i><i className="bi bi-arrow-up "></i></>,
-                            desc: <><i className="bi bi-filter-circle-fill fs-6 me-1 ms-2 text-primary"></i><i className="bi bi-arrow-down "></i></>,
-                          }[header.column.getIsSorted()] ?? null}
-                        </div>
+                          ? null : (
+                            <div
+                              {...{
+                                className: header.column.getCanSort()
+                                  ? 'cursor-pointer select-none'
+                                  : '',
+                                onClick: header.column.getToggleSortingHandler(),
+                              }}
+                            >
+                              {flexRender(
+                                header.column.columnDef.header,
+                                header.getContext()
+                              )}
+                              {{
+                                asc: <><i className="bi bi-filter-circle-fill fs-6 me-1 ms-2 text-primary"></i><i className="bi bi-arrow-up "></i></>,
+                                desc: <><i className="bi bi-filter-circle-fill fs-6 me-1 ms-2 text-primary"></i><i className="bi bi-arrow-down "></i></>,
+                              }[header.column.getIsSorted()] ?? null}
+                            </div>
                           )}
                       </th>
-                      
-                      
+
+
                     ))}
-                                        <th key={'expand'} className="max-w-50px min-w-25px">
-                    <div className="m-0">
-              <a href="#" className="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-xgn-menu-trigger="click" data-xgn-menu-placement="bottom-end">
-                <i className="bi bi-plus fs-6 text-muted me-1"></i>
-              </a>
-              <div className="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-xgn-menu="true" id="xgn_menu_Column" >
-                <div className="px-7 py-5">
-                  <div className="fs-5 text-dark fw-bold">Columns</div>
-                </div>
-                <div className="separator border-gray-200"></div>
-                <div className="px-7 py-5">
-                  <div className="mb-10">
-                    <label className="form-label fw-semibold">
-                      <input
-                        {...{
-                          type: 'checkbox',
-                          checked: table.getIsAllColumnsVisible(),
-                          onChange: table.getToggleAllColumnsVisibilityHandler(),
-                        }}
-                      />{' '}
-                      Toggle All
-                    </label>
-                    {table.getAllLeafColumns().map(column => {
-                      return (
-                        <div key={column.id} className="px-1">
-                          <label>
-                            <input
-                              {...{
-                                type: 'checkbox',
-                                checked: column.getIsVisible(),
-                                onChange: column.getToggleVisibilityHandler(),
-                              }}
-                            />{' '}
-                            {column.id}
-                          </label>
+                    <th key={'expand'} className="max-w-50px min-w-25px">
+                      <div className="m-0">
+                        <a href="#" className="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-xgn-menu-trigger="click" data-xgn-menu-placement="bottom-end">
+                          <i className="bi bi-plus fs-6 text-muted me-1"></i>
+                        </a>
+                        <div className="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-xgn-menu="true" id="xgn_menu_Column" >
+                          <div className="px-7 py-5">
+                            <div className="fs-5 text-dark fw-bold">Columns</div>
+                          </div>
+                          <div className="separator border-gray-200"></div>
+                          <div className="px-7 py-5">
+                            <div className="mb-10">
+                              <label className="form-label fw-semibold">
+                                <input
+                                  {...{
+                                    type: 'checkbox',
+                                    checked: table.getIsAllColumnsVisible(),
+                                    onChange: table.getToggleAllColumnsVisibilityHandler(),
+                                  }}
+                                />{' '}
+                                Toggle All
+                              </label>
+                              {table.getAllLeafColumns().map(column => {
+                                return (
+                                  <div key={column.id} className="px-1">
+                                    <label>
+                                      <input
+                                        {...{
+                                          type: 'checkbox',
+                                          checked: column.getIsVisible(),
+                                          onChange: column.getToggleVisibilityHandler(),
+                                        }}
+                                      />{' '}
+                                      {column.id}
+                                    </label>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                            <div className="d-flex justify-content-end">
+
+                              <button type="submit" className="btn btn-sm btn-primary" data-xgn-menu-dismiss="true">Close</button>
+                            </div>
+
+                          </div>
                         </div>
-                      )
-                    })}
-                  </div>
-                  <div className="d-flex justify-content-end">
-
-                    <button type="submit" className="btn btn-sm btn-primary" data-xgn-menu-dismiss="true">Close</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+                      </div>
                     </th>
                   </tr>
                 ))}
@@ -563,21 +554,21 @@ const TruncatedCellRenderer = ({ value }) => {
                 {table.getRowModel().rows.map(row => (
                   <tr key={row.id} >
                     {/* Add a custom column with the expanding button */}
-                <td>
-                {row.getCanExpand() ? (
-              <button className='btn btn-icon btn-light btn-active-light-primary toggle h-25px w-25px me-1 '
-                {...{
-                  onClick: row.getToggleExpandedHandler(),
-                  style: {},
-                }}
-              >
-                {row.getIsExpanded() ? <span className="bi bi-dash fs-3 m-0"></span> : <span className="bi bi-plus fs-3 m-0 "></span>}
-              </button>
-            ) : (
-              ''
-            )}{''}
-                </td>
-                {/* Render the other data columns */}
+                    <td>
+                      {row.getCanExpand() ? (
+                        <button className='btn btn-icon btn-light btn-active-light-primary toggle h-25px w-25px me-1 '
+                          {...{
+                            onClick: row.getToggleExpandedHandler(),
+                            style: {},
+                          }}
+                        >
+                          {row.getIsExpanded() ? <span className="bi bi-dash fs-3 m-0"></span> : <span className="bi bi-plus fs-3 m-0 "></span>}
+                        </button>
+                      ) : (
+                        ''
+                      )}{''}
+                    </td>
+                    {/* Render the other data columns */}
                     {row.getVisibleCells().map(cell => (
                       <td key={cell.id} onClick={() => {
                         if (cell.id === row.id + '_title') {
@@ -611,8 +602,8 @@ const TruncatedCellRenderer = ({ value }) => {
             </table>
             <div className="h-4" />
             {/*             <button onClick={() => rerender()} className="border p-2">
-              Rerender
-            </button> */}
+                Rerender
+              </button> */}
           </div>
         </div>
       </div>

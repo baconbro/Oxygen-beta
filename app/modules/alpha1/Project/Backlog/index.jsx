@@ -38,25 +38,18 @@ const Backlog = ({ project, fetchProject, updateLocalProjectIssues, refreshData 
 
   return (
     <Fragment>
-      <div className="toolbar mb-5 mb-lg-7" id="xgn_toolbar">
-        <div className="page-title d-flex flex-column me-3">
-          <h1 className="d-flex text-dark fw-bolder my-1 fs-3">Board</h1>
-
-        </div>
-
-        <div className="d-flex align-items-center py-2 py-md-1">
-          <Filters
-            projectUsers={projectUsers}
-            defaultFilters={defaultFilters}
-            filters={filters}
-            mergeFilters={mergeFilters}
-          />
-
-        </div>
+      <div className="d-flex align-items-center py-2 py-md-1">
+        <Filters
+          projectUsers={projectUsers}
+          defaultFilters={defaultFilters}
+          filters={filters}
+          mergeFilters={mergeFilters}
+        />
 
       </div>
 
-      <div className='card kanban' >
+
+      <div className='card kanban flex-row flex-column-fluid' >
         <div className='card-body' style={{ padding: "1rem 1rem" }}>
           <Lists
             project={project}
@@ -64,28 +57,28 @@ const Backlog = ({ project, fetchProject, updateLocalProjectIssues, refreshData 
             updateLocalProjectIssues={updateLocalProjectIssues}
           />
           <Routes>
-          <Route
-            path={`${match.path}/issues/:issueId`}
-            render={routeProps => (
-              <Modal
-                isOpen
-                testid="modal:issue-details"
-                width={1040}
-                withCloseIcon={false}
-                onClose={() => history.push(match.url)}
-                renderContent={modal => (
-                  <IssueDetails
-                    issueId={routeProps.match.params.issueId}
-                    projectUsers={projectUsers}
-                    //fetchProject={fetchProject}
-                    updateLocalProjectIssues={updateLocalProjectIssues}
-                    modalClose={modal.close}
-                    issueProps={project.issues}
-                  />
-                )}
-              />
-            )}
-          />
+            <Route
+              path={`${match.path}/issues/:issueId`}
+              render={routeProps => (
+                <Modal
+                  isOpen
+                  testid="modal:issue-details"
+                  width={1040}
+                  withCloseIcon={false}
+                  onClose={() => history.push(match.url)}
+                  renderContent={modal => (
+                    <IssueDetails
+                      issueId={routeProps.match.params.issueId}
+                      projectUsers={projectUsers}
+                      //fetchProject={fetchProject}
+                      updateLocalProjectIssues={updateLocalProjectIssues}
+                      modalClose={modal.close}
+                      issueProps={project.issues}
+                    />
+                  )}
+                />
+              )}
+            />
           </Routes>
         </div>
       </div>
