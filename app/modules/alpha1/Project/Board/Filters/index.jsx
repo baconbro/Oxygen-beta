@@ -142,7 +142,7 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
         {!areFiltersCleared && (
           <ClearAll onClick={() => mergeFilters(defaultFilters)}>Clear all</ClearAll>
         )}
-        <div className='d-flex align-items-center flex-grow-1 mx-7'>
+{/*         <div className='d-flex align-items-center flex-grow-1 mx-7'>
           <span className='fs-7 fw-bolder text-gray-700 pe-4 text-nowrap d-none d-xxl-block'>
             Group by:
           </span>
@@ -162,7 +162,7 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
         <div className='d-flex align-items-center flex-grow-1 mx-7'>
           <div className="m-0">
             <a href="#" className="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-xgn-menu-trigger="click" data-xgn-menu-placement="bottom-end">
