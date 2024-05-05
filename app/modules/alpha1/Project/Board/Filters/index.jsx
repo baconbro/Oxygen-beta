@@ -15,6 +15,7 @@ import { Modal } from 'react-bootstrap'
 import ProjectMembers from '../../ProjectSettings/Members';
 import { useWorkspace } from '../../../App/contexts/WorkspaceProvider';
 import { IssueType, IssueStatus } from '../../../../../../app/modules/alpha1/shared/constants/issues';
+import findAvailableParameters from '../../../shared/utils/issueVariables';
 
 const propTypes = {
   projectUsers: PropTypes.array.isRequired,
@@ -25,7 +26,7 @@ const propTypes = {
 
 const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilters }) => {
   const [projectMembers, setprojectMembers] = useState([]);
-  const { searchTerm, userIds, myOnly, recent, groupBy, viewType, viewStatus } = filters;
+  const { searchTerm, userIds, myOnly, recent, groupBy, viewType, viewStatus, hideOld } = filters;
   const [showMembersModal, setShowMembersModal] = useState(false)
   const { project } = useWorkspace();
 
@@ -63,6 +64,20 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
   const clearFilters = () => {
     mergeFilters(defaultFilters);
   };
+
+  //For grouping
+  //-----------------find variables for grouping
+
+  const [availableParameters, setAvailableParameters] = useState({});
+
+  const calculateAvailableParams = async () => { // Use async if fetching issues asynchronously
+    const params = await findAvailableParameters(project.issues);
+    setAvailableParameters(params);
+  };
+  useEffect(() => {
+    // Only calculate if empty
+    if (Object.keys(availableParameters).length === 0) calculateAvailableParams();
+  }, []); // Run once on component mount
 
   return (
     <div className="d-flex flex-wrap flex-stack pb-7">
@@ -139,9 +154,13 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
             value={groupBy}
             onChange={(event) => mergeFilters({ groupBy: event.target.value })}
           >
-            <option value='None'></option>
-            <option value='priority'>Priority</option>
-            <option value='type'>Type</option>
+            <option key='all' value='all'>
+            </option>
+            {Object.keys(availableParameters).map((parameter) => (
+              <option key={parameter} value={parameter}>
+                {parameter}
+              </option>
+            ))}
           </select>
         </div>
         <div className='d-flex align-items-center flex-grow-1 mx-7'>
@@ -201,6 +220,14 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
             </div>
           </div>
         </div>
+        <StyledButton
+          variant="empty"
+          isActive={hideOld === 0} // Update isActive condition
+          onClick={() => mergeFilters({ hideOld: hideOld == 0 ? 30 : 0 })}
+          className="btn"
+        >
+          Show old
+        </StyledButton>
       </Filters>
     </div>
   );

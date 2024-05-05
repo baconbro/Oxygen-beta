@@ -13,9 +13,9 @@ import { editSubItem, editSpace } from "../../../../../App/services/firestore";
 import { filterIssues } from "../../../../../shared/utils/issueFilterUtils";
 
 const Container = styled.div`
-  min-height: 100vh;
+  //min-height: 100vh;
   /* like display:flex but will allow bleeding over the window width */
-  min-width: 100vw;
+  //min-width: 100vw;
   display: inline-flex;
 `;
 
@@ -192,7 +192,7 @@ const Board = ({
         >
           {(provided) => (
             <div className="card">
-              <Container ref={provided.innerRef} {...provided.droppableProps} className=" card-body gray-100">
+              <Container ref={provided.innerRef} {...provided.droppableProps} className=" card-body ">
                 {ordered.map((key, index) => (
                   index !== 0 && (
                     <Column
@@ -205,6 +205,7 @@ const Board = ({
                       useClone={useClone}
                       project={project}
                       onDelete={() => handleDeleteColumn(key)}
+                      className="bg-secondary"
                     />
                   )
                 ))}

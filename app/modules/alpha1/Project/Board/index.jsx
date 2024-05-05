@@ -91,8 +91,7 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
 
 
 
-      <div className='card kanban flex-row flex-column-fluid' >
-        <div>
+
           {/* <Lists
             project={project}
             filters={filters}
@@ -131,8 +130,7 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
               }
             />
           </Routes>
-        </div>
-      </div>
+    
     </Fragment>
   );
 };

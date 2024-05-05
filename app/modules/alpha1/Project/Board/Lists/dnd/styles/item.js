@@ -45,8 +45,7 @@ const CloneBadge = styled.div`
 
 const Container = styled(Link)`
   border-color: ${(props) => getBorderColor(props.isDragging, props.colors)};
-  background-color: ${(props) =>
-        getBackgroundColor(props.isDragging, props.isGroupedOver, props.colors)};
+  //background-color: ${(props) => getBackgroundColor(props.isDragging, props.isGroupedOver, props.colors)};
   box-shadow: ${({ isDragging }) => (isDragging ? `2px 2px 1px #A5ADBA` : 'none')};
   box-sizing: border-box;
   padding: 1px;

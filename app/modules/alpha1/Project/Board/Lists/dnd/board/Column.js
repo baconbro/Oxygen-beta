@@ -16,6 +16,7 @@ const Container = styled.div`
   margin: ${grid}px;
   display: flex;
   flex-direction: column;
+  border-radius: 2%;
 `;
 
 const Header = styled.div`
@@ -85,9 +86,9 @@ const Column = (props) => {
   }, [currentTitle]);
 
   return (
-    <Draggable draggableId={title} index={index}>
+    <Draggable draggableId={title} index={index} >
       {(provided, snapshot) => (
-        <Container ref={provided.innerRef} {...provided.draggableProps}>
+        <Container ref={provided.innerRef} {...provided.draggableProps} className="d-flex flex-row-auto w-275px bg-light-primary">
           <Header isDragging={snapshot.isDragging}>
             <div {...provided.dragHandleProps}>
               {isEditing ? (

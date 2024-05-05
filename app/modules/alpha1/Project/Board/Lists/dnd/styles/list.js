@@ -20,19 +20,19 @@ export const getBackgroundColor = (isDraggingOver, isDraggingFrom) => {
 };
 
 const Wrapper = styled.div`
-  background-color: ${(props) => getBackgroundColor(props.isDraggingOver, props.isDraggingFrom)};
+  //background-color: ${(props) => getBackgroundColor(props.isDraggingOver, props.isDraggingFrom)};
   display: flex;
   flex-direction: column;
   opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : 'inherit')};
-  padding: ${grid}px;
+  padding: 5px;
   border: ${grid}px;
   padding-bottom: 0;
   transition: background-color 0.2s ease, opacity 0.1s ease;
   user-select: none;
-  width: ${props => (props.isEmpty ? 'auto' : '300px')}; 
+  width: ${props => (props.isEmpty ? 'auto' : '275px')}; 
 `;
 
-const scrollContainerHeight = 250;
+const scrollContainerHeight = 150;
 
 const DropZone = styled.div`
   /* stop the list collapsing when empty */
