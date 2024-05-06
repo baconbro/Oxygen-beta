@@ -208,9 +208,11 @@ const Board = ({
                       className="bg-secondary"
                     />
                   )
-                ))}
-                <button className="btn btn-outline btn-outline-dashed btn-outline-secondary btn-active-light-secondary" onClick={handleAddColumn}><i className="bi bi-plus text-primary"></i></button>
-                {provided.placeholder}
+                ))} {provided.placeholder}
+                <button className="btn btn-outline btn-outline-dashed btn-outline-secondary btn-active-light-secondary h-50px w-275px" onClick={handleAddColumn}>
+                  <i className="bi bi-plus text-primary"></i> Add another list
+                </button>
+
               </Container>
             </div>
           )}
