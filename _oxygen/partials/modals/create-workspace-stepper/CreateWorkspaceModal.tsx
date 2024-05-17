@@ -13,7 +13,7 @@ import {Step4} from './steps/Step4'
 import {Step5} from './steps/Step5'
 import {createSpace} from '../../../../app/modules/alpha1/App/services/firestore'
 import {useAuth} from '../../../../app/modules/auth'
-import {Navigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 type Props = {
   show: boolean
@@ -28,6 +28,7 @@ const CreateWorkspaceModal = ({show, handleClose}: Props) => {
   const [data, setData] = useState<ICreateAppData>(defaultCreateAppData)
   const [hasError, setHasError] = useState(false)
   const { currentUser } = useAuth()
+  const navigate = useNavigate();
 
   const loadStepper = () => {
     stepper.current = StepperComponent.createInsance(stepperRef.current as HTMLDivElement)
@@ -93,7 +94,7 @@ const CreateWorkspaceModal = ({show, handleClose}: Props) => {
     try {
       const newSpace = await createSpace(values, currentUser);
       if(newSpace){
-        <Navigate to={'/project/'+newSpace} />
+        navigate('/workspace', { replace: true });
       }
     } catch (error) {
       console.log(error)
@@ -106,7 +107,7 @@ const CreateWorkspaceModal = ({show, handleClose}: Props) => {
       id='xgn_modal_create_workspace'
       tabIndex={-1}
       aria-hidden='true'
-      dialogClassName='modal-dialog modal-dialog-centered mw-900px'
+      dialogClassName='modal-dialog modal-fullscreen'
       show={show}
       onHide={handleClose}
       onEntered={loadStepper}

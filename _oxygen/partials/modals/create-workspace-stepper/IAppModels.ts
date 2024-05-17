@@ -1,3 +1,4 @@
+import { templateScrum } from "./templates/Scrum"
 export interface IAppBasic {
   appName: string
   appType: 'Quick Online Courses' | 'Face to Face Discussions' | 'Full Intro Training'
@@ -25,7 +26,7 @@ export const defaultCreateAppData: ICreateAppData = {
   appFramework: 'Soft',
   appDatabase: {databaseName: 'db_name', databaseSolution: 'MySQL'},
   appStorage: 'Basic Server',
-  appConfig : {}
+  appConfig : templateScrum
 }
 
 export type StepProps = {

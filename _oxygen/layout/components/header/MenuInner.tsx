@@ -69,7 +69,7 @@ export function MenuInner() {
       <MenuItem title={intl.formatMessage({ id: 'MENU.OKR' })} to='/goals' isNew={false} />
       <div data-xgn-menu-trigger="{default: 'click', lg: 'hover'}" data-xgn-menu-placement="bottom-start" className="menu-item here show menu-lg-down-accordion menu-here-bg me-0 me-lg-2">
         <MenuItem title={intl.formatMessage({ id: 'MENU.WORKSPACE' })} to='/workspace' />
-        <div className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px show menu-dropdown">
+{/*         <div className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px show menu-dropdown">
           <div className="menu-state-bg menu-extended" data-xgn-menu-dismiss="true">
             <div className="row">
               <div className="col-lg-8 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
@@ -103,7 +103,7 @@ export function MenuInner() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
     </>

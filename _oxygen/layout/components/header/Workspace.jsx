@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProjectAvatar } from "../../../../app/modules/alpha1/shared/components";
 import { Link } from 'react-router-dom'
+import { CreateWorkspaceModal } from "../../../partials"
 
 function WorkspaceHeaderMenu(spaces) {
+    const [showCreateModal, setShowCreateModal] = useState(false)
 
     return (
         <>
@@ -21,6 +23,15 @@ function WorkspaceHeaderMenu(spaces) {
                     </div>
                 </div>
             ))}
+            <div className="col-lg-6 mb-3">
+                <CreateWorkspaceModal show={showCreateModal} handleClose={() => setShowCreateModal(false)} />
+                <button className="btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary" onClick={() => setShowCreateModal(true)}>
+                    <span className="btn-label">Create a workspace </span>
+                    <span className="svg-icon btn-icon svg-icon-2">
+                        <i className="bi bi-plus"></i>
+                    </span>
+                </button>
+            </div>
         </>
     )
 }

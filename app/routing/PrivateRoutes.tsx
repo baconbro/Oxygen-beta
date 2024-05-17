@@ -1,16 +1,19 @@
-import {lazy, FC, Suspense} from 'react'
-import {Route, Routes, Navigate} from 'react-router-dom'
-import {MasterLayout} from '../../_oxygen/layout/MasterLayout'
+import { lazy, FC, Suspense } from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom'
+import { MasterLayout } from '../../_oxygen/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
-import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
-import {getCSSVariableValue} from '../../_oxygen/assets/ts/_utils'
-import {WithChildren} from '../../_oxygen/helpers'
+import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
+import { getCSSVariableValue } from '../../_oxygen/assets/ts/_utils'
+import { WithChildren } from '../../_oxygen/helpers'
 import { WorkspaceProvider } from '../modules/alpha1/App/contexts/WorkspaceProvider'
 import { Workspacehome } from '../modules/alpha1/Workspaces'
+import CreateWorkspace from '../modules/onboarding/CreateWorkspace'
 
 import Project from '../modules/alpha1/Project'
 import Goals from '../modules/alpha1/Goals'
 import GoalDetails from '../modules/alpha1/Goals/GoalDetails'
+
+import Onboarding from '../modules/onboarding/Onboarding'
 
 const PrivateRoutes = () => {
   const AccountPage = lazy(() => import('../modules/accounts/AccountPage'))
@@ -32,7 +35,7 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         />
-         <Route
+        <Route
           path='admin/*'
           element={
             <SuspensedView>
@@ -44,47 +47,65 @@ const PrivateRoutes = () => {
           path='workspace/'
           element={
             <WorkspaceProvider>
-            <SuspensedView>
-              <Workspacehome />
-            </SuspensedView>
+              <SuspensedView>
+                <Workspacehome />
+              </SuspensedView>
             </WorkspaceProvider>
           }
         />
-         <Route
+        <Route
           path='workspace/:id/*'
           element={
             <WorkspaceProvider>
-            <SuspensedView>
-              <Project />
-            </SuspensedView>
+              <SuspensedView>
+                <Project />
+              </SuspensedView>
             </WorkspaceProvider>
           }
         />
-        
+
         <Route
           path='goals/'
           element={
             <SuspensedView>
-              <Goals/>
+              <Goals />
             </SuspensedView>
           }
         />
-         <Route
+        <Route
           path='goals/details/*'
           element={
             <SuspensedView>
-              <GoalDetails/>
+              <GoalDetails />
             </SuspensedView>
           }
         />
-       
+
+        <Route
+          path='onboarding/'
+          element={
+            <SuspensedView>
+              <Onboarding />
+            </SuspensedView>
+          }
+        />
+
+        <Route
+          path='create-workspace/'
+          element={
+            <SuspensedView>
+              <CreateWorkspace />
+            </SuspensedView>
+          }
+        />
+
         <Route path='*' element={<Navigate to='/error/404' />} />
       </Route>
     </Routes>
   )
 }
 
-const SuspensedView: FC<WithChildren> = ({children}) => {
+const SuspensedView: FC<WithChildren> = ({ children }) => {
   const baseColor = getCSSVariableValue('--xgn-primary')
   TopBarProgress.config({
     barColors: {
@@ -96,4 +117,4 @@ const SuspensedView: FC<WithChildren> = ({children}) => {
   return <Suspense fallback={<TopBarProgress />}>{children}</Suspense>
 }
 
-export {PrivateRoutes}
+export { PrivateRoutes }
