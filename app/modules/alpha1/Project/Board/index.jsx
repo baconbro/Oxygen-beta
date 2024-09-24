@@ -11,6 +11,7 @@ import * as FirestoreService from '../../App/services/firestore';
 import { useWorkspace } from '../../App/contexts/WorkspaceProvider';
 import Dnd from './Lists/dnd';
 import { useAuth } from '../../../auth';
+import { useGetUser } from '../../../../services/userServices';
 
 const propTypes = {
   project: PropTypes.object.isRequired,
@@ -40,21 +41,22 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
   //get the url params
   const match = useLocation();
 
-  const updateAvatars = () => {
+ /*  const updateAvatars = () => {
     projectUsers.forEach(async (user) => {
-      const userInfo = await FirestoreService.getUserInfo(user.email, user.id);
+      //const userInfo = await FirestoreService.getUserInfo(user.email, user.id);
+      //const userInfo = useGetUser(user.email, user.id)
       userInfo.forEach(async (doc) => {
         const userInfo = doc.data();
         user.name = userInfo.name;
         user.avatarUrl = userInfo.avatarUrl;
       });
     });
-  }
+  } */
 
   //if id.id is different from project.id then refresh the data
   useEffect(() => {
     //refreshData()
-    updateAvatars()
+    //updateAvatars()
     const projectUsers = (project.members ? project.users.concat(project.members) : project.users)
     setProjectUsers(projectUsers)
 

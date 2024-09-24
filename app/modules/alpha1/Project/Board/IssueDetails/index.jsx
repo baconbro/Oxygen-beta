@@ -27,6 +27,7 @@ import * as FirestoreService from '../../../App/services/firestore';
 
 import { useAuth } from '../../../../auth';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import { useUpdateItem } from '../../../../../services/itemServices';
 
 
 const ProjectBoardIssueDetails = ({
@@ -42,6 +43,7 @@ const ProjectBoardIssueDetails = ({
 
   const [data, setData] = useState()
   const [comments, setComments] = useState([])
+  const editItemMutation = useUpdateItem();
 
      //get current user data
      const {currentUser} = useAuth();
@@ -77,7 +79,14 @@ const ProjectBoardIssueDetails = ({
     setData(currentData => ({ issue: { ...currentData.issue, ...fields } }));
 
   const updateIssue = (updatedFields) => {
-    FirestoreService.editSubItem(currentUser?.all?.currentOrg,updatedFields, issue.id,issue.projectId);
+
+    const mutateItem = editItemMutation({
+      orgId: currentUser?.all?.currentOrg,
+      field: updatedFields,
+      itemId: issue.id,
+      workspaceId: issue.projectId,
+    }
+    );
   };
 
   return (

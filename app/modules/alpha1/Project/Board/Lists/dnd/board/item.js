@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 //import styled from '@xstyled/styled-components';
 import styled from 'styled-components';
 
-import { borderRadius, grid } from './constants';
+import { borderRadius, grid } from '../styles/constants';
 import { Avatar, IssueTypeIcon, IssuePriorityIcon } from '../../../../../shared/components';
 import { useWorkspace } from '../../../../../App/contexts/WorkspaceProvider';
 import { IssueLink, Issue, Assignees, AssigneeAvatar } from '../../List/Issue/Styles';
 import { Link } from 'react-router-dom';
+import { IconComponent } from '../../../../../shared/utils/iconComponent';
 
 const getBackgroundColor = (isDragging, isGroupedOver, authorColors) => {
     if (isDragging) {
@@ -118,7 +119,7 @@ const Author = styled.small`
   padding: ${grid / 2}px;
 `;
 
-const QuoteId = styled.small`
+const ItemId = styled.small`
   flex-grow: 1;
   flex-shrink: 1;
   margin: 0;
@@ -145,17 +146,17 @@ function getStyle(provided, style) {
 // Need to be super sure we are not relying on PureComponent here for
 // things we should be doing in the selector as we do not know if consumers
 // will be using PureComponent
-function QuoteItem(props) {
-    const { quote, isDragging, isGroupedOver, provided, style, isClone, index } = props;
+function Item(props) {
+    const { item, isDragging, isGroupedOver, provided, style, isClone, index } = props;
 
     const [assig, setAssig] = useState([]);
     const { projectUsers,project } = useWorkspace()
 
     // Watch for changes in projectUsers and update assig accordingly
     useEffect(() => {
-        const newAssig = quote.userIds.map(userId => projectUsers.find(user => user.id === userId));
+        const newAssig = item.userIds.map(userId => projectUsers.find(user => user.id === userId));
         setAssig(newAssig);
-    }, [projectUsers, quote.userIds]);
+    }, [projectUsers, item.userIds]);
 
     const anonymousUser = {
         avatarUrl: "",
@@ -168,7 +169,7 @@ function QuoteItem(props) {
 
     const assignees = Array.from(assig, v => v === undefined ? anonymousUser : v);
 
-    const getIssueTypeDetails = (typeId) => {
+/*     const getIssueTypeDetails = (typeId) => {
       return Object.values(project.config.issueType).find(issueType => issueType.id === typeId);
     };
 
@@ -187,34 +188,34 @@ function QuoteItem(props) {
           display: 'inline-block', 
           fontSize: '18px' }}></i>
       );
-    };
+    }; */
 
     return (
         <Container
-            to={`issues/${quote.id}`}
+            to={`issues/${item.id}`}
             isDragging={isDragging}
             isGroupedOver={isGroupedOver}
             isClone={isClone}
-            colors='#FFFF'//{quote.author.colors}
+            colors='#FFFF'//{item.author.colors}
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             style={getStyle(provided, style)}
             data-is-dragging={isDragging}
-            data-testid={quote.id}
+            data-testid={item.id}
             data-index={index}
         >
             <div className="card" style={{ width: '100%', boxShadow: " 0px 1px 2px 0px rgba(9, 30, 66, 0.25)" }}>
                 <div className="progress h-6px " style={{ backgroundColor: 'initial' }}>
-                    <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style={{ width: quote.progress + '%', borderTopLeftRadius: '20px' }}></div>
+                    <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style={{ width: item.progress + '%', borderTopLeftRadius: '20px' }}></div>
                 </div>
                 <div className="card-body" style={{ padding: "1rem 1rem" }}>
 
                     <div className="mb-2">
-                        <span className="fs-4  mb-1 text-gray-900">{quote.title}</span>
+                        <span className="fs-4  mb-1 text-gray-900">{item.title}</span>
                     </div>
                     <div className="d-flex mb-3">
-                        {quote.tags && quote.tags.map(tag => (
+                        {item.tags && item.tags.map(tag => (
                             <div className="badge badge-light me-2" key={Object.values(tag)}>{Object.values(tag).toString()}</div>
                         ))}
 
@@ -242,9 +243,9 @@ function QuoteItem(props) {
                         </Assignees>
 
                         <div className="d-flex my-1">
-                            <span className='text-gray-600 fw-bold me-2'>#{quote.id}</span>
-                            <IconComponent typeId={quote.type} />
-                            <IssuePriorityIcon priority={quote.priority} top={-1} left={4} />
+                            <span className='text-gray-600 fw-bold me-2'>#{item.id}</span>
+                            <IconComponent typeId={item.type} projectConfig={project.config} />
+                            <IssuePriorityIcon priority={item.priority} top={-1} left={4} />
                         </div>
 
                     </div>
@@ -257,4 +258,4 @@ function QuoteItem(props) {
     );
 }
 
-export default React.memo(QuoteItem);
+export default React.memo(Item);

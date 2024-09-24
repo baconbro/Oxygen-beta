@@ -6,6 +6,7 @@ import toast from '../../../../shared/utils/toast';
 import { KeyCodes } from '../../../../shared/constants/keyCodes';
 
 import { useAuth } from '../../../../../auth';
+import { useAddItem } from '../../../../../../services/itemServices';
 
 
 
@@ -15,31 +16,37 @@ const AddItem = ({ status, currentUserId, spaceId, lastIssue }) => {
     const [body, setBody] = useState('');
     const $textareaRef = useRef();
 
-    const {currentUser} = useAuth();
+    const { currentUser } = useAuth();
+    const addItemMutation = useAddItem();
 
-    const handleSubmit = async () => {
+    const handleSubmit = () => {
         if ($textareaRef.current.value.trim()) {
-            await FirestoreService.addSubItem( currentUser?.all?.currentOrg,{
-                description: '',
-                status: status,
-                projectId: spaceId,
-                listPosition: lastIssue,
-                type: 'task',
-                title: body,
-                reporterId: currentUserId,
-                userIds: [],
-                priority: '',
-                users: [],
-            }, 'userId')
-                .then(() => {
-                    setFormOpen(false)
-                    setBody('')
-                }).catch((error) => {
-                    toast.error(error.message)
-                });
-
+          addItemMutation({
+            orgId: currentUser?.all?.currentOrg,
+            item: {
+              description: '',
+              status: status,
+              projectId: spaceId,
+              listPosition: lastIssue,
+              type: 'task',
+              title: body,
+              reporterId: currentUserId,
+              userIds: [],
+              priority: '',
+              users: [],
+            },
+            userId: 'userId'
+          }, {
+            onSuccess: () => {
+              setFormOpen(false);
+              setBody('');
+            },
+            onError: (error) => {
+              toast.error(error.message);
+            },
+          });
         }
-    }
+      }
 
 
     return (
@@ -54,25 +61,25 @@ const AddItem = ({ status, currentUserId, spaceId, lastIssue }) => {
                         ref={$textareaRef}
                         onKeyDown={event => {
                             if (event.keyCode === KeyCodes.ENTER) {
-                              event.target.blur();
-                              handleSubmit()
+                                event.target.blur();
+                                handleSubmit()
                             }
                         }}
                     />
                     <Actions>
-                        
+
                         <FormButton variant="primary" isWorking={isCreating} onClick={handleSubmit} className="btn">
                             Save
                         </FormButton>
                         <FormButton variant="empty" onClick={() => setFormOpen(false)} className="btn">
                             Cancel
                         </FormButton>
-                        
+
                     </Actions>
-                    </div>
+                </div>
             ) : (
                 <>
-                    <button className='btn btn-light btn-outline btn-outline-dashed btn-outline-default me-2 mb-2 ms-2' onClick={() => setFormOpen(true)}><i className='bi bi-plus'></i></button>
+                    <button className='btn btn-primary me-2 mb-2 ms-2' onClick={() => setFormOpen(true)}><i className='bi bi-plus'></i>Add item</button>
                 </>
             )}
         </>
@@ -80,14 +87,14 @@ const AddItem = ({ status, currentUserId, spaceId, lastIssue }) => {
 };
 
 const calculateListPosition = async ({ issues }) => {
-    
-  
+
+
     const listPositions = issues.map(({ listPosition }) => listPosition);
-  
+
     if (listPositions.length > 0) {
-      return Math.min(...listPositions) - 1;
+        return Math.min(...listPositions) - 1;
     }
     return 1;
-  };
+};
 
 export default AddItem;

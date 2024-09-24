@@ -20,6 +20,7 @@ import { formatDate } from '../../shared/utils/dateTime';
 import { Priority, Label } from '../Board/IssueDetails/Priority/Styles';
 import { intersection } from 'lodash';
 import moment from 'moment';
+import { IconComponent, IconText } from '../../shared/utils/iconComponent';
 
 import {
   createColumnHelper,
@@ -381,7 +382,10 @@ const List = () => {
     return (
       <Type >
         <IssueTypeIcon type={type} top={1} />
-        <TypeLabel>{IssueTypeCopy[type]}</TypeLabel>
+        <IconComponent typeId={type} projectConfig={project.config} />
+        <TypeLabel>
+          <IconText typeId={type} projectConfig={project.config} />
+        </TypeLabel>
       </Type>
     )
   }
@@ -446,21 +450,22 @@ const List = () => {
 
   return (
     <Fragment>
-      <div className="d-flex align-items-center py-2 py-md-1">
-        <Filters
+      <div id="xgn_app_toolbar" className="app-toolbar  py-3 py-lg-6 ">
+        <div id="xgn_app_toolbar_container" className="app-container  container-xxl d-flex flex-stack ">
+          <div className="d-flex flex-column justify-content-center flex-wrap me-3 ">
+          <Filters
           projectUsers={projectUsers}
           defaultFilters={defaultFilters}
           filters={filters}
           mergeFilters={mergeFilters}
         />
-
+          </div>
+          <div className="d-flex align-items-center gap-2 gap-lg-3">
+          <AddItem reloadList={handleDataRefresh} />
+          </div>
+        </div>
       </div>
-      <div className="d-flex align-items-center gap-2 gap-lg-3  mx-7">
 
-
-        <AddItem reloadList={handleDataRefresh} />
-
-      </div>
 
       <div className='card kanban' >
         <div className='card-body' style={{ padding: "1rem 1rem" }}>

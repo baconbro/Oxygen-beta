@@ -8,6 +8,7 @@ import { Button, ConfirmModal } from '../../../shared/components';
 import * as FirestoreService from '../../../App/services/firestore';
 import { useAuth } from '../../../../auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useDeleteItem } from '../../../../../services/itemServices';
 
 const propTypes = {
   issue: PropTypes.object.isRequired,
@@ -20,10 +21,14 @@ const ProjectBoardIssueDetailsDelete = ({ issue, fetchProject, modalClose }) => 
   const location = useLocation();
   const path = location.pathname.split('/').slice(0, -2).join('/');
   const navigate = useNavigate();
+  const deleteItem = useDeleteItem();
 
   const handleIssueDelete = async () => {
     try {
-      await FirestoreService.deleteItem(currentUser?.all?.currentOrg,issue.id);
+       deleteItem({
+        orgId:currentUser?.all?.currentOrg,
+        itemId:issue.id,
+    });
       //modalClose();
       navigate(path);
     } catch (error) {

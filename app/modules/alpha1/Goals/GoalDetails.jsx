@@ -33,6 +33,7 @@ import { isNil } from 'lodash';
 import DatePicker from '../shared/components/DatePicker';
 import { toAbsoluteUrl } from '../../../../_oxygen/helpers'
 import { customStatus, getScoreColor } from '../shared/constants/custom';
+import { useUpdateOKR } from '../../../services/okrServices';
 
 
 
@@ -49,6 +50,7 @@ const GoalDetails = ({
   const [endDate, setEndDate] = useState(null);
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
+  const editOKRMutation = useUpdateOKR();
 
   //transform orgUsers into an array of objects
   const orgUsersArray = Object.keys(orgUsers).map((key) => {
@@ -80,7 +82,12 @@ const GoalDetails = ({
     setData(currentData => ({ ...currentData, ...fields }));
 
   const updateIssue = (updatedFields) => {
-    FirestoreService.editGoal(currentUser?.all?.currentOrg, updatedFields, issue.id);
+    editOKRMutation({
+      orgId: currentUser?.all?.currentOrg,
+      feild: updatedFields,
+      itemId: issue.id,
+    }
+    );
     updateLocalIssueDetails(updatedFields)
   };
 
@@ -199,7 +206,7 @@ const GoalDetails = ({
             <div className="flex-wrap gap-5 px-9 mb-5">
               <Description issue={issue} updateIssue={updateIssue} />
             </div>
-            
+
 
             <div className="flex-wrap gap-5 px-9 mb-5">
               <SubsComponent issue={issue} updateIssue={updateIssue} />
@@ -297,8 +304,8 @@ const GoalDetails = ({
             </div>
             <div className='card'>
               <div className='card-body pt-6'>
-              <TagsComponent issue={issue} updateIssue={updateIssue} />
-            </div>
+                <TagsComponent issue={issue} updateIssue={updateIssue} />
+              </div>
             </div>
           </div>
         </div>

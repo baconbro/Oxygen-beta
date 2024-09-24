@@ -8,6 +8,7 @@ import { Button, ConfirmModal } from '../shared/components';
 import * as FirestoreService from '../App/services/firestore';
 import { useAuth } from '../../auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useDeleteOKR } from '../../../services/okrServices';
 
 const propTypes = {
   issue: PropTypes.object.isRequired,
@@ -20,10 +21,15 @@ const ProjectBoardIssueDetailsDelete = ({ issue, fetchProject, modalClose }) => 
   const location = useLocation();
   const path = '/goals';
   const navigate = useNavigate();
+  const deleteOKRMutation = useDeleteOKR();
 
   const handleIssueDelete = async () => {
     try {
-      await FirestoreService.deleteGoal(currentUser?.all?.currentOrg,issue.id);
+      deleteOKRMutation({
+        orgId: currentUser?.all?.currentOrg,
+        itemId: issue.id,
+      }
+      );
       //modalClose();
       navigate(path);
     } catch (error) {

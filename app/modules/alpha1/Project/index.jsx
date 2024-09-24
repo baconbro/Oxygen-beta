@@ -20,24 +20,124 @@ import { useAuth } from '../../auth';
 import { useWorkspace } from '../App/contexts/WorkspaceProvider';
 import List from './List';
 
-const Project = () => {
+import { useGetSpace } from '../../../services/workspaceServices';
+import { useGetItems } from '../../../services/itemServices';
+import { useGetOrgUsers } from '../../../services/userServices';
 
+const Project = () => {
+  //get current user data
+  const { currentUser } = useAuth();
   var id = useParams()
   const [data, setLocalData] = useState();
   const { project, updateProjectContext, setOrgUsers } = useWorkspace();
+  const { data: spaceData, status, error } = useGetSpace(id.id, currentUser?.all?.currentOrg);
+  const { data: items, status: itemsStatus, error: itemsError } = useGetItems(id.id, currentUser?.all?.currentOrg);
+  const { data: orgusers, status: orgusersStatus, error: orgusersError } = useGetOrgUsers(currentUser?.all?.currentOrg);
+
+
+  //for the breadcrumbs
+  const location = useLocation();
+
+  //set timeout to wait for data to load
+  //get current time
+  const time = new Date().getTime();
+  const [timeout, setTimeout] = useState(time);
+
+  useEffect(() => {
+    if (data) {
+      try {
+        //const spaceData = await FirestoreService.getSpaceData(id.id, currentUser?.all?.currentOrg);
+
+        const orgDataUsers = orgusers
+        setOrgUsers(orgDataUsers)
+
+        if (spaceData) {
+          const a = spaceData
+
+          if (a) {
+            // For 'users'
+            for (const user of a.users) {
+              const userDetail = orgDataUsers.users[user.id];
+              if (userDetail) {
+                user.avatarUrl = userDetail.photoURL;
+                user.name = userDetail.fName;
+              }
+            }
+
+            // For 'members'
+            if (a.members) {
+              // Map over members to create an array of promises
+              const memberPromises = a.members.map(async member => {
+                try {
+                  const memberDetail = orgDataUsers[member.id];
+                  if (memberDetail) {
+                    member.avatarUrl = memberDetail.photoURL;
+                    member.name = memberDetail.fName;
+
+                    return member;  // Return the modified member
+                  }
+
+                  return null;  // If no memberDetail available
+                } catch (error) {
+                  console.error(`Error fetching data for member ${member.id}:`, error);
+                  return null;
+                }
+              });
+
+              // Await all member data fetches
+              const fetchedMembers = Promise.all(memberPromises);
+
+              // Filter out null values if you want
+              // const validMembers = fetchedMembers.filter(Boolean);
+            }
+          }
+        } else {
+          console.log('space-not-found');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (itemsStatus === 'success' && items) {
+      setLocalData({
+        project: {
+          ...spaceData,
+          issues: items
+        }
+      });
+      updateProjectContext({
+        ...spaceData,
+        issues: items
+      });
+    }
+  }, [itemsStatus, items]);
+
+  const history = useNavigate();
+
+  // Handle loading and error states
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'error') {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (status === 'success' && !spaceData) {
+    return <div>No data found</div>;
+  }
 
 
   //set the breadcrumbs
-  //get the first element of the url
-  const url = useLocation().pathname.split('/')[3];
-  const issue = useLocation().pathname.split('/')[5];
-  //get the url before the last element
-  const url2 = useLocation().pathname.split('/').slice(0, -2).join('/');
-  const accountBreadCrumbs = [
-
-  ]
+  const url = location.pathname.split('/')[3];
+  const issue = location.pathname.split('/')[5];
+  const url2 = location.pathname.split('/').slice(0, -2).join('/');
+  const accountBreadCrumbs = [];
   //if url contain issue, add the issue id to the breadcrumbs
-  if (useLocation().pathname.includes('issues')) {
+  if (location.pathname.includes('issues')) {
     accountBreadCrumbs.push({
 
       title: url,
@@ -48,95 +148,16 @@ const Project = () => {
     })
   }
 
-  //set timeout to wait for data to load
-  //get current time
-  const time = new Date().getTime();
-  const [timeout, setTimeout] = useState(time);
 
 
-  useEffect(() => {
-    // if it's been a minute since the last update or data is null, update again
-    if (new Date().getTime() - timeout > 1000 || data == null) {
-      refreshData()
-      setTimeout(new Date().getTime())
-    }
-  }, [data, id.id]);
 
-  //get current user data
-  const { currentUser } = useAuth();
 
-  const refreshData = async () => {
-    try {
-      const spaceData = await FirestoreService.getSpaceData(id.id, currentUser?.all?.currentOrg);
-      const orgData = await FirestoreService.getOrgUsers(currentUser?.all?.currentOrg);
-      const orgDataUsers = orgData.data().users
-      setOrgUsers(orgDataUsers)
 
-      if (spaceData) {
-        const a = spaceData.data();
 
-        if (a) {
-          // For 'users'
-          for (const user of a.users) {
-            const userDetail = orgDataUsers[user.id];
-            if (userDetail) {
-              user.avatarUrl = userDetail.photoURL;
-              user.name = userDetail.fName;
-            }
-          }
 
-          // For 'members'
-          if (a.members) {
-            // Map over members to create an array of promises
-            const memberPromises = a.members.map(async member => {
-              try {
-                const memberDetail = orgDataUsers[member.id];
-                if (memberDetail) {
-                  member.avatarUrl = memberDetail.photoURL;
-                  member.name = memberDetail.fName;
+  const refreshData = () => {
+    console.log('refreshData');
 
-                  return member;  // Return the modified member
-                }
-
-                return null;  // If no memberDetail available
-              } catch (error) {
-                console.error(`Error fetching data for member ${member.id}:`, error);
-                return null;
-              }
-            });
-
-            // Await all member data fetches
-            const fetchedMembers = await Promise.all(memberPromises);
-
-            // Filter out null values if you want
-            const validMembers = fetchedMembers.filter(Boolean);
-          }
-        }
-
-        const unsubscribe = FirestoreService.streamSubItems(currentUser.all.currentOrg, id.id,
-          (querySnapshot) => {
-            const items = querySnapshot.docs.map(docSnapshot => docSnapshot.data());
-            setLocalData({
-              project: {
-                ...a,
-                issues: items
-              }
-            });
-            updateProjectContext({
-              ...a,
-              issues: items
-            });
-          },
-          (error) => console.log(error)
-        );
-
-        return unsubscribe;
-      } else {
-        console.log('space-not-found');
-      }
-    } catch (error) {
-      console.error(error);
-    }
   }
 
 
@@ -144,12 +165,10 @@ const Project = () => {
 
 
 
-  const match = useLocation();
-  const history = useNavigate();
+
 
   const issueSearchModalHelpers = createQueryParamModalHelpers('issue-search');
   const issueCreateModalHelpers = createQueryParamModalHelpers('issue-create');
-
   if (!project || id.id !== project?.spaceId) return <PageLoader />;
 
 
@@ -243,7 +262,7 @@ const Project = () => {
           renderContent={modal => (
             <IssueCreate
               project={project}
-              onCreate={() => history.push(`${match.url}/board`)}
+              onCreate={() => history.push(`${location.url}/board`)}
               modalClose={modal.close}
             />
           )}
@@ -343,7 +362,7 @@ const Project = () => {
           }
         />
       </Routes>
-      {id['*'] === "" && <Navigate to={`${match.pathname}/board`} replace />}
+      {id['*'] === "" && <Navigate to={`${location.pathname}/board`} replace />}
       <PageTitle breadcrumbs={accountBreadCrumbs} pageSideMenu={workspaceSideMenu}>{[project.title]}</PageTitle>
 
     </>

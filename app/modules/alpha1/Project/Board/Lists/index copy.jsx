@@ -21,6 +21,13 @@ const propTypes = {
   updateLocalProjectIssues: PropTypes.func.isRequired,
 };
 
+//ce fichier sert a rien
+
+
+
+
+
+
 const ProjectBoardLists = ({ project, filters, updateLocalProjectIssues }) => {
   const { currentUserId } = useCurrentUser();
   const [issueStatus, setIssueStatus] = useState(project.config.issueStatus); 
@@ -34,6 +41,7 @@ const ProjectBoardLists = ({ project, filters, updateLocalProjectIssues }) => {
         listPosition: calculateIssueListPosition(project.issues, destination, source, issueId),
       }
       FirestoreService.editSubItem(project.org,updatedFields,issueId);
+      console.log('updatedFields',updatedFields)
       //currentFields: project.issues.find(({ id }) => id === issueId),
       updateLocalProjectIssues(issueId, updatedFields)
 

@@ -55,7 +55,7 @@ const ProjectBoardList = ({ status, project, filters, currentUserId }) => {
         <List>
           <Title>
             {getStatusNameById(status)}
-            <IssuesCount>{formatIssuesCount(allListIssues, filteredListIssues)}</IssuesCount>
+            <IssuesCount> <span className="badge badge-circle badge-light">{formatIssuesCount(allListIssues, filteredListIssues)}</span></IssuesCount>
           </Title>
           <AddItem status={status} currentUserId={currentUserId} spaceId={project.spaceId} lastIssue={firstIssue(allListIssues)}/>
           <Issues
@@ -68,7 +68,7 @@ const ProjectBoardList = ({ status, project, filters, currentUserId }) => {
             ))}
             {provided.placeholder}
           </Issues>
-          <AddItem status={status} currentUserId={currentUserId} spaceId={project.spaceId} lastIssue={lastIssue(allListIssues)}/>
+         
         </List>
       )}
     </Droppable>

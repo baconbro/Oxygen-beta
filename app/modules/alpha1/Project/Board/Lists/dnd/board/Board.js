@@ -11,6 +11,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { moveItemWithinArray, insertItemIntoArray } from "../../../../../shared/utils/javascript";
 import { editSubItem, editSpace } from "../../../../../App/services/firestore";
 import { filterIssues } from "../../../../../shared/utils/issueFilterUtils";
+import { useUpdateItem } from "../../../../../../../services/itemServices";
 
 const Container = styled.div`
   //min-height: 100vh;
@@ -38,6 +39,7 @@ const Board = ({
   }, {});
 
   const [filteredColumns, setFilteredColumns] = useState(initialFilteredColumns);
+  const editItemMutation = useUpdateItem();
 
 
   useEffect(() => {
@@ -125,7 +127,13 @@ const Board = ({
       status: findIdByName(destination.droppableId, issueStatus),
       listPosition: calculateIssueListPosition(project.issues, destination, source, issueId, issueStatus),
     }
-    editSubItem(project.org, updatedFields, target.id, project.spaceId);
+    const mutateItem = editItemMutation({
+      orgId: project.org,
+      field: updatedFields,
+      itemId: target.id,
+      workspaceId: project.spaceId,
+    }
+    );
   };
 
 
@@ -199,7 +207,7 @@ const Board = ({
                       key={key}
                       index={index}
                       title={key}
-                      quotes={filteredColumns[key] ? filteredColumns[key] : []}
+                      items={filteredColumns[key] ? filteredColumns[key] : []}
                       isScrollable={withScrollableColumns}
                       isCombineEnabled={isCombineEnabled}
                       useClone={useClone}

@@ -34,6 +34,7 @@ import {
 import { getAnalytics } from "firebase/analytics";
 import { async } from "@firebase/util";
 import { defaultWorkspaceConfig } from "../../shared/constants/defaultConfig";
+import { useFirestoreQuery } from "@react-query-firebase/firestore";
 
 
 
@@ -48,7 +49,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
+export const db = getFirestore(app)
 const analytics = getAnalytics(app);
 
 
@@ -405,13 +406,13 @@ export const editComment = async (orgId, comment, issueId, body) => {
 };
 
 //Goals
-//create a goal in the goals collection in the organisation collection based on data received
+//create a goal in the goals collection in the organisation collection based on data received ///query done
 export const createGoal = async (orgId, data) => {
     data.id = Math.floor(Math.random() * 1000000000000) + 1;
     data.createdAt = Math.floor(Date.now());
     await addDoc(collection(db, "organisation", orgId, "goals"), data);
 };
-//get all goals from the goals collection in the organisation collection
+//get all goals from the goals collection in the organisation collection ///query done
 export const getGoals = async (orgId) => {
     const q = query(collection(db, "organisation", orgId, "goals"));
     const querySnapshot = await getDocs(q);
@@ -421,7 +422,7 @@ export const getGoals = async (orgId) => {
     });
     return goals;
 };
-//edit Goal
+//edit Goal ///query done
 export const editGoal = async (orgId, feild, itemId) => {
     const q = query(collection(db, "organisation", orgId, "goals"), where("id", "==", parseInt(itemId)));
     const querySnapshot = await getDocs(q);
@@ -437,7 +438,7 @@ export const getHighLevelWorkItems = async (orgId, snapshot, error) => {
     return onSnapshot(itemsQuery, snapshot, error);
 };
 
-//delete goal
+//delete goal ///query done
 export const deleteGoal = async (orgId, itemId) => {
     const q = query(collection(db, "organisation", orgId, "goals"), where("id", "==", parseInt(itemId)));
     const querySnapshot = await getDocs(q);
@@ -453,7 +454,7 @@ export const getSpaceData = (id, org) => {
     const spaceDocRef = doc(db, 'organisation', org, 'spaces', id)
     return getDoc(spaceDocRef);
 };
-
+///-Query done
 export const getSpaces = (org) => {
     // const itemsColRef = query(collection(db, "spaces"), where("org", "==", org));
     const itemsColRef = query(collection(db, 'organisation', org, 'spaces'));

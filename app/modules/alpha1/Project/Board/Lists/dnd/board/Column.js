@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { grid, borderRadius } from "../styles/constants";
 import { Draggable } from "react-beautiful-dnd";
-import QuoteList from "../styles/list";
+import ItemList from "./list";
 import Title from "../styles/title";
 import AddItem from "../../List/AddItem";
 import { useAuth } from "../../../../../../auth";
@@ -33,7 +33,7 @@ const Header = styled.div`
 
 const Column = (props) => {
   const title = props.title;
-  const quotes = props.quotes;
+  const items = props.items;
   const index = props.index;
   const project = props.project
   const [isEditing, setIsEditing] = useState(false);
@@ -107,11 +107,11 @@ const Column = (props) => {
                   <div className="fw-bold fs-4">
                     <Title
                       isDragging={snapshot.isDragging}
-                      aria-label={`${title} quote list`}
+                      aria-label={`${title} item list`}
                       onClick={() => setIsEditing(true)}
                     >
                       {currentTitle}
-                      <IssuesCount className="fs-6 text-gray-400 ms-2">{formatIssuesCount(quotes)}</IssuesCount>
+                      <IssuesCount className="fs-6 text-gray-400 ms-2">{formatIssuesCount(items)}</IssuesCount>
                     </Title>
                   </div>
                   <div>
@@ -136,14 +136,14 @@ const Column = (props) => {
 
           </Header>
           <div className="h-3px w-100 bg-primary mb-9"></div>
-          <AddItem status={findIdByName(title, project.config.issueStatus)} currentUserId={currentUser.all.uid} spaceId={project.spaceId} lastIssue={firstIssue(quotes)} />
-          <QuoteList
+          <AddItem status={findIdByName(title, project.config.issueStatus)} currentUserId={currentUser.all.uid} spaceId={project.spaceId} lastIssue={firstIssue(items)} />
+          <ItemList
             listId={title}
-            listType="QUOTE"
+            listType="Item"
             style={{
               backgroundColor: snapshot.isDragging ? '#AAAA' : null
             }}
-            quotes={quotes}
+            items={items}
             internalScroll={props.isScrollable}
             isCombineEnabled={Boolean(props.isCombineEnabled)}
             useClone={Boolean(props.useClone)}

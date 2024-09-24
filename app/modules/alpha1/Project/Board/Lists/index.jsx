@@ -14,6 +14,7 @@ import EmptyBoard from '../../../App/emptyStates/emptyBoard';
 import * as FirestoreService from '../../../App/services/firestore';
 
 import { IssueTypeIcon, IssuePriorityIcon } from '../../../shared/components';
+import { useUpdateItem } from '../../../../../services/itemServices';
 
 const propTypes = {
   project: PropTypes.object.isRequired,
@@ -27,10 +28,22 @@ const containerStyle = {
   minWidth: '100vw',
   display: 'inline-flex',
 };
+// ce fichier semble servir a rien
+
+
+
+
+
+
+
+
+
 
 const ProjectBoardLists = ({ project, filters, updateLocalProjectIssues }) => {
+  console.log('project', project)
   const { currentUserId } = useCurrentUser();
   const [issueStatus, setIssueStatus] = useState(project.config.issueStatus);
+  const editItemMutation = useUpdateItem();
 
   const handleIssueDrop = ({ draggableId, destination, source }) => {
     if (!isPositionChanged(source, destination)) return;
@@ -40,7 +53,16 @@ const ProjectBoardLists = ({ project, filters, updateLocalProjectIssues }) => {
       status: destination.droppableId,
       listPosition: calculateIssueListPosition(project.issues, destination, source, issueId),
     }
-    FirestoreService.editSubItem(project.org, updatedFields, issueId);
+    //FirestoreService.editSubItem(project.org, updatedFields, issueId);
+    //const updateItem = useUpdateItem(project.org, updatedFields, issueId);
+    const mutateItem = editItemMutation({
+      orgId: project.org,
+      feild: updatedFields,
+      itemId: issueId,
+    }
+    );
+console.log(mutateItem)
+console.log('update',updatedFields)
     //currentFields: project.issues.find(({ id }) => id === issueId),
     updateLocalProjectIssues(issueId, updatedFields)
 

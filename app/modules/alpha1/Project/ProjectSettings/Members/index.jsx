@@ -4,6 +4,7 @@ import { Select, Avatar, Icon } from '../../../shared/components';
 import { SectionTitle } from '../../Board/IssueDetails/Styles';
 import { User, Username } from '../../Board/IssueDetails/AssigneesReporter/Styles';
 import * as FirestoreService from '../../../App/services/firestore';
+import { useGetOrgUsers } from '../../../../../services/userServices';
 
 const SpaceMembers = ({ project, spaceId }) => {
 
@@ -13,21 +14,17 @@ const SpaceMembers = ({ project, spaceId }) => {
   const [orgUser, setOrgUser] = useState(filteredProjectUsers);
   const [spaceMembers, setSpaceMembers] = useState((project.members ? project.members : []));
 
-  useEffect(() => {
-    FirestoreService.getOrgUsers(project.org)
-      .then(getOrg => {
-        if (getOrg.exists()) {
-          const org = getOrg.data();
-          Object.values(org.users).forEach(async (user) => {
-            getUserInfo(user.email);
-          })
-        } else {
-          console.log("No such document!");
-        }
-      })
-      .catch((error) => console.log(error));
+  const orgUsers = useGetOrgUsers(project.org);
 
-  }, []);
+  useEffect(() => {
+    if (orgUsers.data.users) {
+      Object.values(orgUsers.data.users).forEach(async (user) => {
+        getUserInfo(user.email);
+      });
+    } else {
+      console.log("No such document!");
+    }
+  }, [orgUsers.data.users]);
 
   const getUserInfo = (userEmail) => {
     FirestoreService.getUserInfo(userEmail)

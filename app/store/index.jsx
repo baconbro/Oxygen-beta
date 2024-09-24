@@ -1,19 +1,17 @@
-import { configureStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import okrReducer from '../reducers/okrSlice';
 
-const initialState = {
-  title: 'Default Title',
-};
+const store = configureStore({
+  reducer: {
+    okrs: okrReducer,
+  },
+  preloadedState: {
+    okrs: {
+      selectedOKR: null, // or some other initial value
+      // other properties of okrs...
+    },
+  },
+});
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'CHANGE_TITLE':
-      return {
-        ...state,
-        title: action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-export const store = configureStore(reducer);
+export default store;

@@ -12,6 +12,9 @@ import { Status } from '../Project/Board/IssueDetails/Status/Styles';
 import { customStatus, getScoreColor } from '../shared/constants/custom';
 import AddGoal from './goal-drawer/AddGoal';
 import EmptyGoals from '../App/emptyStates/emptyGoals';
+import { useFirestoreQueryData } from "@react-query-firebase/firestore";
+import { query, collection } from 'firebase/firestore'; 
+import { db } from '../App/services/firestore';
 
 import {
   createColumnHelper,
@@ -22,6 +25,12 @@ import {
 } from '@tanstack/react-table'
 
 import { useAuth } from '../../auth';
+
+import { useOKRState} from '../../../hooks/useOkr'
+import { useFetchOKRs, useAddOKR, useUpdateOKR  } from '../../../services/okrServices'
+import { useState } from 'react'
+
+
 
 
 const defaultData = [
@@ -78,6 +87,7 @@ const defaultFilters = {
 
 const Goals = () => {
   const { currentUser } = useAuth();
+  const { data: okrs, status, error } = useFetchOKRs(currentUser?.all?.currentOrg);
   const match = useLocation();
   const navigate = useNavigate();
   const { currentGoal, setCurrentGoal, setOrgUsers, setHighLevelWorkItems, orgUsers } = useWorkspace();
@@ -106,7 +116,7 @@ const Goals = () => {
 
   useEffect(() => {
     if (refreshData) {
-      reloadGoals();
+      //reloadGoals();
       setRefreshData(false); // Reset the state after fetching data
     }
     const orgUsers = FirestoreService.getOrgUsers(currentUser?.all?.currentOrg)
@@ -308,7 +318,7 @@ const Goals = () => {
 
 
   const table = useReactTable({
-    data,
+    data: okrs || [],  // Provide data directly from React Query
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSubRows: row => row.subRows,
@@ -321,13 +331,24 @@ const Goals = () => {
 
   const handleRowClick = (row) => {
     //get the object from data that matches the id
-    const goal = data.find((goal) => goal.id === row.getValue('id'));
+    const goal = okrs.find((goal) => goal.id === row.getValue('id'));
     setCurrentGoal(goal);
     /*     const drawerToggle = document.getElementById('goals_drawer_detail_toggle');
         drawerToggle.click(); */
     navigate(`details?id=${row.getValue('id')}`)
 
   };
+
+
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'error' && error instanceof Error) {
+    return <div>Error: {error.message}</div>;
+  }
+       
 
   return (
     <Fragment>
@@ -406,9 +427,7 @@ const Goals = () => {
         </div>
       </div>
 
-      {(!data || data.length === 0 ) ?
-        <EmptyGoals/> : ('')
-      }
+      {(!okrs || okrs.length === 0)  ? <EmptyGoals /> : ''}
     </Fragment>
   );
 };

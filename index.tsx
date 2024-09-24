@@ -2,7 +2,7 @@ import {createRoot} from 'react-dom/client'
 // Axios
 import axios from 'axios'
 import {QueryClient, QueryClientProvider} from 'react-query'
-//import {ReactQueryDevtools} from 'react-query/devtools'
+import {ReactQueryDevtools} from 'react-query/devtools'
 // Apps
 import {BaseI18nProvider} from './_oxygen/i18n/Basei18n'
 /**
@@ -15,6 +15,14 @@ import './_oxygen/assets/sass/plugins.scss'
 import './_oxygen/assets/sass/style.react.scss'
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
+
+import { Provider } from 'react-redux';
+//import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+//import { createFirestoreInstance } from 'redux-firestore';
+
+import  store  from './app/store'
+
+
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
  * basic  mocks and returns it.
@@ -33,13 +41,15 @@ const queryClient = new QueryClient()
 const container = document.getElementById('root')
 if (container) {
   createRoot(container).render(
+    <Provider store={store}>
     <QueryClientProvider client={queryClient}>
       <BaseI18nProvider>
         <AuthProvider>
           <AppRoutes />
         </AuthProvider>
       </BaseI18nProvider>
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
+  </Provider>
   )
 }
