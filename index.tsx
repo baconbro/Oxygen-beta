@@ -4,7 +4,7 @@ import axios from 'axios'
 import {QueryClient, QueryClientProvider} from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
 // Apps
-import {BaseI18nProvider} from './_oxygen/i18n/Basei18n'
+import {BaseI18nProvider} from './i18n/Basei18n'
 /**
  * TIP: Replace this style import with rtl styles to enable rtl mode
  *

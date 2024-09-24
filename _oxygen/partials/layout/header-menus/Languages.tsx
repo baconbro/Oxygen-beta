@@ -2,7 +2,7 @@
 import clsx from 'clsx'
 import {FC} from 'react'
 import {toAbsoluteUrl} from '../../../helpers'
-import {useLang, setLanguage} from '../../../i18n/Basei18n'
+import {useLang, setLanguage} from '../../../../i18n/Basei18n'
 
 const languages = [
   {
