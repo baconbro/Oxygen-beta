@@ -7,7 +7,7 @@ import {
   StickyComponent,
   ToggleComponent,
   SwapperComponent,
-} from '../assets/ts/components'
+} from '../../components/common'
 import { ThemeModeComponent } from '../assets/ts/layout'
 
 import {useLayout} from './core'

@@ -4,7 +4,7 @@ import {
   EventHandlerUtil,
   getUniqueIdWithPrefix,
   getAttributeValueByBreakpoint,
-} from '../../../../utils/index'
+} from '../../utils/index'
 
 export interface FeedbackOptions {
   width?: number

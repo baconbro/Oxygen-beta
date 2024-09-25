@@ -5,7 +5,7 @@ import {
   DrawerComponent,
   ToggleComponent,
   StickyComponent,
-} from '../../assets/ts/components'
+} from '../../../components/common'
 import {InlineSVG} from '../../helpers'
 
 export function ScrollTop() {

@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import {getUserByToken, register} from '../core/_requests'
 import {Link} from 'react-router-dom'
 import {toAbsoluteUrl} from '../../../_oxygen/helpers'
-import {PasswordMeterComponent} from '../../../_oxygen/assets/ts/components'
+import {PasswordMeterComponent} from '../../../components/common'
 import {useAuth} from '../core/Auth'
 
 const initialValues = {

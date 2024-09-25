@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
-import { SearchComponent } from '../../../assets/ts/components'
+import { SearchComponent } from '../../../../components/common'
 import { InlineSVG } from '../../../helpers'
 import { useWorkspace } from '../../../../modules/alpha1/App/contexts/WorkspaceProvider'
 import { IssueTypeIcon } from '../../../../modules/alpha1/shared/components'

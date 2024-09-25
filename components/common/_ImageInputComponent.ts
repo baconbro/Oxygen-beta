@@ -1,4 +1,4 @@
-import {EventHandlerUtil, DataUtil, getUniqueIdWithPrefix, getCSS} from '../../../../utils/index'
+import {EventHandlerUtil, DataUtil, getUniqueIdWithPrefix, getCSS} from '../../utils/index'
 
 export interface IImageInputOptions {}
 
