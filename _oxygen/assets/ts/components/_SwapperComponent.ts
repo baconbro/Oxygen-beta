@@ -4,7 +4,7 @@ import {
   getObjectPropertyValueByKey,
   EventHandlerUtil,
   throttle,
-} from '../_utils/index'
+} from '../../../../utils/index'
 
 export class SwapperStore {
   static store: Map<string, SwapperComponent> = new Map()

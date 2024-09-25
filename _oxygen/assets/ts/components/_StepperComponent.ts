@@ -6,7 +6,7 @@ import {
   DataUtil,
   DOMEventHandlerUtil,
   ElementStyleUtil,
-} from '../_utils/index'
+} from '../../../../utils/index'
 
 export interface IStepperOptions {
   startIndex: number

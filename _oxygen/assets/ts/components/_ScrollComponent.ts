@@ -8,7 +8,7 @@ import {
   throttle,
   getCSS,
   ElementStyleUtil,
-} from '../_utils/index'
+} from '../../../../utils/index'
 import {CookieComponent} from './_CookieComponent'
 
 export interface ScrollOptions {

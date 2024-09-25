@@ -13,7 +13,7 @@ import {
   DOMEventHandlerUtil,
   throttle,
   getHighestZindex,
-} from '../_utils/index'
+} from '../../../../utils/index'
 
 export interface MenuOptions {
   dropdown: {

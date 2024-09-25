@@ -1,3 +1,3 @@
-export * as KTUtil from './_utils/index'
+export * as KTUtil from '../../../utils/index'
 export * as components from './components/index'
 
