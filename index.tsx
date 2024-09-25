@@ -13,14 +13,14 @@ import {BaseI18nProvider} from './i18n/Basei18n'
 import './_oxygen/assets/sass/style.scss'
 import './_oxygen/assets/sass/plugins.scss'
 import './_oxygen/assets/sass/style.react.scss'
-import {AppRoutes} from './app/routing/AppRoutes'
-import {AuthProvider, setupAxios} from './app/modules/auth'
+import {AppRoutes} from './routing/AppRoutes'
+import {AuthProvider, setupAxios} from './modules/auth'
 
 import { Provider } from 'react-redux';
 //import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 //import { createFirestoreInstance } from 'redux-firestore';
 
-import  store  from './app/store'
+import store from './redux/store';
 
 
 /**

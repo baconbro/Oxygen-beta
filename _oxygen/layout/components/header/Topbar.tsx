@@ -6,8 +6,8 @@ import {
   ThemeModeSwitcher,
 } from '../../../partials'
 import { useLayout } from '../../core'
-import { useAuth } from '../../../../app/modules/auth'
-import { Avatar } from '../../../../app/modules/alpha1/shared/components'
+import { useAuth } from '../../../../modules/auth'
+import { Avatar } from '../../../../modules/alpha1/shared/components'
 
 const toolbarButtonMarginClass = 'ms-1 ms-lg-3',
   toolbarButtonHeightClass = 'w-30px h-30px w-md-40px h-md-40px',

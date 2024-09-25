@@ -11,8 +11,8 @@ import {Step2} from './steps/Step2'
 import {Step3} from './steps/Step3'
 import {Step4} from './steps/Step4'
 import {Step5} from './steps/Step5'
-import {createSpace} from '../../../../app/modules/alpha1/App/services/firestore'
-import {useAuth} from '../../../../app/modules/auth'
+import {createSpace} from '../../../../modules/alpha1/App/services/firestore'
+import {useAuth} from '../../../../modules/auth'
 import {useNavigate} from 'react-router-dom'
 
 type Props = {

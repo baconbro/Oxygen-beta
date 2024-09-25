@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import { SearchComponent } from '../../../assets/ts/components'
 import { InlineSVG } from '../../../helpers'
-import { useWorkspace } from '../../../../app/modules/alpha1/App/contexts/WorkspaceProvider'
-import { IssueTypeIcon } from '../../../../app/modules/alpha1/shared/components'
-import { Status } from '../../../../app/modules/alpha1/Project/Board/IssueDetails/Status/Styles'
-import * as FirestoreService from '../../../../app/modules/alpha1/App/services/firestore'
+import { useWorkspace } from '../../../../modules/alpha1/App/contexts/WorkspaceProvider'
+import { IssueTypeIcon } from '../../../../modules/alpha1/shared/components'
+import { Status } from '../../../../modules/alpha1/Project/Board/IssueDetails/Status/Styles'
+import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore'
 
 interface IssueTypeDetails {
   id: number; // Or string, if your IDs are strings

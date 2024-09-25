@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import {useLayout} from '../../core'
 import {InlineSVG, toAbsoluteUrl} from '../../../helpers'
 import {AsideMenu} from './AsideMenu'
-import FeedbackForm from '../../../../app/modules/alpha1/shared/components/Feedbackform'
+import FeedbackForm from '../../../../modules/alpha1/shared/components/Feedbackform'
 
 const AsideDefault: FC = () => {
   const {config, classes} = useLayout()

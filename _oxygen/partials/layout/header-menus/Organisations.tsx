@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import clsx from 'clsx'
 import {FC, Key, useEffect} from 'react'
-import { useAuth } from '../../../../app/modules/auth'
+import { useAuth } from '../../../../modules/auth'
 import {toAbsoluteUrl} from '../../../helpers'
 import { useState } from 'react'
-import { editUser } from '../../../../app/modules/alpha1/App/services/firestore'
+import { editUser } from '../../../../modules/alpha1/App/services/firestore'
 import { string } from 'yup'
-import { getOrgs } from '../../../../app/modules/alpha1/App/services/firestore'
+import { getOrgs } from '../../../../modules/alpha1/App/services/firestore'
 import { DocumentData } from 'firebase/firestore'
 
 
