@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {FC} from 'react'
-import {toAbsoluteUrl, InlineSVG} from '../../../helpers'
+import {toAbsoluteUrl, InlineSVG} from '../../../utils'
 import {Dropdown1} from '../dropdown/Dropdown1'
 
 type Props = {

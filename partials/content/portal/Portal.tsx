@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {FC, useState, useEffect} from 'react'
 import {createPortal} from 'react-dom'
-import {WithChildren} from '../../../helpers'
+import {WithChildren} from '../../../utils'
 
 /**
  * React portal based on https://stackoverflow.com/a/59154364

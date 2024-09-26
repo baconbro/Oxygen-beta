@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction, useState, useEffect} from 'react'
 import {Modal} from 'react-bootstrap'
-import {InlineSVG} from '../../../helpers'
+import {InlineSVG} from '../../../utils'
 
 type Props = {
   data: {location: string; setLocation: Dispatch<SetStateAction<string>>}

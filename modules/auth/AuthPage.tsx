@@ -4,7 +4,7 @@ import { Outlet, Route, Routes } from 'react-router-dom'
 import { Registration } from './components/Registration'
 import { ForgotPassword } from './components/ForgotPassword'
 import { Login } from './components/Login'
-import { toAbsoluteUrl } from '../../helpers'
+import { toAbsoluteUrl } from '../../utils'
 import { Link } from "react-router-dom";
 import { VerifyEmail } from './components/VerifyEmail'
 

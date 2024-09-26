@@ -3,7 +3,7 @@ import {FC} from 'react'
 import {Link} from 'react-router-dom'
 
 
-import {toAbsoluteUrl} from '../../../helpers'
+import {toAbsoluteUrl} from '../../../utils'
 
 type Props = {
   icon: string

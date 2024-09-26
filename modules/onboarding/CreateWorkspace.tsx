@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { Modal } from 'react-bootstrap';
-import { toAbsoluteUrl } from '../../helpers';
+import { toAbsoluteUrl } from '../../utils';
 import { CreateWorkspaceModal } from '../../partials';
 
 import { useEffect, useState } from 'react';

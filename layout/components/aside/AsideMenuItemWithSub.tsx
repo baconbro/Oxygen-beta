@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import {useLocation} from 'react-router'
-import {checkIsActive, InlineSVG, WithChildren} from '../../../helpers'
+import {checkIsActive, InlineSVG, WithChildren} from '../../../utils'
 import {useLayout} from '../../core'
 
 type Props = {

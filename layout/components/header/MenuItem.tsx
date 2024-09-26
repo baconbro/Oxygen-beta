@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router'
 import clsx from 'clsx'
-import {checkIsActive, InlineSVG} from '../../../helpers'
+import {checkIsActive, InlineSVG} from '../../../utils'
 
 type Props = {
   to: string

@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 import {useFormik} from 'formik'
 import {getUserByToken, login} from '../core/_requests'
-import {toAbsoluteUrl} from '../../../helpers'
+import {toAbsoluteUrl} from '../../../utils'
 import {useAuth} from '../core/Auth'
 import * as FirestoreService from '../../alpha1/App/services/firestore';
 

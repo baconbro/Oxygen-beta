@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react'
 import {ThemeModeComponent} from '../../../layout'
-import {toAbsoluteUrl} from '../../../helpers'
+import {toAbsoluteUrl} from '../../../utils'
 
 export type ThemeModeType = 'dark' | 'light' | 'system'
 const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark'

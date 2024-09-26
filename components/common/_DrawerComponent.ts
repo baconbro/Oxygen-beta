@@ -8,7 +8,7 @@ import {
   getCSS,
   DOMEventHandlerUtil,
   ElementStyleUtil,
-} from '../../utils/index'
+} from './../../utils'
 
 export class DrawerStore {
   static store: Map<string, DrawerComponent> = new Map()

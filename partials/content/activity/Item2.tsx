@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import {InlineSVG, toAbsoluteUrl} from '../../../helpers'
+import {InlineSVG, toAbsoluteUrl} from '../../../utils'
 
 const Item2: FC = () => {
   return (

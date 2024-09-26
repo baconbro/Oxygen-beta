@@ -6,7 +6,7 @@ import {
   ToggleComponent,
   StickyComponent,
 } from '../../components/common'
-import {InlineSVG} from '../../helpers'
+import {InlineSVG} from '../../utils'
 
 export function ScrollTop() {
   const {pathname} = useLocation()

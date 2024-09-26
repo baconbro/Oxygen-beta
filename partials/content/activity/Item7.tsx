@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {FC} from 'react'
-import {InlineSVG, toAbsoluteUrl} from '../../../helpers'
+import {InlineSVG, toAbsoluteUrl} from '../../../utils'
 
 const Item7: FC = () => {
   return (

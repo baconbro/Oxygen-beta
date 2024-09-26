@@ -12,7 +12,7 @@ import {LayoutSplashScreen} from '../../../layout/core'
 import {AuthModel, UserModel} from './_models'
 import * as authHelper from './AuthHelpers'
 import {getUserByToken} from './_requests'
-import {WithChildren} from '../../../helpers'
+import {WithChildren} from '../../../utils'
 import * as FirestoreService from '../../alpha1/App/services/firestore'
 
 type AuthContextProps = {

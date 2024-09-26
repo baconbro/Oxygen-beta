@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../modules/auth'
 import { Languages } from './Languages'
-import { toAbsoluteUrl } from '../../../helpers'
+import { toAbsoluteUrl } from '../../../utils'
 import { Organisations } from './Organisations'
 
 const HeaderUserMenu: FC = () => {

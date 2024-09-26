@@ -12,7 +12,7 @@ import {
   ILayoutCSSClasses,
   ILayoutHTMLAttributes,
 } from './LayoutModels'
-import {WithChildren} from '../../helpers'
+import {WithChildren} from '../../utils'
 
 export interface LayoutContextModel {
   config: ILayout

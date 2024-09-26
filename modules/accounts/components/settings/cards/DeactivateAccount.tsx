@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState} from 'react'
-import {InlineSVG} from '../../../../../helpers'
+import {InlineSVG} from '../../../../../utils'
 import {IDeactivateAccount, deactivateAccount} from '../SettingsModel'
 import * as Yup from 'yup'
 import {useFormik} from 'formik'

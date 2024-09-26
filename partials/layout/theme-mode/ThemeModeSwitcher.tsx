@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import {InlineSVG} from '../../../helpers'
+import {InlineSVG} from '../../../utils'
 import {ThemeModeType, useThemeMode} from './ThemeModeProvider'
 
 /* eslint-disable jsx-a11y/anchor-is-valid */

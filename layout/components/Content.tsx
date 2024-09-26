@@ -3,7 +3,7 @@ import {useLocation} from 'react-router'
 import clsx from 'clsx'
 import {useLayout} from '../core'
 import {DrawerComponent} from '../../components/common'
-import {WithChildren} from '../../helpers'
+import {WithChildren} from '../../utils'
 
 const Content: FC<WithChildren> = ({children}) => {
   const {classes} = useLayout()

@@ -2,7 +2,7 @@ import {FC} from 'react'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router'
-import {checkIsActive, InlineSVG, WithChildren} from '../../../helpers'
+import {checkIsActive, InlineSVG, WithChildren} from '../../../utils'
 import {useLayout} from '../../core'
 
 type Props = {

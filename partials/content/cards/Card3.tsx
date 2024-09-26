@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {FC} from 'react'
-import {toAbsoluteUrl, InlineSVG} from '../../../helpers'
+import {toAbsoluteUrl, InlineSVG} from '../../../utils'
 
 type Props = {
   color?: string

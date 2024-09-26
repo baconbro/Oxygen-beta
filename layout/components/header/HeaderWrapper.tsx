@@ -2,7 +2,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {InlineSVG, toAbsoluteUrl} from '../../../helpers'
+import {InlineSVG, toAbsoluteUrl} from '../../../utils'
 import {useLayout} from '../../core'
 import {Header} from './Header'
 import {DefaultTitle} from './page-title/DefaultTitle'

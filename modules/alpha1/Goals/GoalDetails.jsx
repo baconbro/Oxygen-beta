@@ -31,7 +31,7 @@ import { Modal } from 'react-bootstrap'
 import { InputDebounced } from '../shared/components'
 import { isNil } from 'lodash';
 import DatePicker from '../shared/components/DatePicker';
-import { toAbsoluteUrl } from '../../../helpers'
+import { toAbsoluteUrl } from '../../../utils'
 import { customStatus, getScoreColor } from '../shared/constants/custom';
 import { useUpdateOKR } from '../../../services/okrServices';
 

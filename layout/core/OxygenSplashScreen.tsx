@@ -7,7 +7,7 @@ import React, {
   SetStateAction,
   Dispatch,
 } from 'react'
-import {WithChildren} from '../../helpers'
+import {WithChildren} from '../../utils'
 
 const OxygenSplashScreenContext = createContext<Dispatch<SetStateAction<number>> | undefined>(
   undefined

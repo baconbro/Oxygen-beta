@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import React, { FC } from 'react'
-import { InlineSVG, toAbsoluteUrl } from '../../../helpers'
+import { InlineSVG, toAbsoluteUrl } from '../../../utils'
 import {
   HeaderUserMenu,
   ThemeModeSwitcher,

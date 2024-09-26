@@ -4,7 +4,7 @@ import {FC, useRef,useState} from 'react'
 import {Link} from 'react-router-dom'
 import clsx from 'clsx'
 import {useLayout} from '../../core'
-import {InlineSVG, toAbsoluteUrl} from '../../../helpers'
+import {InlineSVG, toAbsoluteUrl} from '../../../utils'
 import {AsideMenu} from './AsideMenu'
 import FeedbackForm from '../../../modules/alpha1/shared/components/Feedbackform'
 

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {FC} from 'react'
-import {InlineSVG, toAbsoluteUrl} from '../../../helpers'
+import {InlineSVG, toAbsoluteUrl} from '../../../utils'
 
 const InviteUsers: FC = () => {
   const users = [

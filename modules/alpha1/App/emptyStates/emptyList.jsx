@@ -1,4 +1,4 @@
-import { InlineSVG } from "../../../../helpers"
+import { InlineSVG } from "../../../../utils"
 
 
 const EmptyList = ({

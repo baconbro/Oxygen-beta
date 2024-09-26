@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {FC, useState} from 'react'
-import {InlineSVG} from '../../../helpers'
+import {InlineSVG} from '../../../utils'
 
 const plans = [
   {

@@ -2,7 +2,7 @@
 import clsx from 'clsx'
 import {FC, Key, useEffect} from 'react'
 import { useAuth } from '../../../modules/auth'
-import {toAbsoluteUrl} from '../../../helpers'
+import {toAbsoluteUrl} from '../../../utils'
 import { useState } from 'react'
 import { editUser } from '../../../modules/alpha1/App/services/firestore'
 import { string } from 'yup'
