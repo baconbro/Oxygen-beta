@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../auth";
 
 import * as FirestoreService from '../App/services/firestore'
-import WorkspaceHeaderMenu from "../../../_oxygen/layout/components/header/Workspace";
+import WorkspaceHeaderMenu from "../../../layout/components/header/Workspace";
 import EmptyWorkspace from "../App/emptyStates/emptyWorkspace";
 import { useGetSpaces } from "../../../services/workspaceServices";
 

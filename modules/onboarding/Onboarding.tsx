@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { Modal } from 'react-bootstrap';
-import { toAbsoluteUrl } from '../../_oxygen/helpers';
+import { toAbsoluteUrl } from '../../helpers';
 
 import { useEffect, useState } from 'react';
 

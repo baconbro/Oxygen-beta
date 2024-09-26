@@ -1,6 +1,6 @@
 import React from 'react'
 import {Navigate, Route, Routes, Outlet} from 'react-router-dom'
-import {PageLink, PageTitle} from '../../_oxygen/layout/core'
+import {PageLink, PageTitle} from '../../layout/core'
 import AdminOverview from './components/Overview'
 //import UsersPage from './components/UsersPage'
 import { AdminHeader } from './AdminHeader'

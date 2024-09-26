@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Search } from '../../../../../../_oxygen/partials';
+import { Search } from '../../../../../../partials';
 import DepDescription from './depDescription';
 import * as Firestore from '../../../../App/services/firestore';
 import { useWorkspace } from '../../../../App/contexts/WorkspaceProvider';

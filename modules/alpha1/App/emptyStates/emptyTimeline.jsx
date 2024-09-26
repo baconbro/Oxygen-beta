@@ -1,6 +1,3 @@
-import { InlineSVG } from "../../../../_oxygen/helpers"
-
-
 const EmptyTimeline = ({
     color = '',
     avatar = '',

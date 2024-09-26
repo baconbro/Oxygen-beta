@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {InlineSVG} from '../../_oxygen/helpers'
+import {InlineSVG} from '../../helpers'
 import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router'
 import { useAuth } from '../auth'
-import { toAbsoluteUrl } from '../../_oxygen/helpers'
+import { toAbsoluteUrl } from '../../helpers'
 
 const AdminHeader: React.FC = () => {
   const location = useLocation()

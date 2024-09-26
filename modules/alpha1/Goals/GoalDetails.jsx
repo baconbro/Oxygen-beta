@@ -20,7 +20,7 @@ import { issueTypeColors } from '../shared/utils/styles';
 import TagsComponent from '../Project/Board/IssueDetails/Tags';
 import SubsComponent from './Subs';
 import TaskDependencies from '../Project/Board/IssueDetails/Dependencies';
-import { Search } from '../../../_oxygen/partials';
+import { Search } from '../../../partials';
 
 import * as FirestoreService from '../App/services/firestore';
 
@@ -31,7 +31,7 @@ import { Modal } from 'react-bootstrap'
 import { InputDebounced } from '../shared/components'
 import { isNil } from 'lodash';
 import DatePicker from '../shared/components/DatePicker';
-import { toAbsoluteUrl } from '../../../_oxygen/helpers'
+import { toAbsoluteUrl } from '../../../helpers'
 import { customStatus, getScoreColor } from '../shared/constants/custom';
 import { useUpdateOKR } from '../../../services/okrServices';
 

@@ -5,14 +5,10 @@ import {QueryClient, QueryClientProvider} from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
 // Apps
 import {BaseI18nProvider} from './i18n/Basei18n'
-/**
- * TIP: Replace this style import with rtl styles to enable rtl mode
- *
- * import './_oxygen/assets/css/style.rtl.css'
- **/
-import './_oxygen/assets/sass/style.scss'
-import './_oxygen/assets/sass/plugins.scss'
-import './_oxygen/assets/sass/style.react.scss'
+
+import './styles/style.scss'
+import './styles/plugins.scss'
+import './styles/style.react.scss'
 import {AppRoutes} from './routing/AppRoutes'
 import {AuthProvider, setupAxios} from './modules/auth'
 

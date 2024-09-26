@@ -14,7 +14,7 @@ import ProjectSettings from './ProjectSettings';
 import * as FirestoreService from '../App/services/firestore';
 import Backlog from './Backlog';
 import Roadmap from './Roadmap';
-import { PageTitle } from '../../../_oxygen/layout/core';
+import { PageTitle } from '../../../layout/core';
 import IssueDetailsPage from './Board/issueDetail';
 import { useAuth } from '../../auth';
 import { useWorkspace } from '../App/contexts/WorkspaceProvider';

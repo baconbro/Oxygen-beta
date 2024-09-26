@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import { Modal } from 'react-bootstrap';
-import { toAbsoluteUrl } from '../../_oxygen/helpers';
-import { CreateWorkspaceModal } from '../../_oxygen/partials';
+import { toAbsoluteUrl } from '../../helpers';
+import { CreateWorkspaceModal } from '../../partials';
 
 import { useEffect, useState } from 'react';
 

@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 import clsx from 'clsx'
 import {getUserByToken, register} from '../core/_requests'
 import {Link} from 'react-router-dom'
-import {toAbsoluteUrl} from '../../../_oxygen/helpers'
+import {toAbsoluteUrl} from '../../../helpers'
 import {PasswordMeterComponent} from '../../../components/common'
 import {useAuth} from '../core/Auth'
 

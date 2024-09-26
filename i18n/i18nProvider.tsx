@@ -8,7 +8,7 @@ import '@formatjs/intl-relativetimeformat/locale-data/fr'
 
 import enMessages from './messages/en.json'
 import frMessages from './messages/fr.json'
-import { WithChildren } from '../_oxygen/helpers'
+import { WithChildren } from '../helpers'
 
 const allMessages = {
   en: enMessages,

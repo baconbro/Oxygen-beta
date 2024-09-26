@@ -8,11 +8,11 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react'
-import {LayoutSplashScreen} from '../../../_oxygen/layout/core'
+import {LayoutSplashScreen} from '../../../layout/core'
 import {AuthModel, UserModel} from './_models'
 import * as authHelper from './AuthHelpers'
 import {getUserByToken} from './_requests'
-import {WithChildren} from '../../../_oxygen/helpers'
+import {WithChildren} from '../../../helpers'
 import * as FirestoreService from '../../alpha1/App/services/firestore'
 
 type AuthContextProps = {

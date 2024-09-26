@@ -1,4 +1,4 @@
-import { InlineSVG } from "../../../../_oxygen/helpers"
+import { InlineSVG } from "../../../../helpers"
 
 
 const EmptyGoals = ({

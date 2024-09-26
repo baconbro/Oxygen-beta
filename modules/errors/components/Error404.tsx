@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import {Link} from 'react-router-dom'
-import {toAbsoluteUrl} from '../../../_oxygen/helpers'
+import {toAbsoluteUrl} from '../../../helpers'
 
 const Error404: FC = () => {
   return (

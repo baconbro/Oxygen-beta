@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {FC, Key, ReactChild, ReactFragment, ReactPortal} from 'react'
 import {useIntl} from 'react-intl'
-import {PageTitle} from '../../_oxygen/layout/core'
+import {PageTitle} from '../../layout/core'
 import { LastWeek } from './Components/LastWeek'
 import ChartItemByStatus from './Components/ItemsByStatus'
 import ChartItemByPriority from './Components/ItemsByPriority'
