@@ -5,10 +5,7 @@ import { MegaMenu } from './MegaMenu'
 import { useIntl } from 'react-intl'
 import * as FirestoreService from '../../../modules/alpha1/App/services/firestore'
 import { useAuth } from '../../../modules/auth'
-import { array } from 'yup/lib/locale'
-import { title } from 'process'
-import WorkspaceHeaderMenu from './Workspace'
-import { CreateWorkspaceModal } from '../../../partials'
+
 
 export function MenuInner() {
   const intl = useIntl()

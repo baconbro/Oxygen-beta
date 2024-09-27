@@ -7,7 +7,7 @@ import { Create, UserAvatar, Right, FakeTextarea } from './Styles';
 import * as FirestoreService from '../../../../../App/services/firestore';
 import { useAuth } from "../../../../../../auth";
 import { number } from 'prop-types';
-import { SearchReturn } from '../../../../../../../partials/layout/search/SearchReturn';
+import { SearchReturn } from '../../../../../../../components/partials/layout/search/SearchReturn';
 
 
 const ProjectBoardIssueDetailsCommentsCreate = ({ issueId, issue, fetchIssue }) => {

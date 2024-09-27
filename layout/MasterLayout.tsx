@@ -8,7 +8,7 @@ import {ScrollTop} from './components/ScrollTop'
 import {Content} from './components/Content'
 import {PageDataProvider} from './core'
 import {useLocation} from 'react-router-dom'
-import {ThemeModeProvider} from '../partials'
+import {ThemeModeProvider} from '../components/partials'
 import {MenuComponent} from '../components/common'
 import { WorkspaceProvider } from '../modules/alpha1/App/contexts/WorkspaceProvider'
 

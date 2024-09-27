@@ -10,8 +10,8 @@ import { Workspacehome } from '../modules/alpha1/Workspaces'
 import CreateWorkspace from '../modules/onboarding/CreateWorkspace'
 
 import Project from '../modules/alpha1/Project'
-import Goals from '../modules/alpha1/Goals'
-import GoalDetails from '../modules/alpha1/Goals/GoalDetails'
+import Goals from '../modules/Goals'
+import GoalDetails from '../modules/Goals/GoalDetails'
 
 import Onboarding from '../modules/onboarding/Onboarding'
 

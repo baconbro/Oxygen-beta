@@ -4,7 +4,7 @@ import { InlineSVG, toAbsoluteUrl } from '../../../utils'
 import {
   HeaderUserMenu,
   ThemeModeSwitcher,
-} from '../../../partials'
+} from '../../../components/partials'
 import { useLayout } from '../../core'
 import { useAuth } from '../../../modules/auth'
 import { Avatar } from '../../../modules/alpha1/shared/components'

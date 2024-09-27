@@ -10,8 +10,7 @@ import Filters from './Filters';
 import Lists from './Lists';
 import IssueDetails from './IssueDetails';
 import { getAnalytics, logEvent } from "firebase/analytics";
-import { Modal } from 'react-bootstrap'
-import { ActivityDrawer } from '../../../../partials';
+
 
 const propTypes = {
   project: PropTypes.object.isRequired,
