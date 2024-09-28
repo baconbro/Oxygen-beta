@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import useMergeState from '../../shared/hooks/mergeState';
-import { Breadcrumbs, Modal } from '../../shared/components';
+import useMergeState from '../../../../hooks/mergeState';
+import { Breadcrumbs, Modal } from '../../../../components/common';
 import Filters from '../Board/Filters';
 import Lists from './Lists';
 import IssueDetails from './IssueDetails';

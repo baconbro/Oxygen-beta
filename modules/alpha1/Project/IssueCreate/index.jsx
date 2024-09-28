@@ -7,10 +7,10 @@ import {
   IssuePriority,
   IssueTypeCopy,
   IssuePriorityCopy,
-} from '../../shared/constants/issues';
-import toast from '../../shared/utils/toast';
-import useCurrentUser from '../../shared/hooks/currentUser';
-import { Form, IssueTypeIcon, Icon, Avatar, IssuePriorityIcon } from '../../shared/components';
+} from '../../../../constants/issues';
+import toast from '../../../../utils/toast';
+import useCurrentUser from '../../../../hooks/currentUser';
+import { Form, IssueTypeIcon, Icon, Avatar, IssuePriorityIcon } from '../../../../components/common';
 
 import {
   FormHeading,

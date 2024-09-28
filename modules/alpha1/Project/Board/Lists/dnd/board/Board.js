@@ -8,9 +8,9 @@ import PropTypes from "prop-types";
 import Column from "./Column";
 import reorder, { reorderQuoteMap } from "../reorder";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { moveItemWithinArray, insertItemIntoArray } from "../../../../../shared/utils/javascript";
+import { moveItemWithinArray, insertItemIntoArray } from "../../../../../../../utils/javascript";
 import { editSubItem, editSpace } from "../../../../../App/services/firestore";
-import { filterIssues } from "../../../../../shared/utils/issueFilterUtils";
+import { filterIssues } from "../../../../../../../utils/issueFilterUtils";
 import { useUpdateItem } from "../../../../../../../services/itemServices";
 
 const Container = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import toast from '../shared/utils/toast';
-import { Button, ConfirmModal } from '../shared/components';
+import { Button, ConfirmModal } from '../../../components/common';
 
 
 import * as FirestoreService from '../../App/services/firestore';

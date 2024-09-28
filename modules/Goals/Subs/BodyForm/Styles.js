@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Button } from '../../../alpha1/shared/components';
+import { Button } from '../../../../components/common';
 
 export const Actions = styled.div`
   display: flex;

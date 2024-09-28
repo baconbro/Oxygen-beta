@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { color, font } from '../../../../alpha1/shared/utils/styles'
-import { Textarea } from '../../../../alpha1/shared/components';
+import { color, font } from '../../../../../utils/styles'
+import { Textarea } from '../../../../../components/common';
 
 export const TitleTextarea = styled(Textarea)`
   margin: 0 0 0 -8px;

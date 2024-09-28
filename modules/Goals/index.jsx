@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import useMergeState from '../alpha1/shared/hooks/mergeState';
-import { Breadcrumbs, Modal, Avatar } from '../alpha1/shared/components';
+import useMergeState from '../../hooks/mergeState';
+import { Breadcrumbs, Modal, Avatar } from '../../components/common';
 
 import * as FirestoreService from '../alpha1/App/services/firestore';
 import { useWorkspace } from '../alpha1/App/contexts/WorkspaceProvider';
 
 import { Status } from '../alpha1/Project/Board/IssueDetails/Status/Styles';
-import { customStatus, getScoreColor } from '../alpha1/shared/constants/custom';
+import { customStatus, getScoreColor } from '../../constants/custom';
 import AddGoal from './goal-drawer/AddGoal';
 import EmptyGoals from '../alpha1/App/emptyStates/emptyGoals';
 

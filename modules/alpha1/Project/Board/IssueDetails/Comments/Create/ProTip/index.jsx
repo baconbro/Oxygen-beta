@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { KeyCodes } from '../../../../../../shared/constants/keyCodes';
-import { isFocusedElementEditable } from '../../../../../../shared/utils/browser';
+import { KeyCodes } from '../../../../../../../../constants/keyCodes';
+import { isFocusedElementEditable } from '../../../../../../../../utils/browser';
 
 import { Tip, TipLetter } from './Styles';
 

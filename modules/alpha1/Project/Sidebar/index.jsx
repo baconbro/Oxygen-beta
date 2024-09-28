@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 
-import { Icon, ProjectAvatar } from '../../shared/components';
+import { Icon, ProjectAvatar } from '../../../../components/common';
 
 import {
   Sidebar,

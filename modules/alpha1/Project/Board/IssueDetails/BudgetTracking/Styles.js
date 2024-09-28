@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { color, font, mixin } from '../../../../shared/utils/styles';
+import { color, font, mixin } from '../../../../../../utils/styles';
 
 export const TrackingLink = styled.div`
   padding: 4px 4px 2px 0;

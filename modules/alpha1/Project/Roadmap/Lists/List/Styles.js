@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { color, font, mixin } from '../shared/utils/styles';
 
-import { Button } from '../shared/components';
+import { Button } from '../../../components/common';
 
 export const List = styled.div`
   display: flex;

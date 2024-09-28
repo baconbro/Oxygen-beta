@@ -14,8 +14,7 @@ import {
 import { Modal } from 'react-bootstrap'
 import ProjectMembers from '../../ProjectSettings/Members';
 import { useWorkspace } from '../../../App/contexts/WorkspaceProvider';
-import { IssueType, IssueStatus } from '../../../../../modules/alpha1/shared/constants/issues';
-import findAvailableParameters from '../../../shared/utils/issueVariables';
+import findAvailableParameters from '../../../../../utils/issueVariables';
 
 const propTypes = {
   projectUsers: PropTypes.array.isRequired,

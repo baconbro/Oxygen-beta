@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import { Modal } from 'react-bootstrap'
-import { Avatar } from '../shared/components';
+import { Avatar } from '../../../components/common';
 import { formatDateTime } from '../shared/utils/dateTime';
 
 import * as FirestoreService from '../App/services/firestore';

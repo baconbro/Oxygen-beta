@@ -7,7 +7,7 @@ import {
 } from '../../../components/partials'
 import { useLayout } from '../../core'
 import { useAuth } from '../../../modules/auth'
-import { Avatar } from '../../../modules/alpha1/shared/components'
+import { Avatar } from '../../../components/common/'
 
 const toolbarButtonMarginClass = 'ms-1 ms-lg-3',
   toolbarButtonHeightClass = 'w-30px h-30px w-md-40px h-md-40px',

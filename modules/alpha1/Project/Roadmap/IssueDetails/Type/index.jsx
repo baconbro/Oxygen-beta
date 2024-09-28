@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { IssueType, IssueTypeCopy } from '../../../../shared/constants/issues';
-import { IssueTypeIcon, Select } from '../../../../shared/components';
+import { IssueType, IssueTypeCopy } from '../../../../../../constants/issues';
+import { IssueTypeIcon, Select } from '../../../../../../components/common';
 
 import { TypeButton, Type, TypeLabel } from './Styles';
 

@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { IssuePriority, IssuePriorityCopy } from '../../../../shared/constants/issues';
-import { Select, IssuePriorityIcon } from '../../../../shared/components';
+import { IssuePriority, IssuePriorityCopy } from '../../../../../../constants/issues';
+import { Select, IssuePriorityIcon } from '../../../../../../components/common';
 
 import { SectionTitle } from '../Styles';
 import { Priority, Label } from './Styles';

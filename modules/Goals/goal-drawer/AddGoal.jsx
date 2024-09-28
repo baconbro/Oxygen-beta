@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Textarea } from '../../alpha1/shared/components';
+import { Textarea } from '../../../components/common';
 import { Actions, FormButton } from '../../alpha1/Project/Board/Lists/List/Styles.js';
-import { KeyCodes } from '../../alpha1/shared/constants/keyCodes';
+import { KeyCodes } from '../../../constants/keyCodes';
 import { useAuth } from '../../auth';
 import { useAddOKR } from '../../../services/okrServices';
 

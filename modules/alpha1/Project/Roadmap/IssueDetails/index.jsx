@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { PageError, CopyLinkButton, Button, AboutTooltip } from '../../../shared/components';
+import { PageError, CopyLinkButton, Button, AboutTooltip } from '../../../../../components/common';
 
 import Loader from './Loader';
 import Type from './Type';
@@ -17,7 +17,7 @@ import Dates from './Dates';
 import { TopActions, TopActionsRight, Content, Left, Right } from './Styles';
 import ProjectBoardIssueDetailsReporter from './Reporter';
 import Progress from './Progress';
-import { issueTypeColors } from '../../../shared/utils/styles';
+import { issueTypeColors } from '../../../../../utils/styles';
 import TagsComponent from './Tags';
 import SubsComponent from './Subs';
 

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
 import { Modal } from 'react-bootstrap'
-import { Avatar } from '../../alpha1/shared/components';
-import { formatDateTime } from '../../alpha1/shared/utils/dateTime';
+import { Avatar } from '../../../components/common';
+import { formatDateTime } from '../../../utils/dateTime';
 
 import * as FirestoreService from '../../alpha1/App/services/firestore';
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import clsx from 'clsx'
-import toast from '../../alpha1/shared/utils/toast';
+import toast from '../../../utils/toast';
 
 import Plan from './Plan';
 import { getAnalytics, logEvent } from "firebase/analytics";

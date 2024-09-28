@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { color, font, mixin } from '../../shared/utils/styles';
-import { InputDebounced, Icon } from '../../shared/components';
+import { color, font, mixin } from '../../../../utils/styles';
+import { InputDebounced, Icon } from '../../../../components/common';
 
 export const IssueSearch = styled.div`
   padding: 25px 35px 60px;

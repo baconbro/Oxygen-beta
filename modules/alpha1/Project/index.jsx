@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Route, useLocation, useNavigate, useParams, Navigate, Routes } from 'react-router-dom';
 
-import { updateArrayItemById } from '../shared/utils/javascript';
-import { createQueryParamModalHelpers } from '../shared/utils/queryParamModal';
-import { PageLoader, Modal } from '../shared/components';
+import { updateArrayItemById } from '../../../utils/javascript';
+import { createQueryParamModalHelpers } from '../../../utils/queryParamModal';
+import { PageLoader, Modal } from '../../../components/common';
 
 import Board from './Board';
 import IssueSearch from './IssueSearch';

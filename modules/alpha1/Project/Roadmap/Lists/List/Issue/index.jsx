@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useMatch } from 'react-router-dom';
 import { Draggable } from 'react-beautiful-dnd';
 
-import { IssueTypeIcon, IssuePriorityIcon } from '../shared/components';
+import { IssueTypeIcon, IssuePriorityIcon } from '../../../components/common';
 
 import { IssueLink, Issue, Assignees, AssigneeAvatar } from './Styles';
 

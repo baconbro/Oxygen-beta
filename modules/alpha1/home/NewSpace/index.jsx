@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import toast from '../../shared/utils/toast';
-import { Form } from '../../shared/components';
+import toast from '../../../../utils/toast';
+import { Form } from '../../../../components/common';
 import {
   FormHeading,
   FormElement,
@@ -12,7 +12,7 @@ import {
 } from './Styles';
 import * as FirestoreService from '../../App/services/firestore';
 import { useAuth } from "../../App/contexts/AuthContext"
-import history from '../../browserHistory';
+import history from '../../../../utils/browserHistory';
 
 const CreateSpace = ({ modalClose, orgs }) => {
   const { currentUser } = useAuth()

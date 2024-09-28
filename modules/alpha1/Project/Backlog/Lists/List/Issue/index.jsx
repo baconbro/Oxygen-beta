@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Draggable } from 'react-beautiful-dnd';
 
-import { IssueTypeIcon, IssuePriorityIcon } from '../../../../../shared/components';
+import { IssueTypeIcon, IssuePriorityIcon } from '../../../../../../../components/common';
 
 import { IssueLink, Issue, Assignees, AssigneeAvatar } from './Styles';
 import { useWorkspace } from '../../../../../App/contexts/WorkspaceProvider';

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
-import { CopyLinkButton, } from '../alpha1/shared/components';
+import { CopyLinkButton, } from '../../components/common';
 
 import Loader from '../alpha1/Project/Board/IssueDetails/Loader';
 
@@ -19,11 +19,11 @@ import { useAuth } from '../auth';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { useWorkspace } from '../alpha1/App/contexts/WorkspaceProvider';
 import { Modal } from 'react-bootstrap'
-import { InputDebounced } from '../alpha1/shared/components'
+import { InputDebounced } from '../../components/common'
 import { isNil } from 'lodash';
-import DatePicker from '../alpha1/shared/components/DatePicker';
+import DatePicker from '../../components/common/DatePicker';
 import { toAbsoluteUrl } from '../../utils'
-import { customStatus, getScoreColor } from '../alpha1/shared/constants/custom';
+import { customStatus, getScoreColor } from '../../constants/custom';
 import { useUpdateOKR } from '../../services/okrServices';
 
 

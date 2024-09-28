@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon, AboutTooltip, Avatar } from '../../shared/components';
+import { Icon, AboutTooltip, Avatar } from '../../../../components/common';
 
 import { NavLeft, LogoLink, StyledLogo, Bottom, Item, ItemText } from './Styles';
 

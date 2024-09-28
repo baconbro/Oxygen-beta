@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { color, font, mixin } from '../shared/utils/styles';
-import { Avatar } from '../shared/components';
+import { Avatar } from '../../../components/common';
 
 export const IssueLink = styled(Link)`
   display: block;

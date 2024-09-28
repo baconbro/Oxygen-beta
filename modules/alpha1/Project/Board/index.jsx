@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 
-import useMergeState from '../../shared/hooks/mergeState';
+import useMergeState from '../../../../hooks/mergeState';
 import Filters from './Filters';
 import IssueDetails from './IssueDetails';
 import { Modal } from 'react-bootstrap'

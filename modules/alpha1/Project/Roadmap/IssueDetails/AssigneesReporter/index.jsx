@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { Avatar, Select, Icon } from '../../../../shared/components';
+import { Avatar, Select, Icon } from '../../../../../../components/common';
 
 import { SectionTitle } from '../Styles';
 import { User, Username } from './Styles';

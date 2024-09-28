@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { isNil } from 'lodash';
 
-import { InputDebounced, Modal, Button } from '../../../../shared/components';
+import { InputDebounced, Modal, Button } from '../../../../../../components/common';
 
 import TrackingWidget from './TrackingWidget';
 import { SectionTitle } from '../Styles';

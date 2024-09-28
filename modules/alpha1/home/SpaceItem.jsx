@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import * as FirestoreService from '../App/services/firestore';
 
-import { ProjectAvatar } from '../shared/components';
+import { ProjectAvatar } from '../../../components/common';
 
 const SpaceItem = ({org}) => {
     const [spaces, setSpaces] = useState([]);

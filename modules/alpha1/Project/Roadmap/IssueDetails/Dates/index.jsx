@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { formatDateTimeConversational,formatDate } from '../../../../shared/utils/dateTime';
+import { formatDateTimeConversational,formatDate } from '../../../../../../utils/dateTime';
 
 import { Dates } from './Styles';
 import { SectionTitle } from '../Styles';
-import DatePicker from '../../../../shared/components/DatePicker';
+import DatePicker from '../../../../../../components/common/DatePicker';
 
 const propTypes = {
   issue: PropTypes.object.isRequired,

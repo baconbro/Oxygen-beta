@@ -1,7 +1,7 @@
 import React, { Fragment, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { Textarea } from '../../../alpha1/shared/components';
+import { Textarea } from '../../../../components/common';
 
 import { Actions, FormButton } from './Styles';
 

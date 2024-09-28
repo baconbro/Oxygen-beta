@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { Textarea } from '../../../../shared/components';
+import { Textarea } from '../../../../../../components/common';
 import { Actions, FormButton } from './Styles';
 import * as FirestoreService from '../../../../App/services/firestore';
-import toast from '../../../../shared/utils/toast';
-import { KeyCodes } from '../../../../shared/constants/keyCodes';
+import toast from '../../../../../../utils/toast';
+import { KeyCodes } from '../../../../../../constants/keyCodes';
 
 import { useAuth } from '../../../../../auth';
 import { useAddItem } from '../../../../../../services/itemServices';

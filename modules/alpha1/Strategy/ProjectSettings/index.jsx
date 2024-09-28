@@ -1,7 +1,7 @@
 import React from 'react';
 
 import toast from '../shared/utils/toast';
-import { Form, Breadcrumbs, Select, Avatar } from '../shared/components';
+import { Form, Breadcrumbs, Select, Avatar } from '../../../components/common';
 
 import { FormCont, FormHeading, FormElement, ActionButton } from './Styles';
 import ProjectMembers from './Members'

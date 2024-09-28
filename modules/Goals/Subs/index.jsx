@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Create from './Create';
 import  Title  from '../../alpha1/Project/Board/IssueDetails/Title';
-import {InputDebounced } from '../../alpha1/shared/components'
+import {InputDebounced } from '../../../components/common'
 import { isNil } from 'lodash';
-import { getScoreColor } from '../../alpha1/shared/constants/custom';
+import { getScoreColor } from '../../../constants/custom';
 
 const KrData = [
   {

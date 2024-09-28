@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-import toast from '../../shared/utils/toast';
-import { Form, IssueTypeIcon, Icon, Avatar, IssuePriorityIcon } from '../../shared/components';
+import toast from '../../../../utils/toast';
+import { Form, IssueTypeIcon, Icon, Avatar, IssuePriorityIcon } from '../../../../components/common';
 
 import {
   FormHeading,

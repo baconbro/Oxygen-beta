@@ -1,8 +1,8 @@
 import React from 'react';
-import toast from '../../shared/utils/toast';
-import { ConfirmModal } from '../../shared/components';
+import toast from '../../../../utils/toast';
+import { ConfirmModal } from '../../../../components/common';
 import * as FirestoreService from '../../App/services/firestore';
-import history from '../../browserHistory';
+import history from '../../../../utils/browserHistory';
 import { useNavigate } from "react-router-dom";
 
 const ProjectDelete = ({ project }) => {

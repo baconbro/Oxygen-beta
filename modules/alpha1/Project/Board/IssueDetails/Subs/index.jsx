@@ -4,7 +4,7 @@ import Create from './Create';
 import ProjectBoardIssueDetailsDelete from '../Delete';
 import * as FirestoreService from '../../../../App/services/firestore';
 import { Link,useLocation } from "react-router-dom";
-import { issueTypeColors } from '../../../../shared/utils/styles';
+import { issueTypeColors } from '../../../../../../utils/styles';
 import { useAuth } from '../../../../../auth';
 import  Status  from '../Status';
 

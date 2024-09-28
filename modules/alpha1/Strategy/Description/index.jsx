@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 
 
 import { getTextContentsFromHtmlString } from '../../shared/utils/browser';
-import { TextEditor, TextEditedContent, Button } from '../../shared/components';
+import { TextEditor, TextEditedContent, Button } from '../../../../components/common';
 
 import { Title, EmptyLabel, Actions } from './Styles';
 

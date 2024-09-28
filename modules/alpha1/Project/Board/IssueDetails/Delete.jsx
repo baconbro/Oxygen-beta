@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import toast from '../../../shared/utils/toast';
-import { Button, ConfirmModal } from '../../../shared/components';
+import toast from '../../../../../utils/toast';
+import { Button, ConfirmModal } from '../../../../../components/common';
 
 //firebase
 import * as FirestoreService from '../../../App/services/firestore';

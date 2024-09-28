@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, useMatch, useNavigate, useParams, Navigate } from 'react-router-dom';
 
 
-import { PageLoader, Modal } from '../shared/components';
+import { PageLoader, Modal } from '../../../components/common';
 
 import * as FirestoreService from '../App/services/firestore';
 import Header from '../Org/Header';

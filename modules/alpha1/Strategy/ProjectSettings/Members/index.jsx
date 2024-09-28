@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Select, Avatar, Icon } from '../shared/components';
+import { Select, Avatar, Icon } from '../../../components/common';
 
 import { SectionTitle } from '../../Board/IssueDetails/Styles';
 import { User, Username } from '../../Board/IssueDetails/AssigneesReporter/Styles';

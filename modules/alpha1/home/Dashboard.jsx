@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { createQueryParamModalHelpers } from '../shared/utils/queryParamModal';
-import { Modal } from '../shared/components';
+import { createQueryParamModalHelpers } from '../../../utils/queryParamModal';
+import { Modal } from '../../../components/common';
 import Sidebar from './Sidebar';
 import Header from '../Org/Header';
 import * as FirestoreService from '../App/services/firestore';
@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import CreateOrg from './NewOrg';
 import CreateSpace from './NewSpace';
 import { useAuth } from "../App/contexts/AuthContext"
-import { ProjectAvatar } from '../shared/components';
+import { ProjectAvatar } from '../../../components/common';
 
 import { getAnalytics, logEvent } from "firebase/analytics";
 import SuperAdmin from './SuperAdmin';

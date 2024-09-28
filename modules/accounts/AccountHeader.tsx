@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router'
 import { useAuth } from '../auth'
 import { toAbsoluteUrl } from '../../utils'
-import { Avatar } from '../alpha1/shared/components'
+import { Avatar } from '../../components/common'
 import ImageInput from './components/ImageInput'
 import * as FirestoreService from '../alpha1/App/services/firestore'
 

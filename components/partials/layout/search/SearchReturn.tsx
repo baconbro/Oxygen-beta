@@ -2,9 +2,7 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import { SearchComponent } from '../../../../components/common'
 import { InlineSVG } from '../../../../utils'
 import { useWorkspace } from '../../../../modules/alpha1/App/contexts/WorkspaceProvider'
-import { IssueTypeIcon } from '../../../../modules/alpha1/shared/components'
 import { Status } from '../../../../modules/alpha1/Project/Board/IssueDetails/Status/Styles'
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore'
 
 interface SearchProps {
   orgId: any;

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import toast from '../../../../../shared/utils/toast';
+import toast from '../../../../../../../utils/toast';
 
 import BodyForm from '../BodyForm';
 import ProTip from './ProTip';

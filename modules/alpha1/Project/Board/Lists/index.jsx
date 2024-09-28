@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import useCurrentUser from '../../../shared/hooks/currentUser';
-import { moveItemWithinArray, insertItemIntoArray } from '../../../shared/utils/javascript';
-import { IssueStatus } from '../../../shared/constants/issues';
+import useCurrentUser from '../../../../../hooks/currentUser';
+import { moveItemWithinArray, insertItemIntoArray } from '../../../../../utils/javascript';
+import { IssueStatus } from '../../../../../constants/issues';
 
 import List from './List';
 //import { Lists } from './Styles';
@@ -13,7 +13,7 @@ import EmptyBoard from '../../../App/emptyStates/emptyBoard';
 //firebase
 import * as FirestoreService from '../../../App/services/firestore';
 
-import { IssueTypeIcon, IssuePriorityIcon } from '../../../shared/components';
+import { IssueTypeIcon, IssuePriorityIcon } from '../../../../../components/common';
 import { useUpdateItem } from '../../../../../services/itemServices';
 
 const propTypes = {

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Textarea } from '../shared/components';
+import { Textarea } from '../../../components/common';
 import { Actions, FormButton } from './Styles';
 import * as FirestoreService from '../../../../App/services/firestore';
 import toast from '../shared/utils/toast';

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-beautiful-dnd';
 
-import useCurrentUser from '../../../shared/hooks/currentUser';
-import { moveItemWithinArray, insertItemIntoArray } from '../../../shared/utils/javascript';
-//import { IssueStatus } from '../../../shared/constants/issues';
+import useCurrentUser from '../../../../../hooks/currentUser';
+import { moveItemWithinArray, insertItemIntoArray } from '../../../../../utils/javascript';
+//import { IssueStatus } from '../../../../../constants/issues';
 
 import List from './List';
 import { Lists } from './Styles';

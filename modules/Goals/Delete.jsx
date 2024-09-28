@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button, ConfirmModal } from '../alpha1/shared/components';
+import { Button, ConfirmModal } from '../../components/common';
 
 
 import { useAuth } from '../auth';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { sortByNewest } from '../../../../shared/utils/javascript';
+import { sortByNewest } from '../../../../../../utils/javascript';
 
 import Create from './Create';
 import Comment from './Comment';

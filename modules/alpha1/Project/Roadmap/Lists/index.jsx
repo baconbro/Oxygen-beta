@@ -5,7 +5,7 @@ import "gantt-task-react/dist/index.css";
 import { getStartEndDateForProject } from "./Tasks";
 import { ViewSwitcher } from "./view-switcher";
 import { useLocation } from 'react-router-dom';
-import history from '../../../browserHistory';
+import history from '../../../../../utils/browserHistory';
 import { intersection } from 'lodash';
 import moment from 'moment';
 import { useNavigate } from "react-router-dom";

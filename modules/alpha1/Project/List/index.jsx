@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import useMergeState from '../../shared/hooks/mergeState';
-import { Breadcrumbs, Modal, Avatar } from '../../shared/components';
+import useMergeState from '../../../../hooks/mergeState';
+import { Breadcrumbs, Modal, Avatar } from '../../../../components/common';
 import Filters from '../Board/Filters';
 import Lists from '../Board/Lists';
 import IssueDetails from '../Board/IssueDetails';
@@ -9,18 +9,18 @@ import { getAnalytics, logEvent } from "firebase/analytics";
 import * as FirestoreService from '../../App/services/firestore';
 import { useWorkspace } from '../../App/contexts/WorkspaceProvider';
 import { Status } from '../Board/IssueDetails/Status/Styles';
-import { IssueStatusCopy } from '../../shared/constants/issues';
+import { IssueStatusCopy } from '../../../../constants/issues';
 import AddItem from '../Board/Lists/List/AddItem';
 import EmptyList from '../../App/emptyStates/emptyList';
 import { Type, TypeLabel } from '../Board/IssueDetails/Type/Styles';
-import { IssueTypeCopy, IssuePriorityCopy } from '../../shared/constants/issues';
-import { IssueTypeIcon, IssuePriorityIcon } from '../../shared/components/';
+import { IssueTypeCopy, IssuePriorityCopy } from '../../../../constants/issues';
+import { IssueTypeIcon, IssuePriorityIcon } from '../../../../components/common';
 import { User, Username } from '../Board/IssueDetails/Reporter/Styles';
-import { formatDate } from '../../shared/utils/dateTime';
+import { formatDate } from '../../../../utils/dateTime';
 import { Priority, Label } from '../Board/IssueDetails/Priority/Styles';
 import { intersection } from 'lodash';
 import moment from 'moment';
-import { IconComponent, IconText } from '../../shared/utils/iconComponent';
+import { IconComponent, IconText } from '../../../../utils/iconComponent';
 
 import {
   createColumnHelper,

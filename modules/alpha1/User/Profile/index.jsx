@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { ProjectCategory, ProjectCategoryCopy } from '../../shared/constants/projects';
-import toast from '../../shared/utils/toast';
-import { Form, Breadcrumbs } from '../../shared/components';
+import toast from '../../../../utils/toast';
+import { Form, Breadcrumbs } from '../../../../components/common';
 
 import { FormCont, FormHeading, FormElement, ActionButton } from './Styles';
 import { useAuth } from "../../App/contexts/AuthContext"
