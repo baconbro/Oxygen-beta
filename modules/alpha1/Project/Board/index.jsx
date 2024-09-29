@@ -8,7 +8,7 @@ import IssueDetails from './IssueDetails';
 import { Modal } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom';
 import * as FirestoreService from '../../App/services/firestore';
-import { useWorkspace } from '../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../contexts/WorkspaceProvider';
 import Dnd from './Lists/dnd';
 import { useAuth } from '../../../auth';
 import { useGetUser } from '../../../../services/userServices';

@@ -10,7 +10,7 @@ import {PageDataProvider} from './core'
 import {useLocation} from 'react-router-dom'
 import {ThemeModeProvider} from '../components/partials'
 import {MenuComponent} from '../components/common'
-import { WorkspaceProvider } from '../modules/alpha1/App/contexts/WorkspaceProvider'
+import { WorkspaceProvider } from '../contexts/WorkspaceProvider'
 
 const MasterLayout = () => {
   const location = useLocation()

@@ -6,7 +6,7 @@ import { Select, Icon } from '../../../../../../components/common';
 
 import { SectionTitle } from '../Styles';
 import { Status } from './Styles';
-import { useWorkspace } from '../../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../../contexts/WorkspaceProvider';
 
 const propTypes = {
   issue: PropTypes.object.isRequired,

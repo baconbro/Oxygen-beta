@@ -1,4 +1,4 @@
-import { InlineSVG } from "../../../../utils"
+import { InlineSVG } from "../../../utils"
 
 
 const EmptyWorkspace = ({

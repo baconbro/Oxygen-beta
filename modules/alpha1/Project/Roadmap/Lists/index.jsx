@@ -9,7 +9,7 @@ import history from '../../../../../utils/browserHistory';
 import { intersection } from 'lodash';
 import moment from 'moment';
 import { useNavigate } from "react-router-dom";
-import EmptyTimeline from '../../../App/emptyStates/emptyTimeline';
+import EmptyTimeline from '../../../../../components/common/emptyStates/emptyTimeline';
 
 
 

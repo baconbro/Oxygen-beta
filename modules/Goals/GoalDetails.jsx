@@ -17,7 +17,7 @@ import SubsComponent from './Subs';
 
 import { useAuth } from '../auth';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
-import { useWorkspace } from '../alpha1/App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../contexts/WorkspaceProvider';
 import { Modal } from 'react-bootstrap'
 import { InputDebounced } from '../../components/common'
 import { isNil } from 'lodash';

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { borderRadius, grid } from '../styles/constants';
 import { Avatar, IssueTypeIcon, IssuePriorityIcon } from '../../../../../../../components/common';
-import { useWorkspace } from '../../../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../../../contexts/WorkspaceProvider';
 import { IssueLink, Issue, Assignees, AssigneeAvatar } from '../../List/Issue/Styles';
 import { Link } from 'react-router-dom';
 import { IconComponent } from '../../../../../../../utils/iconComponent';

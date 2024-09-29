@@ -12,7 +12,7 @@ import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 import CreateOrg from './NewOrg';
 import CreateSpace from './NewSpace';
-import { useAuth } from "../App/contexts/AuthContext"
+import { useAuth } from "../../../contexts/AuthContext"
 import { ProjectAvatar } from '../../../components/common';
 
 import { getAnalytics, logEvent } from "firebase/analytics";

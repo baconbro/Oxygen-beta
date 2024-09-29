@@ -6,7 +6,7 @@ import toast from '../../../../utils/toast';
 import { Form, Breadcrumbs } from '../../../../components/common';
 
 import { FormCont, FormHeading, FormElement, ActionButton } from './Styles';
-import { useAuth } from "../../App/contexts/AuthContext"
+import { useAuth } from "../../../../contexts/AuthContext"
 import NavbarLeft from '../../Project/NavbarLeft';
 import { ProjectPage } from '../../Project/Styles';
 import Sidebar from './Sidebar';

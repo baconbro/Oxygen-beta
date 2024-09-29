@@ -5,7 +5,7 @@ import { Icon, AboutTooltip, Avatar } from '../../../components/common';
 
 import { NavLeft, LogoLink, StyledLogo, Bottom, Item, ItemText } from './Styles';
 
-import { useAuth } from "../../App/contexts/AuthContext"
+import { useAuth } from "../../../../contexts/AuthContext"
 import { Link } from 'react-router-dom'
 
 const propTypes = {

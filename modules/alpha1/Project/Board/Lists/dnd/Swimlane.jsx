@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useWorkspace } from "../../../../App/contexts/WorkspaceProvider";
+import { useWorkspace } from "../../../../../../contexts/WorkspaceProvider";
 import { Avatars,StyledAvatar } from "../../Filters/Styles";
 
 const headerStyle = {

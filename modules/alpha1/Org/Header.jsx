@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../App/assets/img/logo_oxy.png';
-import { useAuth } from "../App/contexts/AuthContext"
+import { useAuth } from "../../../contexts/AuthContext"
 import { Link } from 'react-router-dom';
 import { Avatar } from '../../../components/common';
 import './Styles.css'

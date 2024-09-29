@@ -6,7 +6,7 @@ import { IssueTypeIcon, Select } from '../../../../../../components/common';
 
 import { TypeButton, Type, TypeLabel } from './Styles';
 
-import { useWorkspace } from '../../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../../contexts/WorkspaceProvider';
 
 const propTypes = {
   issue: PropTypes.object.isRequired,

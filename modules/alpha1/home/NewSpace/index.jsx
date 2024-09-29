@@ -11,7 +11,7 @@ import {
   ActionButton,
 } from './Styles';
 import * as FirestoreService from '../../App/services/firestore';
-import { useAuth } from "../../App/contexts/AuthContext"
+import { useAuth } from "../../../../contexts/AuthContext"
 import history from '../../../../utils/browserHistory';
 
 const CreateSpace = ({ modalClose, orgs }) => {

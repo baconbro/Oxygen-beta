@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import { SearchComponent } from '../../../../components/common'
 import { InlineSVG } from '../../../../utils'
-import { useWorkspace } from '../../../../modules/alpha1/App/contexts/WorkspaceProvider'
+import { useWorkspace } from '../../../../contexts/WorkspaceProvider'
 import { Status } from '../../../../modules/alpha1/Project/Board/IssueDetails/Status/Styles'
 import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore'
 

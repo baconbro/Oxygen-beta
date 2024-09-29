@@ -5,7 +5,7 @@ import { Avatar, Select, Icon } from '../../../../../../components/common';
 
 import { SectionTitle } from '../Styles';
 import { User, Username } from './Styles';
-import { useWorkspace } from '../../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../../contexts/WorkspaceProvider';
 
 const propTypes = {
   issue: PropTypes.object.isRequired,

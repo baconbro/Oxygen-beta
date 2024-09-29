@@ -13,7 +13,7 @@ import {
 } from './Styles';
 import { Modal } from 'react-bootstrap'
 import ProjectMembers from '../../ProjectSettings/Members';
-import { useWorkspace } from '../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../contexts/WorkspaceProvider';
 import findAvailableParameters from '../../../../../utils/issueVariables';
 
 const propTypes = {

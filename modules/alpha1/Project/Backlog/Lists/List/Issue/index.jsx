@@ -5,7 +5,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { IssueTypeIcon, IssuePriorityIcon } from '../../../../../../../components/common';
 
 import { IssueLink, Issue, Assignees, AssigneeAvatar } from './Styles';
-import { useWorkspace } from '../../../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../../../contexts/WorkspaceProvider';
 
 const propTypes = {
   projectUsers: PropTypes.array.isRequired,

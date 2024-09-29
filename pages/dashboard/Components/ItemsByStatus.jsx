@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts'
 import {getItemsByStatus} from "../../../modules/alpha1/App/services/firestore";
  import { useAuth } from "../../../modules/auth";
  import { IssueStatus } from "../../../modules/alpha1/shared/constants/issues";
- import { useWorkspace } from "../../../modules/alpha1/App/contexts/WorkspaceProvider";
+ import { useWorkspace } from "../../../contexts/WorkspaceProvider";
 
 const ChartItemByStatus = () => {
   const [series, setSeries] = useState([]);

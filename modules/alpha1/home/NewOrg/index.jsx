@@ -17,7 +17,7 @@ import {
 
 //firebase
 import * as FirestoreService from '../../App/services/firestore';
-import { useAuth } from "../../App/contexts/AuthContext"
+import { useAuth } from "../../../../contexts/AuthContext"
 
 const propTypes = {
  

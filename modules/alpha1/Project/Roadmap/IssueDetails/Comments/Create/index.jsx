@@ -6,7 +6,7 @@ import ProTip from './ProTip';
 import { Create, UserAvatar, Right, FakeTextarea } from './Styles';
 
 import * as FirestoreService from '../../../../../App/services/firestore';
-import { useAuth } from "../../../../../App/contexts/AuthContext"
+import { useAuth } from "../../../../../../../contexts/AuthContext"
 
 
 const ProjectBoardIssueDetailsCommentsCreate = ({ issueId, fetchIssue }) => {

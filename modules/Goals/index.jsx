@@ -4,12 +4,12 @@ import useMergeState from '../../hooks/mergeState';
 import { Breadcrumbs, Modal, Avatar } from '../../components/common';
 
 import * as FirestoreService from '../alpha1/App/services/firestore';
-import { useWorkspace } from '../alpha1/App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../contexts/WorkspaceProvider';
 
 import { Status } from '../alpha1/Project/Board/IssueDetails/Status/Styles';
 import { customStatus, getScoreColor } from '../../constants/custom';
 import AddGoal from './goal-drawer/AddGoal';
-import EmptyGoals from '../alpha1/App/emptyStates/emptyGoals';
+import EmptyGoals from '../../components/common/emptyStates/emptyGoals';
 
 
 import {

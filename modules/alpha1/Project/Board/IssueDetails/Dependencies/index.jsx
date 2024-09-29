@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Search } from '../../../../../../components/partials';
 import DepDescription from './depDescription';
 import * as Firestore from '../../../../App/services/firestore';
-import { useWorkspace } from '../../../../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../../../../contexts/WorkspaceProvider';
 import { Select,IssueTypeIcon } from '../../../../../../components/common';
 import { SectionTitle } from '../Styles'; 
 import { useAuth } from '../../../../../auth';

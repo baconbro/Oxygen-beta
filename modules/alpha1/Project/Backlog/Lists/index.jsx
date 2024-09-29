@@ -8,7 +8,7 @@ import { moveItemWithinArray, insertItemIntoArray } from '../../../../../utils/j
 
 import List from './List';
 import { Lists } from './Styles';
-import EmptyBacklog from '../../../App/emptyStates/emptyBacklog';
+import EmptyBacklog from '../../../../../components/common/emptyStates/emptyBacklog';
 
 //firebase
 import * as FirestoreService from '../../../App/services/firestore';

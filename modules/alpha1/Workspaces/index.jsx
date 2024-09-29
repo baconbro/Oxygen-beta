@@ -3,7 +3,7 @@ import { useAuth } from "../../auth";
 
 import * as FirestoreService from '../App/services/firestore'
 import WorkspaceHeaderMenu from "../../../layout/components/header/Workspace";
-import EmptyWorkspace from "../App/emptyStates/emptyWorkspace";
+import EmptyWorkspace from "../../../components/common/emptyStates/emptyWorkspace";
 import { useGetSpaces } from "../../../services/workspaceServices";
 
 

@@ -8,7 +8,7 @@ import { IssueStatus } from '../../../../../constants/issues';
 
 import List from './List';
 import { Lists } from './Styles';
-import EmptyBoard from '../../../App/emptyStates/emptyBoard';
+import EmptyBoard from '../../../../../../components/common/emptyStates/emptyBoard';
 
 //firebase
 import * as FirestoreService from '../../../App/services/firestore';

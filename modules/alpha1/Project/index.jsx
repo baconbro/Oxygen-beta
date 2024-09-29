@@ -17,7 +17,7 @@ import Roadmap from './Roadmap';
 import { PageTitle } from '../../../layout/core';
 import IssueDetailsPage from './Board/issueDetail';
 import { useAuth } from '../../auth';
-import { useWorkspace } from '../App/contexts/WorkspaceProvider';
+import { useWorkspace } from '../../../contexts/WorkspaceProvider';
 import List from './List';
 
 import { useGetSpace } from '../../../services/workspaceServices';

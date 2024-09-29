@@ -5,7 +5,7 @@ import TopBarProgress from 'react-topbar-progress-indicator'
 import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
 import { getCSSVariableValue } from '../utils/index'
 import { WithChildren } from '../utils/index'
-import { WorkspaceProvider } from '../modules/alpha1/App/contexts/WorkspaceProvider'
+import { WorkspaceProvider } from '../contexts/WorkspaceProvider'
 import { Workspacehome } from '../modules/alpha1/Workspaces'
 import CreateWorkspace from '../modules/onboarding/CreateWorkspace'
 

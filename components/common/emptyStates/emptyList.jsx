@@ -1,7 +1,7 @@
-import { InlineSVG } from "../../../../utils"
+import { InlineSVG } from "../../../utils"
 
 
-const EmptyGoals = ({
+const EmptyList = ({
     color = '',
     avatar = '',
     online = false,
@@ -16,18 +16,18 @@ const EmptyGoals = ({
                 <div className="card-body d-flex flex-column flex-center">
                     <div className="mb-2">
                         <h1 className="fw-semibold text-gray-800 text-center lh-lg">
-                        Let's Set and Achieve <span className="fw-bolder"> Goals</span>
+                        Let's manage and prioritise <span className="fw-bolder"> Tasks</span>
                         </h1>
                         <div className="py-10 text-center">
                         <InlineSVG
-                      path='/media/icons/duotune/general/gen020.svg'
-                      className='svg-icon-5x svg-icon-warning'
+                      path='/media/icons/duotune/general/gen037.svg'
+                      className='svg-icon-5x svg-icon-primary'
                     />
                         </div>
                     </div>
                     <div className="text-center mb-1">
-                    <p>Track your goals and achieve success with the OKR view.</p>
-                    <p> Start setting objectives to drive progress and reach your targets!</p>
+                    <p>Start managing your tasks efficiently with the Task view. Create and organize your tasks to stay productive and focused!</p>
+                    <p>Create Your First Task to start</p>
 
                     </div>
                 </div>
@@ -37,4 +37,4 @@ const EmptyGoals = ({
     )
 }
 
-export default EmptyGoals
+export default EmptyList
