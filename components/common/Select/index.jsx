@@ -16,7 +16,7 @@ import {
   AddMore,
 } from './Styles';
 
-import * as FirestoreService from '../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../services/firestore';
 
 const propTypes = {
   className: PropTypes.string,

@@ -3,7 +3,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import useMergeState from '../../hooks/mergeState';
 import { Breadcrumbs, Modal, Avatar } from '../../components/common';
 
-import * as FirestoreService from '../alpha1/App/services/firestore';
+import * as FirestoreService from '../../services/firestore';
 import { useWorkspace } from '../../contexts/WorkspaceProvider';
 
 import { Status } from '../Project/Board/IssueDetails/Status/Styles';

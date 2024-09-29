@@ -1,6 +1,6 @@
 import { getFirestore, collection, getDocs, addDoc, updateDoc, doc,query,where,setDoc ,deleteDoc,getDoc} from 'firebase/firestore';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { db } from '../modules/alpha1/App/services/firestore';
+import { db } from '../services/firestore';
 
 
 const getSpaces = async (orgId) => {

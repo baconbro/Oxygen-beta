@@ -5,7 +5,7 @@ import BodyForm from '../BodyForm';
 
 import { Create, UserAvatar, Right, FakeTextarea } from './Styles';
 
-import * as FirestoreService from '../../../../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../../../services/firestore';
 import { useAuth } from "../../../../../auth"
 
 

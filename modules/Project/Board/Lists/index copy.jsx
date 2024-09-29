@@ -11,7 +11,7 @@ import { Lists } from './Styles';
 import EmptyBoard from '../../../../../components/common/emptyStates/emptyBoard';
 
 //firebase
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 
 import {IssueTypeIcon, IssuePriorityIcon} from '../../../../../components/common';
 

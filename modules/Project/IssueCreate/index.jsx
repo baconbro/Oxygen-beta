@@ -23,7 +23,7 @@ import {
 } from './Styles';
 
 //firebase
-import * as FirestoreService from '../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../services/firestore';
 
 const propTypes = {
   project: PropTypes.object.isRequired,

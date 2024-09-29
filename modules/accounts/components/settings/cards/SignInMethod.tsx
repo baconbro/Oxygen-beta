@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 import {useFormik} from 'formik'
 import {IUpdatePassword, IUpdateEmail, updatePassword} from '../SettingsModel'
 import { useAuth } from '../../../../auth'
-import * as FirestoreService from '../../../../alpha1/App/services/firestore'
+import * as FirestoreService from '../../../../../services/firestore'
 
 const emailFormValidationSchema = Yup.object().shape({
   newEmail: Yup.string()

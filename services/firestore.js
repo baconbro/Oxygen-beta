@@ -33,7 +33,7 @@ import {
 } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { async } from "@firebase/util";
-import { defaultWorkspaceConfig } from "../../../../constants/defaultConfig";
+import { defaultWorkspaceConfig } from "../constants/defaultConfig";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 
 

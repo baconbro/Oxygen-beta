@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Search } from '../../../../../components/partials';
 import DepDescription from './depDescription';
-import * as Firestore from '../../../../alpha1/App/services/firestore';
+import * as Firestore from '../../../../../services/firestore';
 import { useWorkspace } from '../../../../../contexts/WorkspaceProvider';
 import { Select,IssueTypeIcon } from '../../../../../components/common';
 import { SectionTitle } from '../Styles'; 

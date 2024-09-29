@@ -11,7 +11,7 @@ import { Lists } from './Styles';
 import EmptyBacklog from '../../../../components/common/emptyStates/emptyBacklog';
 
 //firebase
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 
 const propTypes = {
   project: PropTypes.object.isRequired,

@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 import { Gantt, Task, EventOption, StylingOption, ViewMode, DisplayOption } from 'gantt-task-react';
 import "gantt-task-react/dist/index.css";
 import { getStartEndDateForProject } from "./Tasks";

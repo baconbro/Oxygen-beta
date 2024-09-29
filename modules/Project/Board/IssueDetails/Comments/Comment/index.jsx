@@ -18,7 +18,7 @@ import {
 import { useAuth } from '../../../../../auth';
 
 //firebase
-import * as FirestoreService from '../../../../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../../../services/firestore';
 
 const propTypes = {
   comment: PropTypes.object.isRequired,

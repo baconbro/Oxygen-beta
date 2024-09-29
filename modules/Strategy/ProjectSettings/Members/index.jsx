@@ -3,7 +3,7 @@ import { Select, Avatar, Icon } from '../../../components/common';
 
 import { SectionTitle } from '../../Board/IssueDetails/Styles';
 import { User, Username } from '../../Board/IssueDetails/AssigneesReporter/Styles';
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 
 const SpaceMembers = ({ project, spaceId }) => {
 

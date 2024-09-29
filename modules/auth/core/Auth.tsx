@@ -13,7 +13,7 @@ import {AuthModel, UserModel} from './_models'
 import * as authHelper from './AuthHelpers'
 import {getUserByToken} from './_requests'
 import {WithChildren} from '../../../utils'
-import * as FirestoreService from '../../alpha1/App/services/firestore'
+import * as FirestoreService from '../../../services/firestore'
 
 type AuthContextProps = {
   auth: AuthModel | undefined

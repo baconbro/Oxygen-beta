@@ -12,7 +12,7 @@ import AddItem from './AddItem';
 
 import ProjectBoardIssueDetailsTitle from '../../IssueDetails/Title';
 
-import { editSpace } from '../../../../alpha1/App/services/firestore';
+import { editSpace } from '../../../../../services/firestore';
 import styled from 'styled-components';
 
 const propTypes = {

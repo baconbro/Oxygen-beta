@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap'
 import { Avatar } from '../../../components/common';
 import { formatDateTime } from '../../../utils/dateTime';
 
-import * as FirestoreService from '../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../services/firestore';
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup'

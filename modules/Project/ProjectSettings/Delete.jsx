@@ -1,7 +1,7 @@
 import React from 'react';
 import toast from '../../../utils/toast';
 import { ConfirmModal } from '../../../components/common';
-import * as FirestoreService from '../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../services/firestore';
 import history from '../../../utils/browserHistory';
 import { useNavigate } from "react-router-dom";
 

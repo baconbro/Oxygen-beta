@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { editSpace, editSpaceNoMerge } from '../../alpha1/App/services/firestore';
+import { editSpace, editSpaceNoMerge } from '../../../services/firestore';
 
 const CustomObject = ({ project }) => {
 

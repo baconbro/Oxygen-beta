@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-import * as FirestoreService from '../../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 
 
 import Title from './Title';

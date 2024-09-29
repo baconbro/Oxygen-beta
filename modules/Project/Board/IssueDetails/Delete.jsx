@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, ConfirmModal } from '../../../../components/common';
 
 //firebase
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 import { useAuth } from '../../../auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDeleteItem } from '../../../../services/itemServices';

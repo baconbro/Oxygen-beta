@@ -3,7 +3,7 @@ import {
     getDoneItemsFromLastWeek,
     getNewItemsFromLastWeek,
     getEditedItemsFromLastWeek
- } from "../../../modules/alpha1/App/services/firestore";
+ } from "../../../services/firestore";
 import { useAuth } from "../../../modules/auth";
 
 

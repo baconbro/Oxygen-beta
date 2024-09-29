@@ -7,7 +7,7 @@ import {useFormik} from 'formik'
 import {getUserByToken, login} from '../core/_requests'
 import {toAbsoluteUrl} from '../../../utils'
 import {useAuth} from '../core/Auth'
-import * as FirestoreService from '../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../services/firestore';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()

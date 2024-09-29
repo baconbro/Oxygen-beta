@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {AuthModel, UserModel} from './_models'
-import * as FirestoreService from '../../alpha1/App/services/firestore'
+import * as FirestoreService from '../../../services/firestore'
 
 const API_URL = process.env.REACT_APP_API_URL
 

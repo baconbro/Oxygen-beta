@@ -6,7 +6,7 @@ import { Form, Breadcrumbs, Select, Avatar } from '../../../components/common';
 import { FormCont, FormHeading, FormElement, ActionButton } from './Styles';
 import ProjectMembers from './Members'
 
-import * as FirestoreService from '../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../services/firestore';
 import Delete from './Delete';
 import { getAnalytics, logEvent } from "firebase/analytics";
 import CustomObject from './CustomObject';

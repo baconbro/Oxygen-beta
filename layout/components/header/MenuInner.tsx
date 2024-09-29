@@ -3,7 +3,7 @@ import { MenuItem } from './MenuItem'
 import { MenuInnerWithSub } from './MenuInnerWithSub'
 import { MegaMenu } from './MegaMenu'
 import { useIntl } from 'react-intl'
-import * as FirestoreService from '../../../modules/alpha1/App/services/firestore'
+import * as FirestoreService from '../../../services/firestore'
 import { useAuth } from '../../../modules/auth'
 
 

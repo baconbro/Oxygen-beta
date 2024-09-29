@@ -3,7 +3,7 @@ import React, { Fragment, useState } from 'react';
 import BodyForm from '../BodyForm';
 import { Create, UserAvatar, Right, FakeTextarea } from './Styles';
 
-import * as FirestoreService from '../../../../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../../../services/firestore';
 import { useAuth } from "../../../../../auth";
 import { SearchReturn } from '../../../../../../components/partials/layout/search/SearchReturn';
 

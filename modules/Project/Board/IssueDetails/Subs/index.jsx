@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { SectionTitle } from '../Styles';
 import Create from './Create';
 import ProjectBoardIssueDetailsDelete from '../Delete';
-import * as FirestoreService from '../../../../alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../../services/firestore';
 import { Link,useLocation } from "react-router-dom";
 import { issueTypeColors } from '../../../../../utils/styles';
 import { useAuth } from '../../../../auth';

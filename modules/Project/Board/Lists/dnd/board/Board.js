@@ -9,7 +9,7 @@ import Column from "./Column";
 import reorder, { reorderQuoteMap } from "../reorder";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { moveItemWithinArray, insertItemIntoArray } from "../../../../../../utils/javascript";
-import { editSubItem, editSpace } from "../../../../../alpha1/App/services/firestore";
+import { editSubItem, editSpace } from "../../../../../../services/firestore";
 import { filterIssues } from "../../../../../../utils/issueFilterUtils";
 import { useUpdateItem } from "../../../../../../services/itemServices";
 

@@ -7,7 +7,7 @@ import { useAuth } from '../auth'
 import { toAbsoluteUrl } from '../../utils'
 import { Avatar } from '../../components/common'
 import ImageInput from './components/ImageInput'
-import * as FirestoreService from '../alpha1/App/services/firestore'
+import * as FirestoreService from '../../services/firestore'
 
 const AccountHeader: React.FC = () => {
   const location = useLocation()

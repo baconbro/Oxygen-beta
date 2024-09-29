@@ -9,7 +9,7 @@ import ItemList from "./list";
 import Title from "../styles/title";
 import AddItem from "../../List/AddItem";
 import { useAuth } from "../../../../../auth";
-import { editSpace } from "../../../../../alpha1/App/services/firestore";
+import { editSpace } from "../../../../../../services/firestore";
 import { IssuesCount } from "../../List/Styles";
 
 const Container = styled.div`

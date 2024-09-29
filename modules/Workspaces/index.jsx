@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth";
 
-import * as FirestoreService from '../alpha1/App/services/firestore'
+import * as FirestoreService from '../../services/firestore'
 import WorkspaceHeaderMenu from "../../layout/components/header/Workspace";
 import EmptyWorkspace from "../../components/common/emptyStates/emptyWorkspace";
 import { useGetSpaces } from "../../services/workspaceServices";

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {IProfileDetails} from '../SettingsModel'
 import * as Yup from 'yup'
 import {useFormik} from 'formik'
-import * as FirestoreService from '../../../../alpha1/App/services/firestore'
+import * as FirestoreService from '../../../../../services/firestore'
 import { useAuth } from '../../../../auth'
 
 const profileDetailsSchema = Yup.object().shape({

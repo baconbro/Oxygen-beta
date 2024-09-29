@@ -3,7 +3,7 @@ import { SearchComponent } from '../../../../components/common'
 import { InlineSVG } from '../../../../utils'
 import { useWorkspace } from '../../../../contexts/WorkspaceProvider'
 import { Status } from '../../../../modules/Project/Board/IssueDetails/Status/Styles'
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore'
+import * as FirestoreService from '../../../../services/firestore'
 
 interface IssueTypeDetails {
   id: number; // Or string, if your IDs are strings

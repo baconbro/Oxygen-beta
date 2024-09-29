@@ -4,9 +4,9 @@ import {FC, Key, useEffect} from 'react'
 import { useAuth } from '../../../../modules/auth'
 
 import { useState } from 'react'
-import { editUser } from '../../../../modules/alpha1/App/services/firestore'
+import { editUser } from '../../../../services/firestore'
 import { string } from 'yup'
-import { getOrgs } from '../../../../modules/alpha1/App/services/firestore'
+import { getOrgs } from '../../../../services/firestore'
 import { DocumentData } from 'firebase/firestore'
 
 

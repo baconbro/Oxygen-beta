@@ -23,7 +23,7 @@ import TaskDependencies from './Dependencies';
 import DetailsPrioritization from './Prioritization';
 import BudgetTracking from './BudgetTracking';
 
-import * as FirestoreService from '../../../../modules/alpha1/App/services/firestore';
+import * as FirestoreService from '../../../../services/firestore';
 
 import { useAuth } from '../../../auth';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
