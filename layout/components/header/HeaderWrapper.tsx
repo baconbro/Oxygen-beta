@@ -24,7 +24,6 @@ export function HeaderWrapper() {
           'd-flex align-items-stretch justify-content-between'
         )}
       >
-        {/* begin::Aside mobile toggle */}
         {aside.display && (
           <div className='d-flex align-items-center d-lg-none ms-n3 me-1' title='Show aside menu'>
             <div
@@ -35,8 +34,6 @@ export function HeaderWrapper() {
             </div>
           </div>
         )}
-        {/* end::Aside mobile toggle */}
-        {/* begin::Logo */}
         {!aside.display && (
           <div className='d-flex align-items-center flex-grow-1 flex-lg-grow-0'>
             <Link to='/dashboard' className='d-lg-none'>
@@ -44,7 +41,6 @@ export function HeaderWrapper() {
             </Link>
           </div>
         )}
-        {/* end::Logo */}
 
         {aside.display && (
           <div className='d-flex align-items-center flex-grow-1 flex-lg-grow-0'>
@@ -54,9 +50,7 @@ export function HeaderWrapper() {
           </div>
         )}
 
-        {/* begin::Wrapper */}
         <div className='d-flex align-items-stretch justify-content-between flex-lg-grow-1'>
-          {/* begin::Navbar */}
           {header.left === 'menu' && (
             <div className='d-flex align-items-stretch' id='xgn_header_nav'>
               <Header />

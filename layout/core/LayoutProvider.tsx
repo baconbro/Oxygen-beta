@@ -69,6 +69,7 @@ const LayoutProvider: FC<WithChildren> = ({children}) => {
     cssVariables,
     setLayout,
   }
+  console.log('LayoutProvider', value)
 
   useEffect(() => {
     disableSplashScreen()

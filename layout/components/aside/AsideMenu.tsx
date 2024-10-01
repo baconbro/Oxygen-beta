@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import {useLocation} from 'react-router'
 import clsx from 'clsx'
 import {AsideMenuMain} from './AsideMenuMain'
-import {DrawerComponent, ScrollComponent, ToggleComponent} from '../../../components/common'
+import {DrawerComponent,ToggleComponent} from '../../../components/common'
 
 type Props = {
   asideMenuCSSClasses: string[]
@@ -15,8 +15,7 @@ const AsideMenu: React.FC<Props> = ({asideMenuCSSClasses}) => {
   useEffect(() => {
     setTimeout(() => {
       DrawerComponent.reinitialization()
-      ToggleComponent.reinitialization()
-      ScrollComponent.reinitialization()
+      ToggleComponent.reinitialization() 
       if (scrollRef.current) {
         scrollRef.current.scrollTop = 0
       }

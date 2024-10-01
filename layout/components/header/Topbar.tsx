@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import React, { FC } from 'react'
-import { InlineSVG, toAbsoluteUrl } from '../../../utils'
+import { FC } from 'react'
+import { InlineSVG } from '../../../utils'
 import {
   HeaderUserMenu,
   ThemeModeSwitcher,
@@ -20,20 +20,15 @@ const Topbar: FC = () => {
 
   return (
     <div className='d-flex align-items-stretch flex-shrink-0'>
-      {/* begin::Theme mode */}
       <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
         <ThemeModeSwitcher
           toggleBtnClass={clsx('btn-active-light-primary btn-custom', toolbarButtonHeightClass)}
         />
       </div>
-      {/* end::Theme mode */}
-
-      {/* begin::User */}
       <div
         className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}
         id='xgn_header_user_menu_toggle'
       >
-        {/* begin::Toggle */}
         <div
           className={clsx('cursor-pointer symbol', toolbarUserAvatarHeightClass)}
           data-xgn-menu-trigger='click'
@@ -41,15 +36,11 @@ const Topbar: FC = () => {
           data-xgn-menu-placement='bottom-end'
           data-xgn-menu-flip='bottom'
         >
-          <Avatar name={currentUser?.all?.fName} avatarUrl={currentUser?.photoURL} size={32} className={''}/>
+          <Avatar name={currentUser?.all?.fName} avatarUrl={currentUser?.photoURL} size={32} className={''} />
 
         </div>
         <HeaderUserMenu />
-        {/* end::Toggle */}
       </div>
-      {/* end::User */}
-
-      {/* begin::Aside Toggler */}
       {config.header.left === 'menu' && (
         <div className='d-flex align-items-center d-lg-none ms-2 me-n3' title='Show header menu'>
           <div

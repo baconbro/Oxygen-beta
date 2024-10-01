@@ -2,11 +2,7 @@ import {useEffect, useRef} from 'react'
 import {
   MenuComponent,
   DrawerComponent,
-  ScrollComponent,
-  ScrollTopComponent,
   StickyComponent,
-  ToggleComponent,
-  SwapperComponent,
 } from '../components/common'
 import { ThemeModeComponent } from '../layout'
 
@@ -19,13 +15,9 @@ export function MasterInit() {
     isFirstRun.current = false
     ThemeModeComponent.init()
     setTimeout(() => {
-      ToggleComponent.bootstrap()
-      ScrollTopComponent.bootstrap()
       DrawerComponent.bootstrap()
       StickyComponent.bootstrap()
       MenuComponent.bootstrap()
-      ScrollComponent.bootstrap()
-      SwapperComponent.bootstrap()
     }, 500)
   }
 

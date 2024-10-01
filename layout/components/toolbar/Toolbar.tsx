@@ -1,17 +1,7 @@
-import React from 'react'
-import {useLayout} from '../../core/LayoutProvider'
-import {Toolbar1} from './Toolbar1'
+import { Toolbar as WorkspaceToolbar } from '../../../modules/Workspaces/Toolbar'
 
 const Toolbar = () => {
-  const {config} = useLayout()
-
-  switch (config.toolbar.layout) {
-    case 'toolbar1':
-      return <Toolbar1 />
-
-    default:
-      return <Toolbar1 />
-  }
+  return <WorkspaceToolbar />
 }
 
-export {Toolbar}
+export { Toolbar }
