@@ -146,7 +146,7 @@ export class LayoutSetup {
     if (typeOptions) {
       let bodyStyles: string = ''
       if (typeOptions.height) {
-        bodyStyles += ` --xgn-toolbar-height: ${typeOptions.height};`
+        bodyStyles += ` --xgn-toolbar-height: 100px;`///${typeOptions.height};`
       }
 
       if (typeOptions.heightAndTabletMobileMode) {

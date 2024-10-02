@@ -2,10 +2,11 @@ import React, { Fragment, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import useMergeState from '../../../hooks/mergeState';
 import { Breadcrumbs, Modal } from '../../../components/common';
-import Filters from '../Board/Filters';
+import Filters from '../Board/Filters/filter';
 import Lists from './Lists';
 import IssueDetails from '../Board/IssueDetails';
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { useWorkspace } from '../../../contexts/WorkspaceProvider';
 
 
 const defaultFilters = {
@@ -26,9 +27,7 @@ const Roadmap = ({ project, fetchProject, updateLocalProjectIssues, refreshData 
   });
   const match = useLocation();
   const history = useNavigate();
-
-  const [filters, mergeFilters] = useMergeState(defaultFilters);
-  const projectUsers = (project.members ? project.users.concat(project.members) : project.users)
+  const { projectUsers, defaultFilters, filters, mergeFilters } = useWorkspace()
 
   useEffect(() => {
     refreshData()

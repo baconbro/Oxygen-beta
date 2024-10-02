@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import useMergeState from '../../../hooks/mergeState';
 import { Breadcrumbs, Modal, Avatar } from '../../../components/common';
-import Filters from '../Board/Filters';
+import Filters from '../Board/Filters/filter';
 import { useWorkspace } from '../../../contexts/WorkspaceProvider';
 import { Status } from '../Board/IssueDetails/Status/Styles';
 import { IssueStatusCopy } from '../../../constants/issues';
@@ -160,9 +160,7 @@ const List = () => {
   const navigate = useNavigate();
   const { project, currentGoal, setCurrentGoal, setOrgUsers, setHighLevelWorkItems, orgUsers } = useWorkspace();
   const [refreshData, setRefreshData] = React.useState(true);
-
-  const [filters, mergeFilters] = useMergeState(defaultFilters);
-  const projectUsers = (project.members ? project.users.concat(project.members) : project.users)
+  const { projectUsers, defaultFilters, filters, mergeFilters } = useWorkspace()
 
 
 

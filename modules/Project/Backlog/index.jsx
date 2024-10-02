@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import useMergeState from '../../../hooks/mergeState';
-import { Breadcrumbs, Modal } from '../../../components/common';
-import Filters from '../Board/Filters';
+import {  Modal } from '../../../components/common';
+import Filters from '../Board/Filters/filter';
 import Lists from './Lists';
 import IssueDetails from '../Board/IssueDetails';
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { useWorkspace } from '../../../contexts/WorkspaceProvider';
 
 
 const defaultFilters = {
@@ -26,9 +26,8 @@ const Backlog = ({ project, fetchProject, updateLocalProjectIssues, refreshData 
   });
   const match = useLocation();
   const history = useNavigate();
+  const { projectUsers, defaultFilters, filters, mergeFilters } = useWorkspace()
 
-  const [filters, mergeFilters] = useMergeState(defaultFilters);
-  const projectUsers = (project.members ? project.users.concat(project.members) : project.users)
 
   useEffect(() => {
     refreshData()
@@ -45,10 +44,7 @@ const Backlog = ({ project, fetchProject, updateLocalProjectIssues, refreshData 
           filters={filters}
           mergeFilters={mergeFilters}
         />
-
       </div>
-
-
       <div className='card kanban flex-row flex-column-fluid' >
         <div className='card-body' style={{ padding: "1rem 1rem" }}>
           <Lists

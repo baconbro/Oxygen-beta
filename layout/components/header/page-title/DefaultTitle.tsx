@@ -1,12 +1,13 @@
 import clsx from 'clsx'
-import React, {FC} from 'react'
-import {Link} from 'react-router-dom'
-import {useLayout} from '../../../core/LayoutProvider'
-import {usePageData} from '../../../core/PageData'
+import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
+import { useLayout } from '../../../core/LayoutProvider'
+import { usePageData } from '../../../core/PageData'
+import ProjectAvatar from '../../../../components/common/ProjectAvatar'
 
 const DefaultTitle: FC = () => {
-  const {pageTitle, pageDescription, pageBreadcrumbs} = usePageData()
-  const {config, classes} = useLayout()
+  const { pageTitle, pageDescription, pageBreadcrumbs } = usePageData()
+  const { config, classes } = useLayout()
   return (
     <div
       id='xgn_page_title'
@@ -15,19 +16,23 @@ const DefaultTitle: FC = () => {
       data-xgn-swapper-parent="{default: '#xgn_content_container', 'lg': '#xgn_toolbar_container'}"
       className={clsx('page-title d-flex', classes.pageTitle.join(' '))}
     >
-      {/* begin::Title */}
       {pageTitle && (
-        <h1 className='d-flex align-items-center text-dark fw-bolder my-1 fs-3'>
-          {pageTitle}
-          {pageDescription && config.pageTitle && config.pageTitle.description && (
-            <>
-              <span className='h-20px border-gray-200 border-start ms-3 mx-2'></span>
-              <small className='text-muted fs-7 fw-bold my-1 ms-1'>{pageDescription}</small>
-            </>
-          )}
-        </h1>
+        <div className="app-page-entry d-flex align-items-center flex-row-fluid gap-3">
+          <span className="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px ">
+            <ProjectAvatar avatarUrl="" name={pageTitle} size={40} className='me-5' />
+          </span>
+
+          <h1 className='d-flex align-items-center text-dark fw-bolder my-1 fs-3'>
+            {pageTitle}
+            {pageDescription && config.pageTitle && config.pageTitle.description && (
+              <>
+                <span className='h-20px border-gray-200 border-start ms-3 mx-2'></span>
+                <small className='text-muted fs-7 fw-bold my-1 ms-1'>{pageDescription}</small>
+              </>
+            )}
+          </h1>
+        </div>
       )}
-      {/* end::Title */}
 
       {pageBreadcrumbs &&
         pageBreadcrumbs.length > 0 &&
@@ -63,4 +68,4 @@ const DefaultTitle: FC = () => {
   )
 }
 
-export {DefaultTitle}
+export { DefaultTitle }

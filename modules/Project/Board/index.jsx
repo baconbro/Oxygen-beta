@@ -1,9 +1,7 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
-
-import useMergeState from '../../../hooks/mergeState';
-import Filters from './Filters';
+import Filters from './Filters/filter';
 import IssueDetails from './IssueDetails';
 import { Modal } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom';
@@ -32,7 +30,7 @@ const defaultFilters = {
 const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refreshData }) => {
 
   //const [projectUsers,setProjectUser] = useState([])
-  const { projectUsers, setProjectUsers } = useWorkspace()
+  const { projectUsers, setProjectUsers,defaultFilters,filters,mergeFilters } = useWorkspace()
 
   const history = useNavigate();
   var id = useParams()
@@ -63,7 +61,7 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
   }, [id.id]);
 
 
-  const [filters, mergeFilters] = useMergeState(defaultFilters);
+  //const [filters, mergeFilters] = useMergeState(defaultFilters);
 
   const [showCreateAppModal, setShowCreateAppModal] = useState(true)
   const closeModal = () => {

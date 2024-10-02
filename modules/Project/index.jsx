@@ -147,24 +147,10 @@ const Project = () => {
     })
   }
 
-
-
-
-
-
-
-
   const refreshData = () => {
     console.log('refreshData');
 
   }
-
-
-
-
-
-
-
 
   const issueSearchModalHelpers = createQueryParamModalHelpers('issue-search');
   const issueCreateModalHelpers = createQueryParamModalHelpers('issue-create');

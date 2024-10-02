@@ -78,6 +78,11 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
     if (Object.keys(availableParameters).length === 0) calculateAvailableParams();
   }, []); // Run once on component mount
 
+  // Global validation
+  if (!project || Object.keys(project).length === 0) {
+    return null;
+  }
+
   return (
     <div className="d-flex flex-wrap flex-stack pb-7">
       <Filters data-testid="board-filters">
@@ -124,7 +129,7 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
           </div>
 
           <div className='modal-body py-lg-10 px-lg-10'>
-            <ProjectMembers project={project} spaceId={project.spaceId} />
+            <ProjectMembers project={project} spaceId={project?.spaceId} />
 
 
           </div>
@@ -141,7 +146,7 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
         {!areFiltersCleared && (
           <ClearAll onClick={() => mergeFilters(defaultFilters)}>Clear all</ClearAll>
         )}
-{/*         <div className='d-flex align-items-center flex-grow-1 mx-7'>
+        {/*         <div className='d-flex align-items-center flex-grow-1 mx-7'>
           <span className='fs-7 fw-bolder text-gray-700 pe-4 text-nowrap d-none d-xxl-block'>
             Group by:
           </span>
@@ -165,8 +170,7 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
         <div className='d-flex align-items-center flex-grow-1 mx-7'>
           <div className="m-0">
             <a href="#" className="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-xgn-menu-trigger="click" data-xgn-menu-placement="bottom-end">
-              <i className="bi bi-collection fs-6 text-muted me-1"><span className="path1"></span><span className="path2"></span></i>
-              Filter types
+              <i className="bi bi-funnel fs-6 text-muted p-0"><span className="path1"></span><span className="path2"></span></i>
             </a>
             <div className="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-xgn-menu="true" id="xgn_menu_644f08fa4bf63" >
               <div className="px-7 py-5">

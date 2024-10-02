@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-
+import useMergeState from '../hooks/mergeState';
 const WorkspaceContext = React.createContext();
 
 export function useWorkspace() {
@@ -18,7 +18,18 @@ export function WorkspaceProvider({ children }) {
     setCards([...cards, card]);
   };
 
- 
+  const defaultFilters = {
+    searchTerm: '',
+    userIds: [],
+    myOnly: false,
+    recent: false,
+    groupBy: 'None',
+    viewType: [],
+    viewStatus: [],
+    hideOld:30,
+  };
+
+  const [filters, mergeFilters] = useMergeState(defaultFilters);
 
   const assignCard = (cardId, userId) => {
     const updatedCards = cards.map(card => {
@@ -43,6 +54,9 @@ export function WorkspaceProvider({ children }) {
     project,
     currentGoal,
     highLevelWorkItems,
+    defaultFilters,
+    filters,
+    mergeFilters,
     setHighLevelWorkItems,
     setCurrentGoal,
     updateProjectContext,
