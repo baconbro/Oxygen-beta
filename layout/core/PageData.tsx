@@ -16,6 +16,14 @@ export interface SideMenu {
   fontIcon?:string
 
 }
+export interface InnerNavigation {
+  position?: number
+  title: string
+  to:string
+  icon?:string
+  fontIcon?:string
+
+}
 
 export interface PageDataContextModel {
   pageTitle?: string
@@ -26,6 +34,8 @@ export interface PageDataContextModel {
   setPageBreadcrumbs: (_breadcrumbs: Array<PageLink>) => void
   pageSideMenu?: Array<SideMenu>
   setPageSideMenu: (_sideMenu: Array<SideMenu>) => void
+  pageInnerNavigation?: Array<InnerNavigation>
+  setPageInnerNavigation: (_innerNavigation: Array<InnerNavigation>) => void
 }
 
 const PageDataContext = createContext<PageDataContextModel>({
@@ -33,6 +43,7 @@ const PageDataContext = createContext<PageDataContextModel>({
   setPageBreadcrumbs: (_breadcrumbs: Array<PageLink>) => {},
   setPageDescription: (_description: string) => {},
   setPageSideMenu: (_sideMenu: Array<SideMenu>) => {},
+  setPageInnerNavigation: (_innerNavigation: Array<InnerNavigation>) => {},
 })
 
 const PageDataProvider: FC<WithChildren> = ({children}) => {
@@ -40,6 +51,7 @@ const PageDataProvider: FC<WithChildren> = ({children}) => {
   const [pageDescription, setPageDescription] = useState<string>('')
   const [pageBreadcrumbs, setPageBreadcrumbs] = useState<Array<PageLink>>([])
   const [pageSideMenu, setPageSideMenu] = useState<Array<SideMenu>>([])
+  const [pageInnerNavigation, setPageInnerNavigation] = useState<Array<InnerNavigation>>([])
   const value: PageDataContextModel = {
     pageTitle,
     setPageTitle,
@@ -49,6 +61,8 @@ const PageDataProvider: FC<WithChildren> = ({children}) => {
     setPageBreadcrumbs,
     pageSideMenu,
     setPageSideMenu,
+    pageInnerNavigation,
+    setPageInnerNavigation
   }
   return <PageDataContext.Provider value={value}>{children}</PageDataContext.Provider>
 }
@@ -61,10 +75,11 @@ type Props = {
   description?: string
   breadcrumbs?: Array<PageLink>
   pageSideMenu?: Array<SideMenu>
+  pageInnerNavigation?: Array<InnerNavigation>
 }
 
-const PageTitle: FC<Props & WithChildren> = ({children, description, breadcrumbs,pageSideMenu}) => {
-  const {setPageTitle, setPageDescription, setPageBreadcrumbs,setPageSideMenu} = usePageData()
+const PageTitle: FC<Props & WithChildren> = ({children, description, breadcrumbs,pageSideMenu,pageInnerNavigation}) => {
+  const {setPageTitle, setPageDescription, setPageBreadcrumbs,setPageSideMenu,setPageInnerNavigation} = usePageData()
   useEffect(() => {
     if (children) {
       setPageTitle(children.toString())
@@ -98,6 +113,14 @@ const PageTitle: FC<Props & WithChildren> = ({children, description, breadcrumbs
     }
     return () => {
       setPageSideMenu([])
+    }
+  }, [breadcrumbs])
+  useEffect(() => {
+    if (pageInnerNavigation) {
+      setPageInnerNavigation(pageInnerNavigation)
+    }
+    return () => {
+      setPageInnerNavigation([])
     }
   }, [breadcrumbs])
 

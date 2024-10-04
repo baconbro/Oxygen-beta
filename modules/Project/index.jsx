@@ -22,6 +22,8 @@ import List from './List';
 import { useGetSpace } from '../../services/workspaceServices';
 import { useGetItems } from '../../services/itemServices';
 import { useGetOrgUsers } from '../../services/userServices';
+import { useGetUserViews } from '../../services/userViewServices';
+import { getIssueField } from '../../utils/getIssueX';
 
 const Project = () => {
   //get current user data
@@ -41,6 +43,14 @@ const Project = () => {
   //get current time
   const time = new Date().getTime();
   const [timeout, setTimeout] = useState(time);
+
+  // Get user views for the side menu
+  const { data: userViews, isLoading } = useGetUserViews(
+    currentUser?.all?.id,
+    currentUser?.all?.currentOrg
+  );
+
+
 
   useEffect(() => {
     if (data) {
@@ -186,7 +196,19 @@ const Project = () => {
     }));
   };
 
-  const workspaceSideMenu = [
+  // set workspaceSideMenu with userViews.data
+  // Sort userViews by lastTime in descending order
+  const sortedUserViews = userViews?.sort((a, b) => new Date(b.lastTime) - new Date(a.lastTime)) || [];
+
+  const workspaceSideMenu = sortedUserViews.map((view, index) => ({
+    position: index,
+    title: getIssueField(project.issues, view.itemId, 'title'),
+    to: `/workspace/${id.id}/issue/${view.itemId}`,
+    icon: '', // Assuming view has an icon property
+  })) || [];
+
+  //set the inner navigation of the workspace
+  const workspaceInnerNavigation = [
     {
       position: 0,
       title: 'Board',
@@ -219,6 +241,8 @@ const Project = () => {
     },
 
   ]
+
+
 
   return (
     <>
@@ -348,7 +372,7 @@ const Project = () => {
         />
       </Routes>
       {id['*'] === "" && <Navigate to={`${location.pathname}/board`} replace />}
-      <PageTitle breadcrumbs={accountBreadCrumbs} pageSideMenu={workspaceSideMenu}>{[project.title]}</PageTitle>
+      <PageTitle breadcrumbs={accountBreadCrumbs} pageSideMenu={workspaceSideMenu} pageInnerNavigation={workspaceInnerNavigation}>{[project.title]}</PageTitle>
 
     </>
 

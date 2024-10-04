@@ -5,15 +5,15 @@ import { usePageData } from '../../core'
 
 export function ToolbarMenuMain() {
   const intl = useIntl()
-  const { pageSideMenu } = usePageData()
+  const { pageInnerNavigation } = usePageData()
 
   return (
     <>
-      {pageSideMenu &&
-        pageSideMenu.length > 0 &&
+      {pageInnerNavigation &&
+        pageInnerNavigation.length > 0 &&
         <div className='d-flex align-items-stretch '>
           <ul className="nav nav-stretch nav-line-tabs flex-grow-1 fs-5 fw-semibold">
-            {Array.from(pageSideMenu).map((item, index) => (
+            {Array.from(pageInnerNavigation).map((item, index) => (
               <span key={index}>
                 <ToolbarMenuItem
                   to={item.to}

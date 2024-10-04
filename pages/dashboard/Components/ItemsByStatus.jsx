@@ -20,7 +20,6 @@ const ChartItemByStatus = () => {
 
   useEffect(() => {
     const statuses = Object.values(IssueStatus); 
-    console.log(statuses)
 
     getItemsByStatus(idr, statuses).then(counts => {
       // Convert the counts object to the format needed by ApexCharts

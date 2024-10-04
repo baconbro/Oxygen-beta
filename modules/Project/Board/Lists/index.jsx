@@ -39,7 +39,6 @@ const containerStyle = {
 
 
 const ProjectBoardLists = ({ project, filters, updateLocalProjectIssues }) => {
-  console.log('project', project)
   const { currentUserId } = useCurrentUser();
   const [issueStatus, setIssueStatus] = useState(project.config.issueStatus);
   const editItemMutation = useUpdateItem();

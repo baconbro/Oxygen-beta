@@ -3,8 +3,6 @@ import { editSpace, editSpaceNoMerge } from '../../../services/firestore';
 
 const CustomObject = ({ project }) => {
 
-    console.log(project.config)
-
     const [config, setConfig] = useState(project.config.issueType);
     const [newItemName, setNewItemName] = useState('');
     const [editItemIndex, setEditItemIndex] = useState(null);

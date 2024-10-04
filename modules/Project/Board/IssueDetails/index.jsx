@@ -28,6 +28,7 @@ import * as FirestoreService from '../../../../services/firestore';
 import { useAuth } from '../../../auth';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { useUpdateItem } from '../../../../services/itemServices';
+import { useAddUserView } from '../../../../services/userViewServices';
 
 
 const ProjectBoardIssueDetails = ({
@@ -48,6 +49,26 @@ const ProjectBoardIssueDetails = ({
      //get current user data
      const {currentUser} = useAuth();
      var id = useParams()
+
+     // Convert issueId to a number
+  const numericIssueId = Number(issueId);
+
+  // Add a user view
+  const addUserViewMutation = useAddUserView();
+  useEffect(() => {
+    if (currentUser?.all?.id && currentUser?.all?.currentOrg && issueId) {
+      addUserViewMutation.mutate({
+        userId: currentUser?.all?.id,
+        orgId: currentUser?.all?.currentOrg,
+        viewData: {
+          itemId: numericIssueId,
+          userId: currentUser?.all?.id,
+          type: 'issue',
+          lastTime: new Date().toISOString(),
+        }
+      });
+    }
+  }, [issueId]);
 
   useEffect(() => {
     if (id.issueId) {

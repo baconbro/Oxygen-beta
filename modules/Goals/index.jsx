@@ -21,7 +21,7 @@ import {
 } from '@tanstack/react-table'
 
 import { useAuth } from '../auth';
-import { useFetchOKRs, useAddOKR, useUpdateOKR  } from '../../services/okrServices'
+import { useFetchOKRs } from '../../services/okrServices'
 
 
 
@@ -341,7 +341,7 @@ const Goals = () => {
   if (status === 'error' && error instanceof Error) {
     return <div>Error: {error.message}</div>;
   }
-       
+
 
   return (
     <Fragment>
@@ -357,7 +357,7 @@ const Goals = () => {
           </div>
         </div>
       </div>
-  
+
       <div className='card kanban' >
         <div className='card-body' style={{ padding: "1rem 1rem" }}>
           <div className="table-responsive">
@@ -420,7 +420,7 @@ const Goals = () => {
         </div>
       </div>
 
-      {(!okrs || okrs.length === 0)  ? <EmptyGoals /> : ''}
+      {(!okrs || okrs.length === 0) ? <EmptyGoals /> : ''}
     </Fragment>
   );
 };

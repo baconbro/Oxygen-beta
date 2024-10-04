@@ -7,7 +7,7 @@ import { Avatar, IssueTypeIcon, IssuePriorityIcon } from '../../../../../../comp
 import { useWorkspace } from '../../../../../../contexts/WorkspaceProvider';
 import { IssueLink, Issue, Assignees, AssigneeAvatar } from '../../List/Issue/Styles';
 import { Link } from 'react-router-dom';
-import { IconComponent } from '../../../../../../utils/iconComponent';
+import { IconComponent } from '../../../../../../components/common/IssueIconComponent';
 
 const getBackgroundColor = (isDragging, isGroupedOver, authorColors) => {
     if (isDragging) {

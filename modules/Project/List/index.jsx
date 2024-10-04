@@ -16,7 +16,7 @@ import { formatDate } from '../../../utils/dateTime';
 import { Priority, Label } from '../Board/IssueDetails/Priority/Styles';
 import { intersection } from 'lodash';
 import moment from 'moment';
-import { IconComponent, IconText } from '../../../utils/iconComponent';
+import { IconComponent, IconText } from '../../../components/common/IssueIconComponent';
 
 import {
   createColumnHelper,
