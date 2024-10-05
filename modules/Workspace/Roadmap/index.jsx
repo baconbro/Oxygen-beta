@@ -4,7 +4,7 @@ import useMergeState from '../../../hooks/mergeState';
 import { Breadcrumbs, Modal } from '../../../components/common';
 import Filters from '../Board/Filters/filter';
 import Lists from './Lists';
-import IssueDetails from '../Board/IssueDetails';
+import IssueDetails from '../../IssueDetails';
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { useWorkspace } from '../../../contexts/WorkspaceProvider';
 

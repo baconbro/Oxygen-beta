@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import Filters from './Filters/filter';
-import IssueDetails from './IssueDetails';
+import IssueDetails from '../../IssueDetails';
 import { Modal } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom';
 import * as FirestoreService from '../../../services/firestore';

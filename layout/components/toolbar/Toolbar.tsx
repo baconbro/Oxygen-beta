@@ -1,7 +1,7 @@
-import { Toolbar as WorkspaceToolbar } from '../../../modules/Workspaces/Toolbar'
+import { Toolbar as WorkspaceToolbar } from '../../../modules/Workspace/Toolbar'
 
 const Toolbar = () => {
-  return <WorkspaceToolbar />
+  return <WorkspaceToolbar /> 
 }
 
 export { Toolbar }

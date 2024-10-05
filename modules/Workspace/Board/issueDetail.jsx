@@ -8,7 +8,7 @@ import useMergeState from '../../../hooks/mergeState';
 
 import Filters from './Filters/filter';
 import Lists from './Lists';
-import IssueDetails from './IssueDetails';
+import IssueDetails from '../../IssueDetails';
 import { getAnalytics, logEvent } from "firebase/analytics";
 
 

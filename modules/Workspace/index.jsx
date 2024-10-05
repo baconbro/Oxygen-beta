@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Route, useLocation, useNavigate, useParams, Navigate, Routes } from 'react-router-dom';
 
 import { updateArrayItemById } from '../../utils/javascript';
 import { createQueryParamModalHelpers } from '../../utils/queryParamModal';
-import { PageLoader, Modal } from '../../components/common';
+import { PageLoader } from '../../components/common';
 
 import Board from './Board';
-import IssueSearch from './IssueSearch';
-import IssueCreate from './IssueCreate';
 import ProjectSettings from './WorkspaceSettings';
 
 
@@ -246,37 +244,6 @@ const Project = () => {
 
   return (
     <>
-      {/*   <Header
-          issueSearchModalOpen={issueSearchModalHelpers.open}
-          issueCreateModalOpen={issueCreateModalHelpers.open}
-        /> 
-          <Sidebar project={project} />*/}
-      {issueSearchModalHelpers.isOpen() && (
-        <Modal
-          isOpen
-          testid="modal:issue-search"
-          width={600}
-          onClose={issueSearchModalHelpers.close}
-          renderContent={() => <IssueSearch project={project} />}
-        />
-      )}
-
-      {issueCreateModalHelpers.isOpen() && (
-        <Modal
-          isOpen
-          testid="modal:issue-create"
-          width={800}
-          withCloseIcon={false}
-          onClose={issueCreateModalHelpers.close}
-          renderContent={modal => (
-            <IssueCreate
-              project={project}
-              onCreate={() => history.push(`${location.url}/board`)}
-              modalClose={modal.close}
-            />
-          )}
-        />
-      )}
       <Routes>
         <Route
           path="/board/*"

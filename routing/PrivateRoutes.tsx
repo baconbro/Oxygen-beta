@@ -6,7 +6,7 @@ import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
 import { getCSSVariableValue } from '../utils/index'
 import { WithChildren } from '../utils/index'
 import { WorkspaceProvider } from '../contexts/WorkspaceProvider'
-import { Workspacehome } from '../modules/Workspaces'
+import { Workspacehome } from '../pages/Workspaces'
 import CreateWorkspace from '../modules/onboarding/CreateWorkspace'
 
 import Project from '../modules/Workspace'

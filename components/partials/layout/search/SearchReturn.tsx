@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import { SearchComponent } from '../../../../components/common'
 import { InlineSVG } from '../../../../utils'
 import { useWorkspace } from '../../../../contexts/WorkspaceProvider'
-import { Status } from '../../../../modules/Workspace/Board/IssueDetails/Status/Styles'
+import { Status } from '../../../../modules/IssueDetails/Status/Styles'
 
 interface SearchProps {
   orgId: any;

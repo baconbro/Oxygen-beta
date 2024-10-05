@@ -2,17 +2,17 @@ import React, { Fragment, useState, useEffect } from 'react';
 
 import { CopyLinkButton, } from '../../components/common';
 
-import Loader from '../Workspace/Board/IssueDetails/Loader';
+import Loader from '../IssueDetails/Loader';
 
 import Delete from './Delete';
-import Title from '../Workspace/Board/IssueDetails/Title';
-import Description from '../Workspace/Board/IssueDetails/Description';
+import Title from '../IssueDetails/Title';
+import Description from '../IssueDetails/Description';
 
-import Status from '../Workspace/Board/IssueDetails/Status';
+import Status from '../IssueDetails/Status';
 
-import ProjectBoardIssueDetailsReporter from '../Workspace/Board/IssueDetails/Reporter';
+import ProjectBoardIssueDetailsReporter from '../IssueDetails/Reporter';
 
-import TagsComponent from '../Workspace/Board/IssueDetails/Tags';
+import TagsComponent from '../IssueDetails/Tags';
 import SubsComponent from './Subs';
 
 import { useAuth } from '../auth';

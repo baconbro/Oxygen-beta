@@ -10,7 +10,7 @@ import Issue from './Issue';
 import { List, Title, IssuesCount, Issues } from './Styles';
 import AddItem from './AddItem';
 
-import ProjectBoardIssueDetailsTitle from '../../IssueDetails/Title';
+import ProjectBoardIssueDetailsTitle from '../../../../IssueDetails/Title';
 
 import { editSpace } from '../../../../../services/firestore';
 import styled from 'styled-components';
