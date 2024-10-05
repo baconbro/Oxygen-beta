@@ -12,7 +12,7 @@ import {
   ClearAll,
 } from './Styles';
 import { Modal } from 'react-bootstrap'
-import ProjectMembers from '../../ProjectSettings/Members';
+import ProjectMembers from '../../WorkspaceSettings/Members';
 import { useWorkspace } from '../../../../contexts/WorkspaceProvider';
 import findAvailableParameters from '../../../../utils/issueVariables';
 

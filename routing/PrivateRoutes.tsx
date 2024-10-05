@@ -9,7 +9,7 @@ import { WorkspaceProvider } from '../contexts/WorkspaceProvider'
 import { Workspacehome } from '../modules/Workspaces'
 import CreateWorkspace from '../modules/onboarding/CreateWorkspace'
 
-import Project from '../modules/Project'
+import Project from '../modules/Workspace'
 import Goals from '../modules/Goals'
 import GoalDetails from '../modules/Goals/GoalDetails'
 

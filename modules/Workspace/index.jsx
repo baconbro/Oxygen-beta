@@ -8,7 +8,7 @@ import { PageLoader, Modal } from '../../components/common';
 import Board from './Board';
 import IssueSearch from './IssueSearch';
 import IssueCreate from './IssueCreate';
-import ProjectSettings from './ProjectSettings';
+import ProjectSettings from './WorkspaceSettings';
 
 
 import Backlog from './Backlog';

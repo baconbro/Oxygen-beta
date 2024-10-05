@@ -7,8 +7,8 @@ import { Form, Breadcrumbs } from '../../../../components/common';
 
 import { FormCont, FormHeading, FormElement, ActionButton } from './Styles';
 import { useAuth } from "../../../../contexts/AuthContext"
-import NavbarLeft from '../../Project/NavbarLeft';
-import { ProjectPage } from '../../Project/Styles';
+import NavbarLeft from '../../Workspace/NavbarLeft';
+import { ProjectPage } from '../../Workspace/Styles';
 import Sidebar from './Sidebar';
 import Header from '../../Org/Header';
 

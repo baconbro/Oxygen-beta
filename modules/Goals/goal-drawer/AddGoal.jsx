@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Textarea } from '../../../components/common';
-import { Actions, FormButton } from '../../Project/Board/Lists/List/Styles.js';
+import { Actions, FormButton } from '../../Workspace/Board/Lists/List/Styles.js';
 import { KeyCodes } from '../../../constants/keyCodes';
 import { useAuth } from '../../auth';
 import { useAddOKR } from '../../../services/okrServices';

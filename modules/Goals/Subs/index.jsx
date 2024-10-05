@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Create from './Create';
-import  Title  from '../../Project/Board/IssueDetails/Title';
+import  Title  from '../../Workspace/Board/IssueDetails/Title';
 import {InputDebounced } from '../../../components/common'
 import { isNil } from 'lodash';
 import { getScoreColor } from '../../../constants/custom';
