@@ -1,14 +1,9 @@
-import React, { useState, useCallback } from 'react';
-import { SectionTitle } from '../Styles';
+import { useState, useCallback } from 'react';
 import Tags from "@yaireo/tagify/dist/react.tagify"
-//import './tagify.css'
-
-
-
+import './tagify.css'
 
 const TagsComponent = ({ issue, updateIssue }) => {
   const [tags, setTags] = useState([issue.tags])
-
 
   const list = (tags) => {
     var arr = [];
@@ -18,31 +13,28 @@ const TagsComponent = ({ issue, updateIssue }) => {
       }
     }
     return arr;
-
   }
 
   const onChange = useCallback(e => {
-    updateIssue({ tags : e.detail.tagify.getCleanValue() })
+    updateIssue({ tags: e.detail.tagify.getCleanValue() })
   }, [])
-
-
 
   return (
     <>
-        <h3 className="fw-bold mb-1">Tags</h3>
-        <Tags
-          settings={{
-            dropdown: {
-              enabled: 1
-            }
-          }}
-          defaultValue={list(tags[0]).toString()}
-          autoFocus={false}
-          whitelist={[]}//from all tags in the organisation
-          className="form-control form-control-solid"
-          onAdd={onChange}
-          onRemove={onChange}
-        />
+      <h3 className="fw-bold mb-1">Tags</h3>
+      <Tags
+        settings={{
+          dropdown: {
+            enabled: 1
+          }
+        }}
+        defaultValue={list(tags[0]).toString()}
+        autoFocus={false}
+        whitelist={[]}//from all tags in the organisation
+        className="form-control form-control-solid"
+        onAdd={onChange}
+        onRemove={onChange}
+      />
     </>
   )
 }
