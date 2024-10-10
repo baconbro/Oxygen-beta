@@ -1,4 +1,3 @@
-import React from 'react';
 import FeedbackForm from '../../shared/components/Feedbackform';
 import { Link } from "react-router-dom";
 
@@ -24,16 +23,6 @@ const Sidebar = ({ orgs }) => {
                                 <span className="menu-title">Dashboards</span>
                             </span>
                         </div>
-{/*                         <div className="menu-item mb-2">
-                            <Link to={`/strategy/${orgs}`} >
-                                <span className="menu-link">
-                                    <span className="menu-icon">
-                                        <i className="bi bi-compass fs-2x"></i>
-                                    </span>
-                                    <span className="menu-title">Strategy</span>
-                                </span>
-                            </Link>
-                        </div> */}
                         <div className="menu-item mb-2">
                             <div className="menu-content pt-8 pb-0">
                                 <span className="menu-section text-muted text-uppercase fs-8 ls-1">Admin</span>
