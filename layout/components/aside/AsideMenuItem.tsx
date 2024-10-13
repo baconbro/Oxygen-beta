@@ -37,11 +37,7 @@ const AsideMenuItem: FC<Props & WithChildren> = ({
           </span>
         )}
         <i className=" rounded bi bi-clock-history" />
-        <div className="d-flex flex-column">
-          <div className="fs-6 fw-semibold">
-            {title}								</div>
-        </div>
-        <span className='menu-title'></span>
+        <span className='menu-title'>  {title}	</span>
         {isNew && <span className="badge badge-light">New</span>}
       </Link>
       {children}

@@ -18,6 +18,7 @@ export function AsideMenuMain() {
             </div>
           </div>
           {Array.from(pageSideMenu).slice(0, 10).map((item, index) => (
+            <>
             <span key={index}>
               <AsideMenuItem
                 to={item.to}
@@ -26,6 +27,7 @@ export function AsideMenuMain() {
                 fontIcon={item.fontIcon}
               />
             </span>
+        </>
           ))}
         </>}
 
