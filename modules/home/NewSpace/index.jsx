@@ -31,8 +31,8 @@ const CreateSpace = ({ modalClose, orgs }) => {
   const renderType = ({ label: org }) => (
     <SelectItem>
       <div className="nav-icon">
-        <div className="symbol symbol-40px me-4">
-          <div className="symbol-label fs-2 fw-bold bg-danger text-inverse-danger">{org.substring(0, 1)}</div>
+        <div className="avatar avatar-40px me-4">
+          <div className="avatar-label fs-2 fw-bold bg-danger text-inverse-danger">{org.substring(0, 1)}</div>
         </div>
       </div>
       <SelectItemLabel>{org}</SelectItemLabel>

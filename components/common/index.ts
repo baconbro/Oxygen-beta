@@ -22,7 +22,6 @@ export { default as IssueTypeIcon } from './IssueTypeIcon';
 export { default as IssuePriorityIcon } from './IssuePriorityIcon';
 export { default as Modal } from './Modal';
 export { default as PageLoader } from './PageLoader';
-export { default as ProjectAvatar } from './ProjectAvatar';
 export { default as Select } from './Select';
 export { default as Textarea } from './Textarea';
 export { default as TextEditedContent } from './TextEditedContent';

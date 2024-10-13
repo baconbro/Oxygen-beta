@@ -59,7 +59,7 @@ const ProjectBoardIssueDetailsComment = ({ comment, fetchIssue }) => {
         
           <div className="d-flex mb-5">
            
-              <div className="symbol symbol-45px me-5">
+              <div className="avatar avatar-45px me-5">
               <UserAvatar name={comment.user.name} avatarUrl={comment.user.avatarUrl} />   
               </div>
           

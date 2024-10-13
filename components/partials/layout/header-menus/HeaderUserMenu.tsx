@@ -13,7 +13,7 @@ const HeaderUserMenu: FC = () => {
     >
       <div className='menu-item px-3'>
         <div className='menu-content d-flex align-items-center px-3'>
-          <div className='symbol symbol-50px me-5'>
+          <div className='avatar avatar-50px me-5'>
 
           </div>
 

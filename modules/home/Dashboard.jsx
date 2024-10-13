@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import CreateOrg from './NewOrg';
 import CreateSpace from './NewSpace';
 import { useAuth } from "../../../contexts/AuthContext"
-import { ProjectAvatar } from '../../../components/common';
+import { Avatar } from '../../../components/common';
 
 import { getAnalytics, logEvent } from "firebase/analytics";
 import SuperAdmin from './SuperAdmin';
@@ -99,7 +99,7 @@ const DashboardPage = () => {
 															<li className="nav-item mb-3 me-3 me-lg-6">
 																<Nav.Link eventKey={Object.keys(org)} className="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-200px h-85px py-4">
 																	<div className="nav-icon">
-																		<ProjectAvatar avatarUrl="" name={org[Object.keys(org)].name} size={50} />
+																		<Avatar avatarUrl="" name={org[Object.keys(org)].name} size={50} />
 																	</div>
 																	<span className="nav-text text-gray-700 fw-bolder fs-6 lh-1">{org[Object.keys(org)].name}</span>
 																	<span className="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>

@@ -11,7 +11,7 @@ import { Avatar } from '../../../components/common/'
 
 const toolbarButtonMarginClass = 'ms-1 ms-lg-3',
   toolbarButtonHeightClass = 'w-30px h-30px w-md-40px h-md-40px',
-  toolbarUserAvatarHeightClass = 'symbol-30px symbol-md-40px',
+  toolbarUserAvatarHeightClass = 'avatar-30px avatar-md-40px',
   toolbarButtonIconSizeClass = 'svg-icon-1'
 
 const Topbar: FC = () => {
@@ -30,13 +30,13 @@ const Topbar: FC = () => {
         id='xgn_header_user_menu_toggle'
       >
         <div
-          className={clsx('cursor-pointer symbol', toolbarUserAvatarHeightClass)}
+          className={clsx('cursor-pointer avatar', toolbarUserAvatarHeightClass)}
           data-xgn-menu-trigger='click'
           data-xgn-menu-attach='parent'
           data-xgn-menu-placement='bottom-end'
           data-xgn-menu-flip='bottom'
         >
-          <Avatar name={currentUser?.all?.fName} avatarUrl={currentUser?.photoURL} size={32} className={''} />
+          <Avatar name={currentUser?.all?.fName} avatarUrl={currentUser?.photoURL} size={30} className={''} />
 
         </div>
         <HeaderUserMenu />

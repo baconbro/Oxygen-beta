@@ -234,7 +234,7 @@ function Item(props) {
 
                                 <AssigneeAvatar
                                     key={user.id}
-                                    size={24}
+                                    size={25}
                                     avatarUrl={user.avatarUrl}
                                     name={user.name}
                                 />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import * as FirestoreService from '../App/services/firestore';
 
-import { ProjectAvatar } from '../../../components/common';
+import { Avatar } from '../../../components/common';
 
 const SpaceItem = ({org}) => {
     const [spaces, setSpaces] = useState([]);
@@ -31,7 +31,7 @@ const SpaceItem = ({org}) => {
                 <>
         <Link to={`/project/${Object.keys(space)}`}>
       					<div className="d-flex flex-stack" key={index}>
-                          <ProjectAvatar avatarUrl="" name={space[Object.keys(space)].title} size={50} className='me-5' />
+                          <Avatar avatarUrl="" name={space[Object.keys(space)].title} size={50} className='me-5' />
                           <div className="d-flex align-items-center flex-row-fluid flex-wrap">
                               <div className="flex-grow-1 me-2">
                                   <span className="text-gray-800 text-hover-primary fs-6 fw-bolder">{space[Object.keys(space)].title}</span>

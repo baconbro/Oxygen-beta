@@ -57,8 +57,8 @@ const Step1 = ({data, updateData, hasError}: StepProps) => {
 
             <label className='d-flex align-items-center justify-content-between mb-6 cursor-pointer'>
               <span className='d-flex align-items-center me-2'>
-                <span className='symbol symbol-50px me-6'>
-                  <span className='symbol-label bg-light-primary'>
+                <span className='avatar avatar-50px me-6'>
+                  <span className='avatar-label bg-light-primary'>
                     <InlineSVG
                       path='/media/icons/duotune/maps/map004.svg'
                       className='svg-icon-1 svg-icon-primary'
@@ -95,8 +95,8 @@ const Step1 = ({data, updateData, hasError}: StepProps) => {
  
             <label className='d-flex align-items-center justify-content-between mb-6 cursor-pointer'>
               <span className='d-flex align-items-center me-2'>
-                <span className='symbol symbol-50px me-6'>
-                  <span className='symbol-label bg-light-danger'>
+                <span className='avatar avatar-50px me-6'>
+                  <span className='avatar-label bg-light-danger'>
                     <InlineSVG
                       path='/media/icons/duotune/general/gen024.svg'
                       className='svg-icon-1 svg-icon-danger'
@@ -133,8 +133,8 @@ const Step1 = ({data, updateData, hasError}: StepProps) => {
 
             <label className='d-flex align-items-center justify-content-between mb-6 cursor-pointer'>
               <span className='d-flex align-items-center me-2'>
-                <span className='symbol symbol-50px me-6'>
-                  <span className='symbol-label bg-light-success'>
+                <span className='avatar avatar-50px me-6'>
+                  <span className='avatar-label bg-light-success'>
                     <InlineSVG
                       path='/media/icons/duotune/general/gen013.svg'
                       className='svg-icon-1 svg-icon-success'

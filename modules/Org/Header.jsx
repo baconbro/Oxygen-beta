@@ -35,7 +35,7 @@ const Header = ({ issueSearchModalOpen, issueCreateModalOpen }) => {
                                     <span className="text-white fs-8 fw-bolder lh-1">{currentUser.email}</span>
                                 </div>
 
-                                <div className="symbol symbol-30px symbol-md-40px">
+                                <div className="avatar avatar-30px avatar-md-40px">
                                     <Avatar avatarUrl={currentUser.photoURL} name={currentUser.fName} size={40} />
                                 </div>
 

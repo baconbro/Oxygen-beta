@@ -281,7 +281,7 @@ const Goals = () => {
       name = foundItem.name;
     }
 
-    return <Avatar avatarUrl='' name={name} size={24} />
+    return <Avatar avatarUrl='' name={name} size={25} />
   }
 
   const Progress = ({ progress }) => {

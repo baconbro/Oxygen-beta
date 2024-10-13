@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { useLayout } from '../../../core/LayoutProvider'
 import { usePageData } from '../../../core/PageData'
-import ProjectAvatar from '../../../../components/common/ProjectAvatar'
+import Avatar from '../../../../components/common/Avatar'
 
 const DefaultTitle: FC = () => {
   const { pageTitle, pageDescription, pageBreadcrumbs } = usePageData()
@@ -19,7 +19,7 @@ const DefaultTitle: FC = () => {
       {pageTitle && (
         <div className="app-page-entry d-flex align-items-center flex-row-fluid gap-3">
           <span className="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px ">
-            <ProjectAvatar avatarUrl="" name={pageTitle} size={40} className='me-5' />
+            <Avatar avatarUrl="" name={pageTitle} size={40} className='me-5' />
           </span>
 
           <h1 className='d-flex align-items-center text-dark fw-bolder my-1 fs-3'>

@@ -51,8 +51,8 @@ const Step3 = ({data, updateData, hasError}: StepProps) => {
             {/*begin:Option */}
             <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
               <span className='d-flex align-items-center me-2'>
-                <span className='symbol symbol-50px me-6'>
-                  <span className='symbol-label bg-light-success'>
+                <span className='avatar avatar-50px me-6'>
+                  <span className='avatar-label bg-light-success'>
                     <i className='bi bi-clock text-success fs-2x'></i>
                   </span>
                 </span>

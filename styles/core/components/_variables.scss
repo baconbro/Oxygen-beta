@@ -1363,8 +1363,8 @@ $custom-sizes: (
 ) !default;
 
 
-// symbol component
-$symbol-sizes: (
+// avatar component
+$avatar-sizes: (
 	20px: 20px,
 	25px: 25px,
 	30px: 30px,
@@ -1386,12 +1386,12 @@ $symbol-sizes: (
 	200px:200px
 ) !default;
 
-$symbol-border-color: rgba($body-bg, 0.5);
-$symbol-border-color-dark: rgba($body-bg, 0.5);
-$symbol-label-color: $gray-800;
-$symbol-label-color-dark: $gray-800-dark;
-$symbol-label-bg: $gray-100;
-$symbol-label-bg-dark: $gray-100-dark;
+$avatar-border-color: rgba($body-bg, 0.5);
+$avatar-border-color-dark: rgba($body-bg, 0.5);
+$avatar-label-color: $gray-800;
+$avatar-label-color-dark: $gray-800-dark;
+$avatar-label-bg: $gray-100;
+$avatar-label-bg-dark: $gray-100-dark;
 
 
 // bullet component

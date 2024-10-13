@@ -162,12 +162,12 @@ const InviteUsers: FC = () => {
                       key={i}
                     >
                       <div className='d-flex align-items-center'>
-                        <div className='symbol symbol-35px symbol-circle'>
+                        <div className='avatar avatar-35px avatar-circle'>
                           {user.avatar && <img alt='Pic' src={toAbsoluteUrl(user.avatar)} />}
                           {user.state && (
-                            <div className='symbol symbol-35px symbol-circle'>
+                            <div className='avatar avatar-35px avatar-circle'>
                               <span
-                                className={`symbol-label bg-light-${user.state} text-${user.state} fw-bold`}
+                                className={`avatar-label bg-light-${user.state} text-${user.state} fw-bold`}
                               >
                                 {user.name.charAt(0)}
                               </span>

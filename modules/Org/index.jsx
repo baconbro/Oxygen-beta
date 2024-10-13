@@ -280,9 +280,9 @@ const removeUser = (user) =>{
                                                 {org && org.users.map((user, index) => (
                                                     <tr>
                                                         <td className="d-flex align-items-center">
-                                                            <div className="symbol symbol-circle symbol-50px overflow-hidden me-3">
+                                                            <div className="avatar avatar-circle avatar-50px overflow-hidden me-3">
 
-                                                                <div className="symbol-label w-100">
+                                                                <div className="avatar-label w-100">
                                                                     <Avatar avatarUrl="" name={user.email} size={50} />
                                                                 </div>
 

@@ -78,7 +78,7 @@ const Organisations: FC = () => {
               href='#'
               className={clsx('menu-link d-flex px-5', {active: 1 === 1})}//{active: l === currentOrg})}
             >
-              <span className='symbol symbol-20px me-4'>
+              <span className='avatar avatar-20px me-4'>
                 <img className='rounded-1' src='' alt='Org' />
               </span>
               {l && Object.keys(l).toString()} tets

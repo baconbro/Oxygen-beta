@@ -28,8 +28,8 @@ const Step2 = ({data, updateData}: StepProps) => {
                     {/*begin:Option */}
                     <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-success'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-success'>
                   <i className='bi bi-code-slash text-success fs-2x'></i>
                 </span>
               </span>
@@ -55,8 +55,8 @@ const Step2 = ({data, updateData}: StepProps) => {
                               {/*begin:Option */}
                               <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-primary'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-primary'>
                   <i className='bi bi-calendar-check text-primary fs-2x'></i>
                 </span>
               </span>
@@ -83,8 +83,8 @@ const Step2 = ({data, updateData}: StepProps) => {
           {/*begin:Option */}
           <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-info'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-info'>
                   <i className='bi bi-person-plus-fill text-info fs-2x'></i>
                 </span>
               </span>
@@ -110,8 +110,8 @@ const Step2 = ({data, updateData}: StepProps) => {
             {/*begin:Option */}
             <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-primary'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-primary'>
                   <i className='bi bi-person-check text-primary fs-2x'></i>
                 </span>
               </span>
@@ -137,8 +137,8 @@ const Step2 = ({data, updateData}: StepProps) => {
                       {/*begin:Option */}
                       <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-warning'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-warning'>
                   <i className='bi bi-file-earmark-text-fill text-warning fs-2x'></i>
                 </span>
               </span>
@@ -164,8 +164,8 @@ const Step2 = ({data, updateData}: StepProps) => {
            {/*begin:Option */}
            <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-primary'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-primary'>
                   <i className='bi bi-lightning-fill text-primary fs-2x'></i>
                 </span>
               </span>
@@ -191,8 +191,8 @@ const Step2 = ({data, updateData}: StepProps) => {
                      {/*begin:Option */}
                      <label className='d-flex align-items-center justify-content-between cursor-pointer mb-6'>
             <span className='d-flex align-items-center me-2'>
-              <span className='symbol symbol-50px me-6'>
-                <span className='symbol-label bg-light-danger'>
+              <span className='avatar avatar-50px me-6'>
+                <span className='avatar-label bg-light-danger'>
                   <i className='bi bi-boxes text-danger fs-2x'></i>
                 </span>
               </span>

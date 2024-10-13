@@ -124,8 +124,8 @@ const Search = (orgId: any, scope: String, currentId: number) => {
   const lastUpdateIssuesDiv = lastUpdateIssues?.map((issue: any, _index: any) => {
     return (
       <div className='d-flex align-items-center mb-5' key={_index}>
-        <div className='symbol symbol-40px me-4'>
-          <span className='symbol-label bg-light'>
+        <div className='avatar avatar-40px me-4'>
+          <span className='avatar-label bg-light'>
             <IconComponent typeId={issue.type} />
           </span>
         </div>
@@ -180,8 +180,8 @@ const Search = (orgId: any, scope: String, currentId: number) => {
   const filteredIssuesDiv = filteredIssues?.map((issue: any, _index: any) => {
     return (
       <div className='d-flex align-items-center mb-5' key={_index}>
-        <div className='symbol symbol-40px me-4'>
-          <span className='symbol-label bg-light'>
+        <div className='avatar avatar-40px me-4'>
+          <span className='avatar-label bg-light'>
           <IconComponent typeId={issue.type} />
           </span>
         </div>

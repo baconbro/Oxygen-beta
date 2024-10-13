@@ -80,8 +80,8 @@ const CustomObject = ({ project }) => {
 
 
 
-                        <div className="symbol symbol-60px symbol-2by3 me-4">
-                            <div className="symbol-label" style={{ width: '40px', height: '40px', marginLeft: '10px' }}><i className={`bi bi-${config[index].icon}`} style={{color: config[index].color}}></i></div>
+                        <div className="avatar avatar-60px avatar-2by3 me-4">
+                            <div className="avatar-label" style={{ width: '40px', height: '40px', marginLeft: '10px' }}><i className={`bi bi-${config[index].icon}`} style={{color: config[index].color}}></i></div>
                         </div>
 
 

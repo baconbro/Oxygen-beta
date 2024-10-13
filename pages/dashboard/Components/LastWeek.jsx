@@ -44,8 +44,8 @@ export const LastWeek = () => {
                 <div className="card-header pt-5">
                     <div className="card-title d-flex flex-column">
                         <div className="d-flex align-items-center mb-9">
-                            <div className="symbol symbol-70px symbol-circle me-5">
-                                <span className="symbol-label bg-light-success">
+                            <div className="avatar avatar-70px avatar-circle me-5">
+                                <span className="avatar-label bg-light-success">
                                     <i className="bi bi-check-circle-fill fs-3x text-success"></i>
                                 </span>
                             </div>
@@ -67,8 +67,8 @@ export const LastWeek = () => {
                 <div className="card-header pt-5">
                     <div className="card-title d-flex flex-column">
                         <div className="d-flex align-items-center mb-9">
-                            <div className="symbol symbol-70px symbol-circle me-5">
-                                <span className="symbol-label bg-light-info">
+                            <div className="avatar avatar-70px avatar-circle me-5">
+                                <span className="avatar-label bg-light-info">
                                     <i className="bi bi-pencil-fill fs-3x text-info"></i>
                                 </span>
                             </div>
@@ -90,8 +90,8 @@ export const LastWeek = () => {
                 <div className="card-header pt-5">
                     <div className="card-title d-flex flex-column">
                         <div className="d-flex align-items-center mb-9">
-                            <div className="symbol symbol-70px symbol-circle me-5">
-                                <span className="symbol-label bg-light-primary">
+                            <div className="avatar avatar-70px avatar-circle me-5">
+                                <span className="avatar-label bg-light-primary">
                                     <i className="bi bi-file-plus-fill fs-3x text-primary"></i>
                                 </span>
                             </div>

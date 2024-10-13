@@ -1,37 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { Letter } from './Styles';
 
-import { Image, Letter } from './Styles';
-
-const propTypes = {
- /*  className: PropTypes.string,
-  avatarUrl: PropTypes.string,
-  name: PropTypes.string,
-  size: PropTypes.number, */
-};
 
 const defaultProps = {
-  className: undefined,
+  className: '',
   avatarUrl: null,
   name: '',
-  size: 32,
+  size: 30,
 };
 
 const Avatar = ({ className, avatarUrl, name, size, ...otherProps }) => {
+  const sizeClass = `avatar avatar-${size}px`;
+  const combinedClassName = `${className} ${sizeClass}`.trim();
+
   const sharedProps = {
-    className,
+    className: combinedClassName,
     size,
     'data-testid': name ? `avatar:${name}` : 'avatar',
     ...otherProps,
-  };
-  if (avatarUrl) {
-    return <Image avatarUrl={avatarUrl} {...sharedProps} />;
-  }
-
-  return (
-    <Letter color={getColorFromName(name)} {...sharedProps}>
-      <span>{name.charAt(0)}</span>
-    </Letter>
+  };  return (
+    <div className={combinedClassName}>
+      {avatarUrl ? (
+        <img src={avatarUrl} alt={name} {...sharedProps} />
+      ) : (
+        <Letter color={getColorFromName(name)} {...sharedProps}>
+        <span 
+        className='avatar-label fs-2 fw-bold text-white'
+        style={{ backgroundColor: getColorFromName(name) }}
+        >{name.charAt(0)}</span>
+      </Letter>
+      )}
+    </div>
   );
 };
 
@@ -47,8 +45,5 @@ const colors = [
 ];
 
 const getColorFromName = name => colors[name.toLocaleLowerCase().charCodeAt(0) % colors.length];
-
-Avatar.propTypes = propTypes;
-Avatar.defaultProps = defaultProps;
 
 export default Avatar;

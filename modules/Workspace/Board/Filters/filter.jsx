@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { xor } from 'lodash';
-
 import {
   Filters,
   SearchInput,
@@ -98,6 +97,8 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
               <StyledAvatar
                 avatarUrl={user.avatarUrl}
                 name={user.name}
+                size={35}
+                className='avatar-circle'
                 onClick={() => mergeFilters({ userIds: xor(userIds, [user.id]) })}
               />
             </AvatarIsActiveBorder>
@@ -105,8 +106,8 @@ const ProjectBoardFilters = ({ projectUsers, defaultFilters, filters, mergeFilte
         </Avatars>
         {projectMembers.length === 0 && <span className='spinner-border spinner-border-sm align-middle ms-2'></span>}
 
-        <a href="#" className="symbol symbol-35px symbol-circle" onClick={() => setShowMembersModal(true)} >
-          <span className="symbol-label bg-secondary text-gray-300 fs-8 fw-bold"><i className="bi bi-person-plus-fill"></i> </span>
+        <a href="#" className="avatar avatar-35px avatar-circle" onClick={() => setShowMembersModal(true)} >
+          <span className="avatar-label bg-secondary text-gray-300 fs-8 fw-bold"><i className="bi bi-person-plus-fill"></i> </span>
         </a>
         <Modal
           id='modal_issueDetail'

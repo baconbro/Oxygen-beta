@@ -129,8 +129,8 @@ const SearchReturn: React.FC<SearchProps> = ({ orgId, scope, onAction }) => {
   const lastUpdateIssuesDiv = lastUpdateIssues?.map((issue: any, _index: any) => {
     return (
       <div className='d-flex align-items-center mb-5' key={_index}>
-        <div className='symbol symbol-40px me-4'>
-          <span className='symbol-label bg-light'>
+        <div className='avatar avatar-40px me-4'>
+          <span className='avatar-label bg-light'>
             <IconComponent typeId={issue.type} />
           </span>
         </div>
@@ -167,8 +167,8 @@ const SearchReturn: React.FC<SearchProps> = ({ orgId, scope, onAction }) => {
   const filteredIssuesDiv = filteredIssues?.map((issue: any, _index: any) => {
     return (
       <div className='d-flex align-items-center mb-5' key={_index}>
-        <div className='symbol symbol-40px me-4'>
-          <span className='symbol-label bg-light'>
+        <div className='avatar avatar-40px me-4'>
+          <span className='avatar-label bg-light'>
             <IconComponent typeId={issue.type} />
           </span>
         </div>

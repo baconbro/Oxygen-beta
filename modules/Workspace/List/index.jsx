@@ -338,7 +338,7 @@ const List = () => {
         isSelectValue={false}
         withBottomMargin={false}
       >
-        <Avatar avatarUrl={''} name={name} size={24} />
+        <Avatar avatarUrl={''} name={name} size={25} />
         <Username>{name}</Username>
       </User>)
   }
