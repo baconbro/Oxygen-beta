@@ -21,6 +21,8 @@ import SubsComponent from './Subs';
 import TaskDependencies from './Dependencies';
 import DetailsPrioritization from './Prioritization';
 import BudgetTracking from './BudgetTracking';
+import StoryPointInput from './Size/Storypoints';
+import TshirtSizeInput from './Size/TshirtSize/TshirtSize';
 
 import * as FirestoreService from '../../services/firestore';
 
@@ -198,6 +200,12 @@ const ProjectBoardIssueDetails = ({
               </div>
               <div className="">
                 <BudgetTracking issue={issue} updateIssue={updateIssue} />
+              </div>
+              <div className="">
+                <StoryPointInput issue={issue} updateIssue={updateIssue} />
+              </div>
+              <div className="">
+                <TshirtSizeInput issue={issue} updateIssue={updateIssue} />
               </div>
 
             </div>

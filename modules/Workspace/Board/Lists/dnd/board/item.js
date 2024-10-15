@@ -215,11 +215,20 @@ function Item(props) {
                         <span className="fs-4  mb-1 text-gray-900">{item.title}</span>
                     </div>
                     <div className="d-flex mb-3">
+                    {item.tags && <i className="bi bi-tags me-2"></i>}
                         {item.tags && item.tags.map(tag => (
                             <div className="badge badge-light me-2" key={Object.values(tag)}>{Object.values(tag).toString()}</div>
                         ))}
 
                     </div>
+                    <div className="d-flex mb-3">
+                        {item.dueDate && <div className="badge badge-light me-2"> <i className="bi bi-calendar-event me-2"></i> {item.dueDate.split('T')[0]}</div>}
+                      </div>
+                      <div className="d-flex mb-3">
+{item.tsize && <div className="badge badge-light me-2"><i className="bi bi-rulers me-2"></i>{item.tsize}</div>}
+{item.storypoint && <div className="badge badge-light me-2"><i className="bi bi-ticket-fill me-2"></i>{item.storypoint}</div>}
+{item.listPosition}
+                      </div>
                     {/*                 <div className="d-flex mb-3">
                   For counting the number of subtasks and the number of completed subtasks
                   <div className="badge badge-light me-2" key={Object.values(issue.subtasks)}>{Object.values(issue.subtasks).length}</div>

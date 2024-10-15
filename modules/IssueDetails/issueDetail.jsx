@@ -2,13 +2,9 @@ import React, { Fragment, useEffect,useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 
-import useMergeState from '../../../hooks/mergeState';
+import useMergeState from '../../hooks/mergeState';
 //import { Breadcrumbs, Modal } from '../../../../components/common';
-
-
-import Filters from './Filters/filter';
-import Lists from './Lists';
-import IssueDetails from '../../IssueDetails';
+import IssueDetails from '.';
 import { getAnalytics, logEvent } from "firebase/analytics";
 
 

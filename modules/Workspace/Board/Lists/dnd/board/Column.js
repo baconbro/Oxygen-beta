@@ -112,6 +112,7 @@ const Column = (props) => {
                     >
                       {currentTitle}
                       <IssuesCount className="fs-6 text-gray-400 ms-2">{formatIssuesCount(items)}</IssuesCount>
+                      <div className="badge badge-light me-2 ms-2"><i className="bi bi-ticket-fill me-2"></i>{items.reduce((sum, item) => sum + (item.storypoint || 0), 0)}</div>
                     </Title>
                   </div>
                   <div>

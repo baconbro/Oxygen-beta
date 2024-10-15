@@ -12,7 +12,7 @@ import ProjectSettings from './WorkspaceSettings';
 import Backlog from './Backlog';
 import Roadmap from './Roadmap';
 import { PageTitle } from '../../layout/core';
-import IssueDetailsPage from './Board/issueDetail';
+import IssueDetailsPage from '../IssueDetails/issueDetail';
 import { useAuth } from '../auth';
 import { useWorkspace } from '../../contexts/WorkspaceProvider';
 import List from './List';
