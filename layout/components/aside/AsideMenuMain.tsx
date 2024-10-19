@@ -1,11 +1,10 @@
-import {useIntl} from 'react-intl'
-
-import {AsideMenuItem} from './AsideMenuItem'
+import { useIntl } from 'react-intl'
+import { AsideMenuItem } from './AsideMenuItem'
 import { usePageData } from '../../core'
 
 export function AsideMenuMain() {
   const intl = useIntl()
-  const {pageSideMenu} = usePageData()
+  const { pageSideMenu } = usePageData()
 
   return (
     <>
@@ -18,7 +17,6 @@ export function AsideMenuMain() {
             </div>
           </div>
           {Array.from(pageSideMenu).slice(0, 10).map((item, index) => (
-            <>
             <span key={index}>
               <AsideMenuItem
                 to={item.to}
@@ -27,12 +25,8 @@ export function AsideMenuMain() {
                 fontIcon={item.fontIcon}
               />
             </span>
-        </>
           ))}
         </>}
-
-
-
     </>
   )
 }
