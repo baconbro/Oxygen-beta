@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
-//import { generateQuoteMap } from "./mockData";
-
 import Board from "./board/Board";
-import { List } from "../../../Backlog/Lists/List/Styles";
-import Swimlane from "./Swimlane";
-import calculateGroupByValue from "./calculateGroupByValue";
-
 
 
 const Dnd = ({
   project,
   filters,
   updateLocalProjectIssues,
-  projectUsers
 }) => {
-  /*   const data = {
-      medium: generateQuoteMap(10),
-      large: generateQuoteMap(500)
-    }; */
-
-  //const [selectedParameter, setSelectedParameter] = useState('priority'); // Initial: 'priority'
 
 
   const groupIssuesByStatus = (issues, issueStatus) => {

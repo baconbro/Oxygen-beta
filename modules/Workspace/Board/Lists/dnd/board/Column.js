@@ -39,7 +39,6 @@ const Column = (props) => {
   const [isEditing, setIsEditing] = useState(false);
   const [currentTitle, setCurrentTitle] = useState(title);
   const inputRef = useRef(null);
-
   //get current user data
   const { currentUser } = useAuth();
 
@@ -49,7 +48,7 @@ const Column = (props) => {
     if (listPositions.length > 0) {
       return Math.min(...listPositions) - 1;
     }
-    return 1;
+    return 1000;
   };
 
   const findIdByName = (name, statusArray) => {

@@ -33,10 +33,11 @@ const Board = ({
 
   const [ordered, setOrdered] = useState(Object.keys(initial));
   const [issueStatus, setIssueStatus] = useState(project.config.issueStatus)
-  const initialFilteredColumns = Object.keys(initial).reduce((acc, curr) => {
+  const initialFilteredColumns = Object.keys(columns).reduce((acc, curr) => {
     acc[curr] = [];
     return acc;
   }, {});
+  
 
   const [filteredColumns, setFilteredColumns] = useState(initialFilteredColumns);
   const editItemMutation = useUpdateItem();
@@ -116,8 +117,9 @@ const Board = ({
       source,
       destination
     });
-
     setColumns(data.quoteMap);
+   
+  
 
     const current = [...columns[source.droppableId]];
     const target = current[source.index];
@@ -131,10 +133,8 @@ const Board = ({
       field: updatedFields,
       itemId: target.id,
       workspaceId: project.spaceId,
-    }
-    );
+    });
   };
-
 
   const handleAddColumn = () => {
     // Define a new column name 

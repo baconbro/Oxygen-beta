@@ -144,7 +144,7 @@ const calculateIssueListPosition = (...args) => {
   let position;
 
   if (!prevIssue && !nextIssue) {
-    position = 1;
+    position = 20;
   } else if (!prevIssue) {
     position = nextIssue.listPosition - 1;
   } else if (!nextIssue) {

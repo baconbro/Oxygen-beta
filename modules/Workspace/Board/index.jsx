@@ -11,7 +11,7 @@ import Dnd from './Lists/dnd';
 import { useAuth } from '../../auth';
 
 const propTypes = {
-  project: PropTypes.object.isRequired,
+  //project: PropTypes.object.isRequired,
   //fetchProject: PropTypes.func.isRequired,
   updateLocalProjectIssues: PropTypes.func.isRequired,
 };
@@ -27,10 +27,10 @@ const defaultFilters = {
   hideOld:30,
 };
 
-const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refreshData }) => {
+const ProjectBoard = ({ fetchProject, updateLocalProjectIssues, refreshData }) => {
 
   //const [projectUsers,setProjectUser] = useState([])
-  const { projectUsers, setProjectUsers,defaultFilters,filters,mergeFilters } = useWorkspace()
+  const { projectUsers, setProjectUsers,defaultFilters,filters,mergeFilters, project} = useWorkspace()
 
   const history = useNavigate();
   var id = useParams()
@@ -38,22 +38,9 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
   //get the url params
   const match = useLocation();
 
- /*  const updateAvatars = () => {
-    projectUsers.forEach(async (user) => {
-      //const userInfo = await FirestoreService.getUserInfo(user.email, user.id);
-      //const userInfo = useGetUser(user.email, user.id)
-      userInfo.forEach(async (doc) => {
-        const userInfo = doc.data();
-        user.name = userInfo.name;
-        user.avatarUrl = userInfo.avatarUrl;
-      });
-    });
-  } */
 
   //if id.id is different from project.id then refresh the data
   useEffect(() => {
-    //refreshData()
-    //updateAvatars()
     const projectUsers = (project.members ? project.users.concat(project.members) : project.users)
     setProjectUsers(projectUsers)
 
@@ -87,15 +74,6 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues, refresh
         />
 
       </div>
-
-
-
-
-          {/* <Lists
-            project={project}
-            filters={filters}
-            updateLocalProjectIssues={updateLocalProjectIssues}
-          /> */}
           <Dnd
             project={project}
             filters={filters}

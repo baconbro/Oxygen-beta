@@ -23,6 +23,8 @@ import { useGetOrgUsers } from '../../services/userServices';
 import { useGetUserViews } from '../../services/userViewServices';
 import { getIssueField } from '../../utils/getIssueX';
 
+import KanbanPage from './Kanban/KanbanPage';
+
 const Project = () => {
   //get current user data
   const { currentUser } = useAuth();
@@ -249,6 +251,16 @@ const Project = () => {
           path="/board/*"
           element={
             <Board
+              project={project}
+              updateLocalProjectIssues={updateLocalProjectIssues}
+              refreshData={refreshData}
+            />
+          }
+        />
+        <Route
+          path="/kanban/*"
+          element={
+            <KanbanPage
               project={project}
               updateLocalProjectIssues={updateLocalProjectIssues}
               refreshData={refreshData}
