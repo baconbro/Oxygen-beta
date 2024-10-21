@@ -119,10 +119,9 @@ const Board = ({
 
     setColumns(data.quoteMap);
 
-    // logic of firebase
     const current = [...columns[source.droppableId]];
     const target = current[source.index];
-    const issueId = source.droppableId;
+    const issueId = Number(result.draggableId);
     const updatedFields = {
       status: findIdByName(destination.droppableId, issueStatus),
       listPosition: calculateIssueListPosition(project.issues, destination, source, issueId, issueStatus),
@@ -240,16 +239,20 @@ Board.propTypes = {
 
 const calculateIssueListPosition = (...args) => {
   const { prevIssue, nextIssue } = getAfterDropPrevNextIssue(...args);
+  const prevIssueLisposition = prevIssue ? Number(prevIssue.listPosition): null;
+  const nextIssueListPosition = nextIssue ? Number(nextIssue.listPosition) : null;
   let position;
-
   if (!prevIssue && !nextIssue) {
-    position = 1;
+    position = 1000;
   } else if (!prevIssue) {
-    position = nextIssue.listPosition - 1;
+    position = nextIssueListPosition - 10;
   } else if (!nextIssue) {
-    position = prevIssue.listPosition + 1;
+    position = prevIssueLisposition + 10;
   } else {
-    position = prevIssue.listPosition + (nextIssue.listPosition - prevIssue.listPosition) / 2;
+    const midpoint = prevIssueLisposition + (nextIssueListPosition - prevIssueLisposition) / 2;
+    // Calculate the number of decimal places needed to avoid collision
+    const numDecimals = Math.ceil(-Math.log10(Math.abs(nextIssueListPosition - prevIssueLisposition))) + 1;
+    position = midpoint.toFixed(numDecimals);
   }
   return position;
 };
